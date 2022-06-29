@@ -14,6 +14,7 @@ nmap('<Leader>b', ':NvimTreeToggle<CR>')
 nmap('<C-T>', ':terminal<CR>')
 
 nmap('<C-p>', ':FZF<CR>')
+nmap('<Leader>f', ':Rg<CR>')
 
 nmap('<Leader>ss', ':<C-u>SessionSave<CR>')
 nmap('<Leader>sl', ':<C-u>SessionLoad<CR>')

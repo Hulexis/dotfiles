@@ -139,6 +139,13 @@ vim.cmd('let g:dashboard_default_executive ="fzf"')
 -- vim.cmd('command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument')
 -- vim.cmd('autocmd BufRead,BufNewFile */nginx_configs/*.conf set syntax=nginx')
 
+
+--vim.cmd('command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)'))
+
+vim.cmd([[
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+]])
+
 vim.env.FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 pcall(vim.cmd, 'colorscheme dracula')
