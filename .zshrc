@@ -171,3 +171,7 @@ export PATH="$PATH:/home/arne/custom/flutter/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias config='/usr/bin/git --git-dir=/home/arne/.cfg/ --work-tree=/home/arne'
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

@@ -57,10 +57,11 @@ keys = [
              desc='Doom Emacs'
              ),
 
-         Key([mod], "l",
+         Key([mod, "shift"], "p",
              lazy.spawn("slock"),
-             desc='Expand window (MonadTall), increase number in master pane (Tile)'
+             desc='Lock the screen'
              ),
+
          ### Switch focus to specific monitor (out of three)
          Key([mod], "w",
              lazy.to_screen(0),
@@ -116,11 +117,11 @@ keys = [
              lazy.layout.decrease_nmaster(),
              desc='Shrink window (MonadTall), decrease number in master pane (Tile)'
              ),
-         # Key([mod], "l",
-             # lazy.layout.grow(),
-             # lazy.layout.increase_nmaster(),
-             # desc='Expand window (MonadTall), increase number in master pane (Tile)'
-             # ),
+         Key([mod], "l",
+             lazy.layout.grow(),
+             lazy.layout.increase_nmaster(),
+             desc='Expand window (MonadTall), increase number in master pane (Tile)'
+             ),
          Key([mod], "n",
              lazy.layout.normalize(),
              desc='normalize window size ratios'
@@ -400,7 +401,7 @@ def init_widgets_list():
                        fontsize = 37
                        ),
              widget.Net(
-                       interface = "enp5s0",
+                       interface = "wlp113s0",
                        format = 'Net: {down} ↓↑ {up}',
                        foreground = colors[1],
                        background = colors[3],
@@ -431,13 +432,14 @@ def init_widgets_list():
                        ),
               widget.CheckUpdates(
                        update_interval = 1800,
-                       distro = "Arch_checkupdates",
+                       distro = "Arch",
                        display_format = "Updates: {updates} ",
                        foreground = colors[1],
                        colour_have_updates = colors[1],
                        colour_no_updates = colors[1],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
                        padding = 5,
+                       no_update_string='No updates',
                        background = colors[5]
                        ),
               widget.TextBox(
@@ -481,8 +483,21 @@ def init_widgets_list():
                        foreground = colors[1],
                        background = colors[8],
                        fmt = 'Keyboard: {}',
-                       padding = 5
+                       padding = 5,
+                       configured_keyboards = ['us', 'no']
                        ),
+              widget.TextBox(
+                       text = '',
+                       font = "Ubuntu Mono",
+                       background = colors[1],
+                       foreground = colors[2],
+                       padding = 0,
+                       fontsize = 37
+                       ),
+              widget.Battery(
+                       foreground = colors[7],
+                       background = colors[8],
+                      ),
               widget.TextBox(
                        text = '',
                        font = "Ubuntu Mono",

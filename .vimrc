@@ -7,6 +7,7 @@ set tabstop=4
 set autoindent
 set expandtab
 set cursorline
+set hlsearch
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))

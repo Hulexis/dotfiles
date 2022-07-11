@@ -103,6 +103,7 @@ require('packer').startup(function(use)
 
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
+  use 'sbdchd/neoformat'
 
   use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
     require("toggleterm").setup{
@@ -198,25 +199,35 @@ require("nvim-tree").setup({
 })
 
 
+vim.cmd('let g:neoformat_try_node_exe = 1')
+--vim.cmd('autocmd BufWritePre *.js Neoformat')
+vim.cmd([[
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+]])
+
+
  local null_ls = require("null-ls")
  local prettier = require("prettier")
 
- null_ls.setup({
-   on_attach = function(client, bufnr)
-     -- if client.resolved_capabilities.document_formatting then
+--[[ null_ls.setup({]]
+   --[[on_attach = function(client, bufnr)]]
+     --[[-- if client.resolved_capabilities.document_formatting then]]
         
-      client.resolved_capabilities.document_formatting = false
+      --[[client.resolved_capabilities.document_formatting = false]]
      
-       vim.cmd("nnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.formatting()<CR>")
-       -- format on save
-       vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()")
-     -- end
+       --[[vim.cmd("nnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.formatting()<CR>")]]
+       --[[-- format on save]]
+       --[[vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()")]]
+     --[[-- end]]
  
-     --  if client.resolved_capabilities.document_range_formatting then
-     --    vim.cmd("xnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.range_formatting({})<CR>")
-     --  end
-   end,
- })
+     --[[--  if client.resolved_capabilities.document_range_formatting then]]
+     --[[--    vim.cmd("xnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.range_formatting({})<CR>")]]
+     --[[--  end]]
+   --[[end,]]
+ --[[})]]
  
  prettier.setup({
    bin = 'prettier', -- or `prettierd`
