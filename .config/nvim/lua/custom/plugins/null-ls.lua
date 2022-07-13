@@ -10,7 +10,9 @@ local b = null_ls.builtins
 local sources = {
 
   -- Spelling
-  b.diagnostics.cspell,
+  -- b.diagnostics.cspell,
+
+  b.formatting.yapf,
 
    -- webdev stuff
    b.formatting.deno_fmt,

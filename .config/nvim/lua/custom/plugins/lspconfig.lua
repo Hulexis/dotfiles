@@ -6,7 +6,7 @@ M.setup_lsp = function(attach, capabilities)
   local lspconfig = require "lspconfig"
 
   -- lspservers with default config
-  local servers = { }
+  local servers = { "pyright" }
 
   -- Add work lspservers
   if string.find(data, "work") then
