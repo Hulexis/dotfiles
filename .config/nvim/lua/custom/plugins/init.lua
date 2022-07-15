@@ -41,5 +41,7 @@ return {
     config = function ()
       require "custom.plugins.smolconfigs"
     end
-  }
+  },
+
+  ["f-person/git-blame.nvim"] = {}
 }

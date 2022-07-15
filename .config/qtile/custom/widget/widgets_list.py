@@ -41,20 +41,31 @@ def getKeyboardLayouts():
     return layouts
 
 
-def get_widgets():
+def get_widgets(screen):
 
     widgets = []
 
+    leftWidgets = get_left_widgets()
+    centerWidgets = get_center_widgets()
+    rightWidgets = get_right_widgets();
+    
+    indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    if screen == 2 and isLaptop():
+        for index in sorted(indexes, reverse=True):
+            del rightWidgets[index]
+
+
     # Get the widgets for the top left side of the screen
-    widgets.extend(get_left_widgets())
+    widgets.extend(leftWidgets)
     widgets.extend([widget.Spacer(width=bar.STRETCH, background="#00000000")])
 
     # Get the widgets for the top center side of the screen
-    widgets.extend(get_center_widgets())
+    widgets.extend(centerWidgets)
     widgets.extend([widget.Spacer(width=bar.STRETCH, background="#00000000")])
 
     # Get the widgets for the top right side of the screen
-    widgets.extend(get_right_widgets())
+    widgets.extend(rightWidgets)
 
     return list(widgets)
 
@@ -211,7 +222,7 @@ def get_right_widgets():
                        fontsize=37),
         widget.KeyboardLayout(foreground=colors[1],
                               background=colors[8],
-                              fmt='Keyboard: {}',
+                              fmt='{}',
                               padding=5,
                               configured_keyboards=getKeyboardLayouts()),
     ]

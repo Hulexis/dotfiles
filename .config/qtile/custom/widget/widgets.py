@@ -4,14 +4,12 @@ from libqtile.config import Screen
 
 
 def init_widgets_screen1():
-    widgets_screen1 = get_widgets()
-    del widgets_screen1[
-        9:10]  # Slicing removes unwanted widgets (systray) on Monitors 1,3
+    widgets_screen1 = get_widgets(1)
     return widgets_screen1
 
 
 def init_widgets_screen2():
-    widgets_screen2 = get_widgets()
+    widgets_screen2 = get_widgets(2)
     return widgets_screen2  # Monitor 2 will display all widgets in widgets_list
 
 
