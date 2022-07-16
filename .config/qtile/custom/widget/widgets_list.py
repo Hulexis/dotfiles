@@ -47,14 +47,17 @@ def get_widgets(screen):
 
     leftWidgets = get_left_widgets()
     centerWidgets = get_center_widgets()
-    rightWidgets = get_right_widgets();
-    
-    indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    rightWidgets = get_right_widgets()
 
-    if screen == 2 and isLaptop():
+    indexes = [0, 1]
+    laptopIndexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    if isLaptop():
+        indexes = laptopIndexes
+
+    if screen == 2:
         for index in sorted(indexes, reverse=True):
             del rightWidgets[index]
-
 
     # Get the widgets for the top left side of the screen
     widgets.extend(leftWidgets)
