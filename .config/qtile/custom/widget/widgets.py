@@ -16,9 +16,9 @@ def init_widgets_screen2():
 def get_screens():
     return [
         Screen(
-            top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20)),
+            top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=24)),
         Screen(
-            top=bar.Bar(widgets=init_widgets_screen2(), opacity=1.0, size=20)),
+            top=bar.Bar(widgets=init_widgets_screen2(), opacity=1.0, size=24)),
         Screen(
-            top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20))
+            top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=24))
     ]
