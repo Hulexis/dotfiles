@@ -2,19 +2,26 @@ local M = {}
 
 M.setup_lsp = function(attach, capabilities)
 
-  local data = vim.loop.os_gethostname();
+  local hostName = vim.loop.os_gethostname();
   local lspconfig = require "lspconfig"
 
   -- lspservers with default config
-  local servers = { "pyright" }
+  local servers = { "pyright", "sumneko_lua" }
+
+
+  local computerServers = {}
+
+  if string.find(hostName, "work") then
+    computerServers = { "html", "cssls", "clangd", "angularls", "tsserver", "tailwindcss" }
+  end
+
+  if string.find(hostName, "home") then
+    computerServers = { "hls" }
+  end
 
   -- Add work lspservers
-  if string.find(data, "work") then
-    local tempServers = { "html", "cssls", "clangd", "angularls", "tsserver", "tailwindcss" }
-
-    for _, serversName in ipairs(tempServers) do
-      table.insert(servers, serversName)
-    end
+  for _, serversName in ipairs(computerServers) do
+    table.insert(servers, serversName)
   end
 
   for _, lsp in ipairs(servers) do
