@@ -25,19 +25,6 @@ mod = "mod4"  # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"  # My terminal of choice
 myBrowser = "firefox"  # My browser of choice
 
-
-def nextSong():
-    lazy.spawn(
-        'dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next'
-    )
-
-
-def previousSong():
-    lazy.spawn(
-        'dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous'
-    )
-
-
 keys = getKeys()
 
 groups = [

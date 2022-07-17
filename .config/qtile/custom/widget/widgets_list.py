@@ -1,6 +1,10 @@
 import os
-from libqtile import bar, widget
+from libqtile import bar
 from libqtile import qtile
+
+from qtile_extras import widget
+from qtile_extras.widget.decorations import BorderDecoration
+from qtile_extras.widget import modify
 
 from ..settings import settings
 
@@ -37,6 +41,10 @@ def get_widgets(screen):
     widgets.extend(rightWidgets)
 
     return list(widgets)
+
+
+def getWidgetDecorations(color):
+    return [BorderDecoration(colour=color[0], border_width=[0, 0, 2, 0])]
 
 
 def get_left_widgets():
@@ -100,6 +108,8 @@ def get_left_widgets():
                           padding=0),
     ]
 
+    # test = bar.Bar(widgets=left_widgets, size=20)
+
     return list(left_widgets)
 
 
@@ -107,15 +117,24 @@ def get_center_widgets():
     colors = settings.colors
 
     center_widgets = [
-        widget.Clock(foreground=colors[1],
-                     background=colors[9],
+        widget.Clock(foreground=colors[9],
+                     background=colors[0],
                      format="%A, %B %d - %H:%M ",
-                     padding=10),
+                     padding=10,
+                     margin_x=5,
+                     decorations=getWidgetDecorations(colors[9])),
+        widget.TextBox(text=' ',
+                       font="Ubuntu Mono",
+                       background=colors[0],
+                       foreground=colors[3],
+                       padding=0,
+                       fontsize=20),
         widget.OpenWeather(app_key=settings.openWeaterApiKey,
                            location='Stavanger,NO',
-                           foreground=colors[1],
-                           background=colors[7],
-                           padding=10),
+                           foreground=colors[7],
+                           background=colors[0],
+                           padding=10,
+                           decorations=getWidgetDecorations(colors[7])),
     ]
 
     return list(center_widgets)
@@ -126,43 +145,22 @@ def get_right_widgets():
 
     right_widgets = [
         widget.Systray(background=colors[0], padding=5),
-        widget.Sep(linewidth=0,
-                   padding=6,
-                   foreground=colors[0],
-                   background=colors[0]),
-        widget.TextBox(text='',
-                       font="Ubuntu Mono",
-                       background=colors[0],
-                       foreground=colors[3],
-                       padding=0,
-                       fontsize=45),
         widget.Net(format='Net: {down} ↓↑ {up}',
-                   foreground=colors[1],
-                   background=colors[3],
-                   padding=5),
-        widget.TextBox(text='',
-                       font="Ubuntu Mono",
-                       background=colors[3],
-                       foreground=colors[4],
-                       padding=0,
-                       fontsize=45),
-        widget.ThermalSensor(foreground=colors[1],
-                             background=colors[4],
+                   foreground=colors[3],
+                   background=colors[0],
+                   padding=5,
+                   decorations=getWidgetDecorations(colors[3])),
+        widget.ThermalSensor(foreground=colors[4],
+                             background=colors[0],
                              threshold=90,
                              fmt='Temp: {}',
-                             padding=5),
-        widget.TextBox(text='',
-                       font="Ubuntu Mono",
-                       background=colors[4],
-                       foreground=colors[5],
-                       padding=0,
-                       fontsize=45),
+                             padding=5,
+                             decorations=getWidgetDecorations(colors[4])),
         widget.CheckUpdates(update_interval=1800,
                             distro="Arch",
                             display_format="Updates: {updates} ",
-                            foreground=colors[1],
-                            colour_have_updates=colors[1],
-                            colour_no_updates=colors[1],
+                            colour_have_updates=colors[5],
+                            colour_no_updates=colors[5],
                             mouse_callbacks={
                                 'Button1':
                                 lambda: qtile.cmd_spawn(settings.myTerm +
@@ -170,63 +168,69 @@ def get_right_widgets():
                             },
                             padding=5,
                             no_update_string='No updates',
-                            background=colors[5]),
-        widget.TextBox(text='',
-                       font="Ubuntu Mono",
-                       background=colors[5],
-                       foreground=colors[6],
-                       padding=0,
-                       fontsize=45),
-        widget.Memory(foreground=colors[1],
-                      background=colors[6],
-                      mouse_callbacks={
-                          'Button1':
-                          lambda: qtile.cmd_spawn(settings.myTerm + ' -e htop')
-                      },
-                      fmt='Mem: {}',
-                      padding=5),
-        widget.TextBox(text='',
-                       font="Ubuntu Mono",
-                       background=colors[6],
-                       foreground=colors[7],
-                       padding=0,
-                       fontsize=45),
-        Spotify(background=colors[7], foreground=colors[1]),
-        widget.TextBox(text='',
-                       font="Ubuntu Mono",
-                       background=colors[7],
-                       foreground=colors[8],
-                       padding=0,
-                       fontsize=45),
-        widget.Volume(foreground=colors[1],
-                      background=colors[8],
-                      fmt='Vol: {}',
-                      padding=5),
-        widget.TextBox(text='',
-                       font="Ubuntu Mono",
-                       background=colors[8],
-                       foreground=colors[2],
-                       padding=0,
-                       fontsize=45),
-        widget.KeyboardLayout(foreground=colors[1],
-                              background=colors[2],
-                              fmt='{}',
-                              padding=5,
-                              configured_keyboards=settings.keyBoardLayouts),
+                            foreground=colors[5],
+                            background=colors[0],
+                            decorations=getWidgetDecorations(colors[5])),
+        widget.Memory(
+            mouse_callbacks={
+                'Button1':
+                lambda: qtile.cmd_spawn(settings.myTerm + ' -e htop')
+            },
+            fmt='Mem: {}',
+            padding=5,
+            decorations=getWidgetDecorations(colors[6]),
+            foreground=colors[6],
+            background=colors[0],
+        ),
+        modify(
+            Spotify,
+            background=colors[0],
+            foreground=colors[7],
+            decorations=getWidgetDecorations(colors[7]),
+        ),
+        widget.Volume(
+            fmt='Vol: {}',
+            padding=5,
+            decorations=getWidgetDecorations(colors[8]),
+            foreground=colors[8],
+            background=colors[0],
+        ),
+        widget.KeyboardLayout(
+            fmt='{}',
+            padding=5,
+            configured_keyboards=settings.keyBoardLayouts,
+            decorations=getWidgetDecorations(colors[2]),
+            foreground=colors[2],
+            background=colors[0],
+        ),
     ]
 
     if settings.isLaptop:
         right_widgets.extend([
-            widget.TextBox(text='',
-                           font="Ubuntu Mono",
-                           background=colors[1],
-                           foreground=colors[2],
-                           padding=0,
-                           fontsize=45),
             widget.Battery(
                 foreground=colors[7],
                 background=colors[8],
             ),
         ])
 
-    return list(right_widgets)
+    widgetList = []
+
+    for rightWidget in right_widgets:
+        widgetList.append(
+            widget.TextBox(text=' ',
+                           font="Ubuntu Mono",
+                           background=colors[0],
+                           foreground=colors[3],
+                           padding=0,
+                           fontsize=20))
+        widgetList.append(rightWidget)
+
+    widgetList.append(
+        widget.TextBox(text=' ',
+                       font="Ubuntu Mono",
+                       background=colors[0],
+                       foreground=colors[3],
+                       padding=0,
+                       fontsize=20))
+
+    return list(widgetList)
