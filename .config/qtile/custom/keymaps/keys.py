@@ -29,7 +29,7 @@ def getKeys():
             desc='Launches My Terminal'),
         Key([mod, "shift"],
             "Return",
-            lazy.spawn("dmenu_run -c -l 20"),
+            lazy.spawn("dmenu_run -c -l 20 -bw 2 -g 4"),
             desc='Run Launcher'),
         Key([mod], "b", lazy.spawn(myBrowser), desc='Qutebrowser'),
         Key([mod], "Tab", lazy.next_layout(), desc='Toggle through layouts'),
