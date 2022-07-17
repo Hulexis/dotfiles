@@ -3,6 +3,7 @@ from libqtile import bar
 from libqtile import qtile
 
 from qtile_extras import widget
+from qtile_extras.widget import decorations
 from qtile_extras.widget.decorations import BorderDecoration
 from qtile_extras.widget import modify
 
@@ -57,6 +58,8 @@ def get_left_widgets():
                    background=colors[0]),
         widget.Image(filename="~/.config/qtile/icons/python-white.png",
                      scale="False",
+                     foreground=colors[2],
+                     background=colors[0],
                      mouse_callbacks={
                          'Button1': lambda: qtile.cmd_spawn(settings.myTerm)
                      }),
