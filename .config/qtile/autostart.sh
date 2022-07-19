@@ -1,5 +1,7 @@
 #!/usr/bin/env bash 
 
-picom &
+autorandr --change &
+sleep .10 &
+picom -b &
 nitrogen --restore &
 

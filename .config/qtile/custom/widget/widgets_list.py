@@ -211,8 +211,9 @@ def get_right_widgets():
     if settings.isLaptop:
         right_widgets.extend([
             widget.Battery(
-                foreground=colors[7],
-                background=colors[8],
+                foreground=colors[9],
+                background=colors[0],
+                decorations=getWidgetDecorations(colors[9]),
             ),
         ])
 
