@@ -12,7 +12,7 @@ M.setup_lsp = function(attach, capabilities)
   local computerServers = {}
 
   if string.find(hostName, "work") then
-    computerServers = { "html", "cssls", "clangd", "angularls", "tsserver", "tailwindcss" }
+    computerServers = { "html", "cssls", "clangd", "angularls", "tsserver", "tailwindcss", "csharp_ls" }
   end
 
   if string.find(hostName, "home") then
