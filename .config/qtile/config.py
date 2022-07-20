@@ -27,13 +27,19 @@ myBrowser = "firefox"  # My browser of choice
 
 keys = getKeys()
 
+def getLayout():
+    if settings.isLaptop:
+        return 'max'
+    return 'monadtall'
+
 groups = [
     Group("DEV", layout='monadtall'),
     Group("WWW", layout='monadtall'),
     Group("SYS", layout='monadtall'),
-    Group("DOC", layout='monadtall'),
-    Group("CHAT", layout='monadtall'),
-    Group("MUS", layout='monadtall', spawn='spotify'),
+    Group("DOC", layout='monadtall', spawn=['firefox']),
+    Group("CHAT", layout=getLayout(), spawn=['slack', 'discord']),
+    Group("MUSIC", layout='monadtall', spawn=['spotify']),
+    Group("SETTINGS", layout='monadtall')
 ]
 
 # Allow MODKEY+[0 through 9] to bind to groups, see https://docs.qtile.org/en/stable/manual/config/groups.html
