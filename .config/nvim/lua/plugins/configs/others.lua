@@ -33,7 +33,6 @@ M.blankline = function()
 
    local options = {
       indentLine_enabled = 1,
-      char = "▏",
       filetype_exclude = {
          "help",
          "terminal",
@@ -113,7 +112,7 @@ M.luasnip = function()
    options = load_override(options, "L3MON4D3/LuaSnip")
    luasnip.config.set_config(options)
    require("luasnip.loaders.from_vscode").lazy_load()
-   require("luasnip.loaders.from_vscode").lazy_load({ paths = vim.g.luasnippets_path or "" })
+   require("luasnip.loaders.from_vscode").lazy_load { paths = vim.g.luasnippets_path or "" }
 
    vim.api.nvim_create_autocmd("InsertLeave", {
       callback = function()
@@ -156,7 +155,7 @@ M.devicons = function()
    if present then
       require("base46").load_highlight "devicons"
 
-      local options = { override = require("ui.icons").devicons }
+      local options = { override = require("nvchad_ui.icons").devicons }
       options = require("core.utils").load_override(options, "kyazdani42/nvim-web-devicons")
 
       devicons.setup(options)
