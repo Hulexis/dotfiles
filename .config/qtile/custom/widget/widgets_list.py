@@ -191,6 +191,12 @@ def get_right_widgets():
             foreground=colors[7],
             decorations=getWidgetDecorations(colors[7]),
         ),
+        widget.Bluetooth(
+            hci='/dev_C8_BD_4D_F7_B1_70',
+            foreground=colors[6],
+            background=colors[0],
+            decorations=getWidgetDecorations(colors[6]),
+            ),
         widget.Volume(
             fmt='Vol: {}',
             padding=5,
