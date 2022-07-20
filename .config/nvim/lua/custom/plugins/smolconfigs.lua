@@ -30,15 +30,30 @@ M.autosave = function()
    end
 end
 
-M.toggleterm = function ()
-  local present, toggleterm = pcall(require, "toggleterm")
+M.toggleterm = function()
+   local present, toggleterm = pcall(require, "toggleterm")
 
-  if present then
-    toggleterm.setup{
-      open_mapping = [[<c-\>]],
-    }
-  end
+   if present then
+      toggleterm.setup {
+         open_mapping = [[<c-\>]],
+      }
+   end
+end
+
+M.autoSession = function()
+   local present, autoSession = pcall(require, "auto-session")
+
+   if present then
+      autoSession.setup()
+   end
+end
+
+M.sessionLens = function()
+   local present, sessionLens = pcall(require, "session-lens")
+
+   if present then
+      sessionLens.setup()
+   end
 end
 
 return M
-
