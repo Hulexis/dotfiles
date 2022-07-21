@@ -20,15 +20,22 @@ def get_widgets(screen):
     rightWidgets = get_right_widgets()
 
     indexes = [0, 1]
-    laptopIndexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    laptopDockedIndexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    laptopIndexes = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
     colors = settings.colors
 
     if settings.isLaptop:
-        indexes = laptopIndexes
+        indexes = laptopDockedIndexes
 
     if screen == 2:
         for index in sorted(indexes, reverse=True):
             del rightWidgets[index]
+
+    if settings.numberOfScreens == 1:
+        for index in sorted(laptopIndexes, reverse=True):
+            if 0 <= index < len(laptopIndexes):
+                del rightWidgets[index]
+
 
     # Get the widgets for the top left side of the screen
     widgets.extend(leftWidgets)
@@ -97,9 +104,6 @@ def get_left_widgets():
             background=colors[0],
             padding=0,
             scale=0.7),
-        widget.CurrentLayout(foreground=colors[2],
-                             background=colors[0],
-                             padding=5),
         widget.TextBox(text='|',
                        font="Ubuntu Mono",
                        background=colors[0],
@@ -160,7 +164,7 @@ def get_right_widgets():
                              padding=5,
                              decorations=getWidgetDecorations(colors[4])),
         widget.CheckUpdates(update_interval=1800,
-                            distro="Arch",
+                            distro="Arch_checkupdates",
                             display_format="Updates: {updates} ",
                             colour_have_updates=colors[5],
                             colour_no_updates=colors[5],
