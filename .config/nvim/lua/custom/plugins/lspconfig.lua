@@ -6,7 +6,7 @@ M.setup_lsp = function(attach, capabilities)
   local lspconfig = require "lspconfig"
 
   -- lspservers with default config
-  local servers = { "pyright", "sumneko_lua" }
+  local servers = { "pyright", "sumneko_lua", "html", "cssls", "tsserver", "tailwindcss", "eslint" }
 
 
   local computerServers = {}
