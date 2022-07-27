@@ -36,7 +36,7 @@ groups = [
     Group("DEV", layout='monadtall'),
     Group("WWW", layout='monadtall'),
     Group("SYS", layout='monadtall'),
-    Group("DOC", layout='monadtall', spawn=['firefox']),
+    Group("DOC", layout='monadtall'),
     Group("CHAT", layout=getLayout(), spawn=['slack', 'discord']),
     Group("MUSIC", layout='monadtall', spawn=['spotify']),
     Group("SETTINGS", layout='monadtall')
