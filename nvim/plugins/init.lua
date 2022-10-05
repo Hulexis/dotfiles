@@ -1,4 +1,4 @@
-local overrides = require "custom.plugins.overrides"
+local overrides = require("custom.plugins.overrides")
 
 return {
 
@@ -11,12 +11,12 @@ return {
 
   ["neovim/nvim-lspconfig"] = {
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.plugins.lspconfig"
+      require("plugins.configs.lspconfig")
+      require("custom.plugins.lspconfig")
     end,
   },
 
-  -- override default configs
+  -- -- override default configs
   ["kyazdani42/nvim-tree.lua"] = {
     override_options = overrides.nvimtree,
   },
@@ -40,51 +40,28 @@ return {
     ft = { "html", "javascriptreact" },
     after = "nvim-treesitter",
     config = function()
-      require("custom.plugins.smolconfigs").autotag()
+      require("custom.plugins.general").autotag()
     end,
   },
 
-  -- dim inactive windows
   ["andreadev-it/shade.nvim"] = {
     module = "shade",
     config = function()
-      require("custom.plugins.smolconfigs").shade()
-    end,
-  },
-
-  ["Pocco81/auto-save.nvim"] = {
-    module = "autosave",
-    config = function()
-      require("custom.plugins.smolconfigs").autosave()
-    end,
-  },
-
-  -- ["jose-elias-alvarez/null-ls.nvim"] = {
-  --   after = "nvim-lspconfig",
-  --   config = function()
-  --     require "custom.plugins.null-ls"
-  --   end,
-  -- },
-
-  ["akinsho/toggleterm.nvim"] = {
-    module = "toggleterm",
-    tag = "v2.*",
-    config = function()
-      require "custom.plugins.smolconfigs"
-    end,
-  },
-
-  ["f-person/git-blame.nvim"] = {
-    module = "auto-session",
-    config = function()
-      require("custom.plugins.smolconfigs").autoSession()
+      require("custom.plugins.general").shade()
     end,
   },
 
   ["rmagatti/auto-session"] = {
     module = "auto",
     config = function()
-      require("custom.plugins.smolconfigs").autoSession()
+      require("custom.plugins.general").autoSession()
+    end,
+  },
+
+  ["Pocco81/auto-save.nvim"] = {
+    module = "autosave",
+    config = function()
+      require("custom.plugins.general").autosave()
     end,
   },
 
@@ -92,14 +69,23 @@ return {
     module = "session-lens",
     requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
     config = function()
-      require("custom.plugins.smolconfigs").sessionLens()
+      require("custom.plugins.general").sessionLens()
     end,
   },
 
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      require("custom.plugins.null-ls")
+    end,
+  },
+
+  -- Temporarly disabled because of errors
+  --
   -- ["nvim-treesitter/nvim-treesitter-angular"] = {
   --   after = "nvim-treesitter",
   --   config = function()
-  --     require("custom.plugins.smolconfigs").treesitterAngular()
+  --     require("custom.plugins.general").treesitterAngular()
   --   end,
   -- },
 }

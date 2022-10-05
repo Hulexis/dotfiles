@@ -12,12 +12,6 @@ M.ui = {
   hl_override = require("custom.highlights").overriden_hlgroups,
 }
 
-M.options = {
-  user = function()
-    require("custom.options")
-  end,
-}
-
 M.mappings = require "custom.mappings"
 
 return M

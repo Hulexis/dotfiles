@@ -15,11 +15,11 @@ M.shade = function()
     return
   end
 
-  shade.setup {
+  shade.setup({
     overlay_opacity = 50,
     opacity_step = 1,
     exclude_filetypes = { "NvimTree" },
-  }
+  })
 end
 
 M.autosave = function()
@@ -27,16 +27,6 @@ M.autosave = function()
 
   if present then
     autosave.setup()
-  end
-end
-
-M.toggleterm = function()
-  local present, toggleterm = pcall(require, "toggleterm")
-
-  if present then
-    toggleterm.setup {
-      open_mapping = [[<c-\>]],
-    }
   end
 end
 
