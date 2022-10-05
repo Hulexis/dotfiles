@@ -19,9 +19,9 @@ def settingsInit():
     global numberOfScreens
 
     myTerm = "alacritty"  # My terminal of choice
-    colors = [["#282c34", "#282c34"], ["#1c1f24", "#1c1f24"],
+    colors = [["#16213E", "#0F3460"], ["#1c1f24", "#1c1f24"],
               ["#dfdfdf", "#dfdfdf"], ["#507DBC", "#507DBC"],
-              ["#98be65", "#98be65"], ["#da8548", "#da8548"],
+              ["#98be65", "#98be65"], ["#E94560", "#E94560"],
               ["#51afef", "#51afef"], ["#c678dd", "#c678dd"],
               ["#46d9ff", "#46d9ff"], ["#a9a1e1", "#a9a1e1"]]
     isLaptop = getIsLaptop()
@@ -56,10 +56,12 @@ def getKeyboardLayouts():
 
     return layouts
 
+
 def find_mode(id, modes):
-   for mode in modes:
-       if id == mode.id:
-           return "{}x{}".format(mode.width, mode.height)
+    for mode in modes:
+        if id == mode.id:
+            return "{}x{}".format(mode.width, mode.height)
+
 
 def get_display_info():
     d = display.Display(':0')
@@ -74,7 +76,7 @@ def get_display_info():
     for output in res.outputs:
         params = d.xrandr_get_output_info(output, res.config_timestamp)
         if not params.crtc:
-           continue
+            continue
         crtc = d.xrandr_get_crtc_info(params.crtc, res.config_timestamp)
         modes = set()
         for mode in params.modes:
