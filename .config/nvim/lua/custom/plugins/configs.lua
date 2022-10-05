@@ -11,6 +11,7 @@ M.treesitter = {
       "regex",
       "typescript",
       "tsx",
+      "c_sharp",
    },
 }
 

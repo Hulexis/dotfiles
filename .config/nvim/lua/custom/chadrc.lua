@@ -1,25 +1,15 @@
--- Just an example, supposed to be placed in /lua/custom/
-
-local pluginConfs = require "custom.plugins.configs";
 local M = {}
 
--- make sure you maintain the structure of `core/default_config.lua` here,
--- example of changing theme:
+M.plugins = require "custom.plugins"
 
 M.ui = {
-   theme = "catppuccin",
-}
+  -- theme stuff
+  theme = "nightfox",
+  theme_toggle = { "onedark", "one_light" },
 
-M.plugins = {
-  user = require "custom.plugins",
-  options = {
-    lspconfig = {
-      setup_lspconf = "custom.plugins.lspconfig",
-    },
-  },
-  override = {
-   ["nvim-treesitter/nvim-treesitter"] = pluginConfs.treesitter
-  }
+  -- highlight groups!
+  hl_add = require("custom.highlights").new_hlgroups,
+  hl_override = require("custom.highlights").overriden_hlgroups,
 }
 
 M.options = {

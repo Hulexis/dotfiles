@@ -1,6 +1,6 @@
-local M = {}
 
-M.setup_lsp = function(attach, capabilities)
+local on_attach = require("plugins.configs.lspconfig").on_attach
+local capabilities = require("plugins.configs.lspconfig").capabilities
 
   local hostName = vim.loop.os_gethostname();
   local lspconfig = require "lspconfig"
@@ -30,7 +30,4 @@ M.setup_lsp = function(attach, capabilities)
       capabilities = capabilities,
     }
   end
-end
-
-return M
 

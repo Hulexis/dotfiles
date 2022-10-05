@@ -33,13 +33,16 @@ def getLayout():
     return 'monadtall'
 
 groups = [
-    Group("DEV", layout='monadtall'),
-    Group("WWW", layout='monadtall'),
-    Group("SYS", layout='monadtall'),
-    Group("DOC", layout='monadtall'),
-    Group("CHAT", layout=getLayout(), spawn=['slack', 'discord']),
-    Group("MUSIC", layout='monadtall', spawn=['spotify']),
-    Group("SETTINGS", layout='monadtall')
+    Group("DEV - 1", layout='monadtall'),
+    Group("WWW - 2", layout='monadtall'),
+    Group("DEV WWW - 3", layout='monadtall'),
+    Group("SYS - 4", layout='monadtall'),
+    Group("DOC - 5", layout='monadtall'),
+    Group("CHAT - 6", layout=getLayout(), spawn=['slack', 'discord']),
+    Group("MAIL - 7", layout=getLayout(), spawn=['chromium']),
+    Group("NOTES - 8", layout=getLayout(), spawn=['QOwnNotes']),
+    Group("MUSIC - 9", layout='monadtall', spawn=['spotify']),
+    Group("SETTINGS - 10", layout='monadtall')
 ]
 
 # Allow MODKEY+[0 through 9] to bind to groups, see https://docs.qtile.org/en/stable/manual/config/groups.html
