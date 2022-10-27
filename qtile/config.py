@@ -73,6 +73,7 @@ layouts = [
     layout.Max(**layout_theme),
     layout.Stack(num_stacks=2),
     layout.RatioTile(**layout_theme),
+    layout.Tile(**layout_theme),
     layout.TreeTab(font="Ubuntu",
                    fontsize=10,
                    sections=["FIRST", "SECOND", "THIRD", "FOURTH"],

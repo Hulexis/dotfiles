@@ -43,6 +43,8 @@ def getKeys():
             desc='Doom Emacs'),
         Key([mod, "shift"], "p", lazy.spawn("slock"), desc='Lock the screen'),
 
+        Key([mod, "shift"], "s", lazy.spawn("deepin-screen-recorder"), desc='Open screenshot tool'),
+
         ### Switch focus to specific monitor (out of three)
         Key([mod], "w", lazy.to_screen(0), desc='Keyboard focus to monitor 1'),
         Key([mod], "e", lazy.to_screen(1), desc='Keyboard focus to monitor 2'),

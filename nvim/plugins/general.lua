@@ -54,4 +54,16 @@ M.treesitterAngular = function()
   end
 end
 
+M.flutter = function ()
+  local present, flutter = pcall(require, "nvim-dap-ui")
+
+  if present then
+    flutter.setup({
+        debugger = {
+          enabled = true,
+        }
+    })
+  end
+end
+
 return M

@@ -169,6 +169,7 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/arne/.cargo/bin
 
 export PATH="$PATH:/home/arne/custom/flutter/bin"
+export PATH="$PATH:/home/arne/dev/flutter/sdk/bin"
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias config='/usr/bin/git --git-dir=/home/arne/.cfg/ --work-tree=/home/arne'

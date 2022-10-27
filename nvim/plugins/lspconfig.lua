@@ -11,7 +11,7 @@ local servers = { "pyright", "sumneko_lua", "html", "cssls", "tsserver", "tailwi
 local computerServers = {}
 
 if string.find(hostName, "work") then
-  computerServers = { "html", "cssls", "clangd", "angularls", "tsserver", "tailwindcss", "csharp_ls" }
+  computerServers = { "html", "cssls", "clangd", "angularls", "tsserver", "tailwindcss", "csharp_ls", "dartls" }
 end
 
 if string.find(hostName, "home") then
@@ -25,7 +25,7 @@ end
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-    on_attach = attach,
+    on_attach = on_attach,
     capabilities = capabilities,
   }
 end

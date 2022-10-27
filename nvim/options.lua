@@ -15,3 +15,6 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.bo.softtabstop = 2
+
+vim.g.luasnippets_path = "~/.config/nvim/lua/custom/snippets/angular"
+

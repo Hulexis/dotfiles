@@ -18,7 +18,7 @@ return {
 
   -- -- override default configs
   ["kyazdani42/nvim-tree.lua"] = {
-    override_options = overrides.nvimtree,
+      override_options = overrides.nvimtree,
   },
 
   ["nvim-treesitter/nvim-treesitter"] = {
@@ -37,7 +37,7 @@ return {
 
   -- autoclose tags in html, jsx etc
   ["windwp/nvim-ts-autotag"] = {
-    ft = { "html", "javascriptreact" },
+      ft = { "html", "javascriptreact" },
     after = "nvim-treesitter",
     config = function()
       require("custom.plugins.general").autotag()
@@ -77,6 +77,21 @@ return {
     after = "nvim-lspconfig",
     config = function()
       require("custom.plugins.null-ls")
+    end,
+  },
+
+  -- Flutter plugins
+  ['thosakwe/vim-flutter'] = {
+    config = function ()
+        require("custom.plugins.general").flutter()
+
+    end
+  },
+
+  ['rcarriga/nvim-dap-ui'] = {
+    requires = { 'mfussenegger/nvim-dap' },
+    config = function ()
+      require("dapui").setup()
     end,
   },
 

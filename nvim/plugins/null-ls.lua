@@ -20,7 +20,6 @@ local sources = {
   b.formatting.yapf,
 
   -- webdev stuff
-  b.formatting.deno_fmt,
   b.formatting.prettier,
 
   -- Shell
