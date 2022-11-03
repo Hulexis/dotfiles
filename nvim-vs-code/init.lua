@@ -1,3 +1,3 @@
 if vim.g.vscode then
-    -- VSCode extension
+  vim.api.nvim_set_option("clipboard", "unnamedplus")
 end

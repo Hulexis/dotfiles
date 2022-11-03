@@ -94,4 +94,8 @@ M.mason = {
   },
 }
 
+M.telescope = {
+  extensions_list = { "themes", "terms", "session-lens" }
+}
+
 return M

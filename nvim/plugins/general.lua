@@ -22,11 +22,11 @@ M.shade = function()
   })
 end
 
-M.autosave = function()
-  local present, autosave = pcall(require, "autosave")
+M.autoSave = function()
+  local present, autoSave = pcall(require, "auto-save")
 
   if present then
-    autosave.setup()
+    autoSave.setup()
   end
 end
 
@@ -34,7 +34,7 @@ M.autoSession = function()
   local present, autoSession = pcall(require, "auto-session")
 
   if present then
-    autoSession.setup()
+    autoSession.setup({})
   end
 end
 
@@ -64,6 +64,22 @@ M.flutter = function ()
         }
     })
   end
+end
+
+M.workspaces = function ()
+  local present, workspaces = pcall(require, "workspaces")
+
+  if present then
+    workspaces.setup({})
+    end
+end
+
+M.hop = function ()
+  local present, htop = pcall(require, "hop")
+
+  if present then
+    htop.setup({})
+    end
 end
 
 return M

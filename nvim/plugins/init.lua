@@ -33,6 +33,11 @@ return {
     override_options = overrides.mason,
   },
 
+  ["nvim-telescope/telescope.nvim"] = {
+    override_options = overrides.telescope
+  },
+
+
   --------------------------------------------- custom plugins ----------------------------------------------
 
   -- autoclose tags in html, jsx etc
@@ -52,16 +57,15 @@ return {
   },
 
   ["rmagatti/auto-session"] = {
-    module = "auto",
     config = function()
       require("custom.plugins.general").autoSession()
     end,
   },
 
   ["Pocco81/auto-save.nvim"] = {
-    module = "autosave",
+    module = "auto-save",
     config = function()
-      require("custom.plugins.general").autosave()
+      require("custom.plugins.general").autoSave()
     end,
   },
 
@@ -94,6 +98,30 @@ return {
       require("dapui").setup()
     end,
   },
+
+  ['natecraddock/workspaces.nvim'] = {
+    config = function ()
+      require("custom.plugins.general").workspaces()
+    end
+  },
+
+  ['Pocco81/true-zen.nvim'] = {
+    cmd = {
+      "TZAtaraxis",
+      "TZMinimalist",
+      "TZFocus",
+    },
+    config = function ()
+      require("custom.plugins.true-zen")
+    end
+  },
+
+  ['phaazon/hop.nvim'] = {
+    branch = 'v2',
+    config = function ()
+      require("custom.plugins.general").hop() 
+    end
+  }
 
   -- Temporarly disabled because of errors
   --
