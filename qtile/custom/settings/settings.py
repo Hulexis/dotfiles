@@ -6,7 +6,7 @@ from Xlib.ext import randr
 
 from libqtile.log_utils import logger
 
-laptopNames = ["arne-work"]
+laptopNames = ["arne-work", "aj-work"]
 usKeyboardPc = ["arne-work"]
 
 
