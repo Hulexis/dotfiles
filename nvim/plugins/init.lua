@@ -1,4 +1,4 @@
-local overrides = require("custom.plugins.overrides")
+local overrides = require "custom.plugins.overrides"
 
 return {
 
@@ -11,8 +11,8 @@ return {
 
   ["neovim/nvim-lspconfig"] = {
     config = function()
-      require("plugins.configs.lspconfig")
-      require("custom.plugins.lspconfig")
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.lspconfig"
     end,
   },
 
@@ -37,6 +37,15 @@ return {
     override_options = overrides.telescope
   },
 
+   ["NvChad/ui"] = {
+    override_options = {
+      statusline = {
+        theme = "vscode", -- default/vscode/vscode_colored/minimal
+        separator_style = "round", -- default/round/block/arrow
+        overriden_modules = nil,
+      },
+    },
+  },
 
   --------------------------------------------- custom plugins ----------------------------------------------
 

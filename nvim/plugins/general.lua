@@ -34,7 +34,7 @@ M.autoSession = function()
   local present, autoSession = pcall(require, "auto-session")
 
   if present then
-    autoSession.setup({})
+    autoSession.setup()
   end
 end
 
