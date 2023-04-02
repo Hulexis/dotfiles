@@ -40,8 +40,8 @@ groups = [
     Group("DOC - 5", layout='monadtall'),
     Group("CHAT - 6", layout=getLayout(), spawn=['slack', 'discord']),
     Group("MAIL - 7", layout=getLayout(), spawn=['chromium']),
-    Group("NOTES - 8", layout=getLayout(), spawn=['QOwnNotes']),
-    Group("MUSIC - 9", layout='monadtall', spawn=['spotify']),
+    Group("NOTES - 8", layout=getLayout(), spawn=['obsidian']),
+    Group("MUSIC - 9", layout='monadtall', spawn=['spotify-launcher']),
     Group("SETTINGS - 10", layout='monadtall')
 ]
 

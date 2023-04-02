@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
-autorandr --change &
+autorandr -c &
 sleep .10 &
 picom -b &
 nitrogen --restore &
