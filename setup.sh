@@ -25,3 +25,6 @@ ln -s ~/.dotfiles/alacritty ~/.config/alacritty
 # Setup qtile
 ln -s ~/.dotfiles/qtile ~/.config/qtile
 
+ln -s ~/.dotfiles/picom ~/.config/picom
+
+ln -s ~/.dotfiles/scripts ~/scripts
