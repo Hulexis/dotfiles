@@ -13,6 +13,7 @@ usKeyboardPc = ["arne-work"]
 def settingsInit():
     global myTerm
     global colors
+    global colors2
     global isLaptop
     global keyBoardLayouts
     global openWeaterApiKey
@@ -24,6 +25,20 @@ def settingsInit():
               ["#98be65", "#98be65"], ["#E94560", "#E94560"],
               ["#51afef", "#51afef"], ["#c678dd", "#c678dd"],
               ["#46d9ff", "#46d9ff"], ["#a9a1e1", "#a9a1e1"]]
+
+    colors2 =  [
+        ["#292d3e", "#292d3e"], # color 0
+        ["#A8A8A8", "#A8A8A8"], # color 1
+        ["#f99db3", "#f99db3"], # color 2
+        ["#B9BCDF", "#B9BCDF"], # color 3
+        ["#F98DA6", "#F98DA6"], # color 4
+        ["#ffffff", "#ffffff"], # color 5
+        ["#C7CAEF", "#C7CAEF"], # color 6
+        ["#F9A9BC", "#F9A9BC"], # color 7
+        ["#b79feb", "#b79feb"], # color 8
+        ["#bbebca", "#bbebca"], # color 9
+        ["#DCDEFC"]] # color 10
+
     isLaptop = getIsLaptop()
     keyBoardLayouts = getKeyboardLayouts()
     openWeaterApiKey = os.getenv('OPEN_WEATHER_API_KEY', default=None)

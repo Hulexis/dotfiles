@@ -2,7 +2,7 @@
 
 autorandr -c &
 sleep .10 &
-picom -b &
+picom -b --config ~/.config/picom/picom.conf &
 nitrogen --restore &
 xmousepasteblock &
 
