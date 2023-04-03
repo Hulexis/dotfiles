@@ -4,11 +4,11 @@ from libqtile.config import Screen
 
 
 def init_widgets_screen1():
-    return get_widgets(2)
+    return get_widgets(1)
 
 
 def init_widgets_screen2():
-    return get_widgets(1)
+    return get_widgets(2)
 
 
 def get_screens():
