@@ -199,13 +199,13 @@ def get_right_widgets():
             decorations=getWidgetDecorations(colors[6]),
             **getCommonOptions(),
         ),
-        widget.Volume(
-            fmt='Vol: {}',
-            decorations=getWidgetDecorations(colors[8]),
-            foreground=colors[8],
-            margin=10,
-            **getCommonOptions(),
-        ),
+        # idget.Volume(
+        #     fmt='Vol: {}',
+        #     decorations=getWidgetDecorations(colors[8]),
+        #     foreground=colors[8],
+        #     margin=10,
+        #     **getCommonOptions(),
+        # ),
         widget.KeyboardLayout(
             fmt='{}',
             configured_keyboards=settings.keyBoardLayouts,

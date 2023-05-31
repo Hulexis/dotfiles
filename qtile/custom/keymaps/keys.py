@@ -5,7 +5,7 @@ mod = "mod4"
 
 mod = "mod4"  # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"  # My terminal of choice
-myBrowser = "firefox"  # My browser of choice
+myBrowser = "brave"  # My browser of choice
 
 
 def nextSong():
