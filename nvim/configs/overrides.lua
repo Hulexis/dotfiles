@@ -15,7 +15,8 @@ M.treesitter = {
     "bash",
     "lua",
     "norg",
-    "dart"
+    "dart",
+    "go"
   },
 }
 
@@ -84,6 +85,8 @@ M.mason = {
     "emmet-ls",
     "json-lsp",
     "angular-language-server",
+    "gopls",
+    "golangci-lint-langserver",
 
     -- Formatters
     "prettier",

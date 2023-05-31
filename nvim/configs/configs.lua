@@ -12,6 +12,7 @@ M.treesitter = {
       "typescript",
       "tsx",
       "c_sharp",
+      "go"
    },
 }
 
