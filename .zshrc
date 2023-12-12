@@ -176,7 +176,7 @@ alias config='/usr/bin/git --git-dir=/home/arne/.cfg/ --work-tree=/home/arne'
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
 
 [ -f "/home/arne/.ghcup/env" ] && source "/home/arne/.ghcup/env" # ghcup-env
 

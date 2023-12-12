@@ -7,7 +7,7 @@ from Xlib.ext import randr
 from libqtile.log_utils import logger
 
 laptopNames = ["arne-work", "aj-work", "aj-arch-work"]
-usKeyboardPc = ["arne-work"]
+usKeyboardPc = ["arne-work", "aj-work-station"]
 
 
 def settingsInit():
@@ -26,18 +26,19 @@ def settingsInit():
               ["#51afef", "#51afef"], ["#c678dd", "#c678dd"],
               ["#46d9ff", "#46d9ff"], ["#a9a1e1", "#a9a1e1"]]
 
-    colors2 =  [
-        ["#292d3e", "#292d3e"], # color 0
-        ["#A8A8A8", "#A8A8A8"], # color 1
-        ["#f99db3", "#f99db3"], # color 2
-        ["#B9BCDF", "#B9BCDF"], # color 3
-        ["#F98DA6", "#F98DA6"], # color 4
-        ["#ffffff", "#ffffff"], # color 5
-        ["#C7CAEF", "#C7CAEF"], # color 6
-        ["#F9A9BC", "#F9A9BC"], # color 7
-        ["#b79feb", "#b79feb"], # color 8
-        ["#bbebca", "#bbebca"], # color 9
-        ["#DCDEFC"]] # color 10
+    colors2 = [
+        ["#292d3e", "#292d3e"],  # color 0
+        ["#A8A8A8", "#A8A8A8"],  # color 1
+        ["#f99db3", "#f99db3"],  # color 2
+        ["#B9BCDF", "#B9BCDF"],  # color 3
+        ["#F98DA6", "#F98DA6"],  # color 4
+        ["#ffffff", "#ffffff"],  # color 5
+        ["#C7CAEF", "#C7CAEF"],  # color 6
+        ["#F9A9BC", "#F9A9BC"],  # color 7
+        ["#b79feb", "#b79feb"],  # color 8
+        ["#bbebca", "#bbebca"],  # color 9
+        ["#DCDEFC"]
+    ]  # color 10
 
     isLaptop = getIsLaptop()
     keyBoardLayouts = getKeyboardLayouts()

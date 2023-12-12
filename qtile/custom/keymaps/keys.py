@@ -7,6 +7,8 @@ mod = "mod4"  # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"  # My terminal of choice
 myBrowser = "brave"  # My browser of choice
 
+launcher = "/home/aj/.dotfiles/scripts/launcher.sh"
+
 
 def nextSong():
     lazy.spawn(
@@ -29,7 +31,7 @@ def getKeys():
             desc='Launches My Terminal'),
         Key([mod, "shift"],
             "Return",
-            lazy.spawn("dmenu_run -c -l 20 -bw 2 -g 4"),
+            lazy.spawn(launcher),
             desc='Run Launcher'),
         Key([mod], "b", lazy.spawn(myBrowser), desc='Qutebrowser'),
         Key([mod], "Tab", lazy.next_layout(), desc='Toggle through layouts'),
@@ -41,9 +43,14 @@ def getKeys():
             "e",
             lazy.spawn("emacsclient -c -a emacs"),
             desc='Doom Emacs'),
-        Key([mod, "shift"], "p", lazy.spawn("dm-tool lock"), desc='Lock the screen'),
-
-        Key([mod, "shift"], "s", lazy.spawn("flameshot gui"), desc='Open screenshot tool'),
+        Key([mod, "shift"],
+            "p",
+            lazy.spawn("dm-tool lock"),
+            desc='Lock the screen'),
+        Key([mod, "shift"],
+            "s",
+            lazy.spawn("flameshot gui"),
+            desc='Open screenshot tool'),
 
         ### Switch focus to specific monitor (out of three)
         Key([mod], "w", lazy.to_screen(0), desc='Keyboard focus to monitor 1'),

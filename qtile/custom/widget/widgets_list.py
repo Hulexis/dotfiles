@@ -27,17 +27,17 @@ def get_widgets(screen):
     colors = settings.colors
     colors2 = settings.colors2
 
-    if settings.isLaptop:
-        indexes = laptopDockedIndexes
+    # if settings.isLaptop:
+    #     indexes = laptopDockedIndexes
 
     if screen == 2:
         for index in sorted(indexes, reverse=True):
             del rightWidgets[index]
 
-    if settings.numberOfScreens == 1:
-        for index in sorted(laptopIndexes, reverse=True):
-            if 0 <= index < len(laptopIndexes):
-                del rightWidgets[index]
+    # if settings.numberOfScreens == 1:
+    #     for index in sorted(laptopIndexes, reverse=True):
+    #         if 0 <= index < len(laptopIndexes):
+    #             del rightWidgets[index]
 
     # Get the widgets for the top left side of the screen
     widgets.extend(leftWidgets)
@@ -64,10 +64,9 @@ def getWidgetDecorations(color):
         ),
     ]
 
+
 def getCommonOptions():
-    return {
-        "padding": 10
-    }
+    return {"padding": 10}
 
 
 def get_left_widgets():
@@ -78,45 +77,6 @@ def get_left_widgets():
     xf = "space mono for powerline bold"
 
     left_widgets = [
-        widget.Clock(
-            foreground=colors[9],
-            format="%A, %B %d - %H:%M ",
-            margin_x=5,
-            decorations=getWidgetDecorations(colors[9]),
-            **getCommonOptions(),
-        ),
-        widget.OpenWeather(
-            app_key=settings.openWeaterApiKey,
-            location='Stavanger,NO',
-            foreground=colors[7],
-            decorations=getWidgetDecorations(colors[7]),
-            **getCommonOptions(),
-        ),
-
-        widget.CurrentLayoutIcon(
-            custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
-            foreground=colors[2],
-            scale=0.7,
-            decorations=getWidgetDecorations(colors[7]),
-            **getCommonOptions(),
-        ),
-        widget.WindowName(
-            foreground=colors[6],
-            decorations=getWidgetDecorations(colors[7]),
-            **getCommonOptions(),
-        ),
-    ]
-    return list(left_widgets)
-
-
-def get_center_widgets():
-    colors = settings.colors
-    colors2 = settings.colors2
-
-    xx = 14
-    xf = "space mono for powerline bold"
-
-    center_widgets = [
         widget.GroupBox(
             font=xf,
             fontsize=xx,
@@ -130,6 +90,40 @@ def get_center_widgets():
             rounded=True,
             highlight_color=colors2[0],
             highlight_method="block",
+        ),
+        widget.OpenWeather(
+            app_key=settings.openWeaterApiKey,
+            location='Stavanger,NO',
+            foreground=colors[7],
+            decorations=getWidgetDecorations(colors[7]),
+            **getCommonOptions(),
+        ),
+        widget.CurrentLayoutIcon(
+            custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
+            foreground=colors[2],
+            scale=0.7,
+            decorations=getWidgetDecorations(colors[7]),
+            **getCommonOptions(),
+        ),
+        widget.GlobalMenu(
+            foreground=colors[6],
+            decorations=getWidgetDecorations(colors[7]),
+            **getCommonOptions(),
+        ),
+    ]
+    return list(left_widgets)
+
+
+def get_center_widgets():
+    colors = settings.colors
+
+    center_widgets = [
+        widget.Clock(
+            foreground=colors[9],
+            format="%A, %B %d - %H:%M ",
+            margin_x=5,
+            decorations=getWidgetDecorations(colors[9]),
+            **getCommonOptions(),
         ),
     ]
 
@@ -145,12 +139,6 @@ def get_right_widgets():
             **getCommonOptions(),
         ),
         widget.Systray(
-            decorations=getWidgetDecorations(colors[3]),
-            **getCommonOptions(),
-        ),
-        widget.Net(
-            format='Net: {down} ↓↑ {up}',
-            foreground=colors[3],
             decorations=getWidgetDecorations(colors[3]),
             **getCommonOptions(),
         ),
@@ -193,12 +181,12 @@ def get_right_widgets():
             decorations=getWidgetDecorations(colors[7]),
             **getCommonOptions(),
         ),
-        widget.Bluetooth(
-            hci='/dev_C8_BD_4D_F7_B1_70',
-            foreground=colors[6],
-            decorations=getWidgetDecorations(colors[6]),
-            **getCommonOptions(),
-        ),
+        # widget.Bluetooth(
+        #     hci='/dev_C8_BD_4D_F7_B1_70',
+        #     foreground=colors[6],
+        #     decorations=getWidgetDecorations(colors[6]),
+        #     **getCommonOptions(),
+        # ),
         # idget.Volume(
         #     fmt='Vol: {}',
         #     decorations=getWidgetDecorations(colors[8]),
@@ -215,14 +203,14 @@ def get_right_widgets():
         ),
     ]
 
-    if settings.isLaptop:
-        right_widgets.extend([
-            widget.Battery(
-                foreground=colors[9],
-                decorations=getWidgetDecorations(colors[9]),
-                **getCommonOptions(),
-            ),
-        ])
+    # if settings.isLaptop:
+    #     right_widgets.extend([
+    #         widget.Battery(
+    #             foreground=colors[9],
+    #             decorations=getWidgetDecorations(colors[9]),
+    #             **getCommonOptions(),
+    #         ),
+    #     ])
 
     widgetList = []
 

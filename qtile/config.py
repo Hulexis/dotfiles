@@ -27,21 +27,23 @@ myBrowser = "firefox"  # My browser of choice
 
 keys = getKeys()
 
+
 def getLayout():
     if settings.isLaptop:
         return 'max'
     return 'monadtall'
 
+
 groups = [
-    Group("1", label="", layout='monadtall'),
-    Group("2", label="", layout='monadtall'),
-    Group("3", label="", layout='monadtall'),
+    Group("1", label="", layout='monadtall'),
+    Group("2", label="", layout='monadtall'),
+    Group("3", label="", layout='monadtall'),
     Group("4", label="", layout='monadtall'),
     Group("5", label="", layout='monadtall'),
-    Group("6", label="", layout=getLayout(), spawn=['slack', 'discord']),
+    Group("6", label="", layout=getLayout(), spawn=['slack', 'discord']),
     Group("7", label="", layout=getLayout(), spawn=['chromium']),
-    Group("8", label="", layout=getLayout(), spawn=['obsidian']),
-    Group("9", label="", layout='monadtall', spawn=['spotify-launcher']),
+    Group("8", label="", layout=getLayout(), spawn=['obsidian']),
+    Group("9", label="", layout='monadtall', spawn=['spotify']),
     Group("0", label="", layout='monadtall')
 ]
 
