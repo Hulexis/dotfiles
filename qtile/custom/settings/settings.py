@@ -7,7 +7,7 @@ from Xlib.ext import randr
 from libqtile.log_utils import logger
 
 laptopNames = ["arne-work", "aj-work", "aj-arch-work"]
-usKeyboardPc = ["arne-work", "aj-work-station"]
+usKeyboardPc = ["arne-work", "aj-work-station", "aj-home-pc"]
 
 
 def settingsInit():

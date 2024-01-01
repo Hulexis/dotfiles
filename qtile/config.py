@@ -22,7 +22,7 @@ mod = "mod4"
 terminal = guess_terminal()
 
 mod = "mod4"  # Sets mod key to SUPER/WINDOWS
-myTerm = "alacritty"  # My terminal of choice
+myTerm = "kitty"  # My terminal of choice
 myBrowser = "firefox"  # My browser of choice
 
 keys = getKeys()
@@ -43,7 +43,7 @@ groups = [
     Group("6", label="", layout=getLayout(), spawn=['slack', 'discord']),
     Group("7", label="", layout=getLayout(), spawn=['chromium']),
     Group("8", label="", layout=getLayout(), spawn=['obsidian']),
-    Group("9", label="", layout='monadtall', spawn=['spotify']),
+    Group("9", label="", layout='monadtall', spawn=['spotify', 'spotify-launcher']),
     Group("0", label="", layout='monadtall')
 ]
 
@@ -175,6 +175,20 @@ auto_minimize = True
 def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/autostart.sh'])
+
+@hook.subscribe.startup
+def dbus_register():
+    id = os.environ.get('DESKTOP_AUTOSTART_ID')
+    if not id:
+        return
+    subprocess.Popen(['dbus-send',
+                      '--session',
+                      '--print-reply',
+                      '--dest=org.gnome.SessionManager',
+                      '/org/gnome/SessionManager',
+                      'org.gnome.SessionManager.RegisterClient',
+                      'string:qtile',
+                      'string:' + id])
 
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this

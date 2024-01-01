@@ -167,6 +167,7 @@ export DOTNET_ROOT=/snap/dotnet-sdk/current
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/arne/.cargo/bin
+export PATH=$PATH:/opt/flutter/bin
 
 export PATH="$PATH:/home/arne/custom/flutter/bin"
 export PATH="$PATH:/home/arne/dev/flutter/sdk/bin"
