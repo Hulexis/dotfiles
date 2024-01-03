@@ -17,6 +17,7 @@ return {
         "prettier",
         "graphql-language-service-cli",
         "cspell",
+        "angular-language-server",
       },
     },
   },
