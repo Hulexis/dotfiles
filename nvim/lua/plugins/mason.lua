@@ -15,6 +15,8 @@ return {
         -- "tailwindcss-language-server",
         -- "tsserver",
         "prettier",
+        "graphql-language-service-cli",
+        "cspell",
       },
     },
   },

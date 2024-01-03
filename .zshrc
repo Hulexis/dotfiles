@@ -162,6 +162,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+# base16_default
+
+~/scripts/base-16.sh
+
 export DOTNET_ROOT=/snap/dotnet-sdk/current
 
 export PATH="$HOME/.local/bin:$PATH"
