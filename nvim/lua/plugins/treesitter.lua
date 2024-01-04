@@ -23,6 +23,7 @@ return {
         "rust",
         "css",
         "graphql",
+        "go",
       },
       indent = {
         enable = true,
