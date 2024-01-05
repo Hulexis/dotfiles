@@ -89,6 +89,7 @@ plugins=(
 zstyle :omz:plugins:keychain agents gpg,ssh
 
 source $ZSH/oh-my-zsh.sh
+source ~/.zsh_profile
 
 # User configuration
 
