@@ -8,3 +8,5 @@ vim.shiftwidth = 2
 vim.o.tabstop = 2
 vim.o.smartident = true
 vim.o.autoindent = true
+
+vim.filetype.add({ extension = { mdx = "mdx" } })
