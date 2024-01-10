@@ -42,8 +42,6 @@ return {
 
           opts.settings.tailwindCSS.experimental = { classRegex = opts.classRegex }
 
-          print(vim.inspect(opts))
-
           -- Add default filetypes
           vim.list_extend(opts.filetypes, tw.default_config.filetypes)
 
