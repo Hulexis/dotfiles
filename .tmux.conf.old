@@ -24,6 +24,8 @@ set -g mouse on
 # don't rename windows automatically
 set-option -g allow-rename off
 
+set -sg escape-time 10
+
 ######################
 ### DESIGN CHANGES ###
 ######################
@@ -44,7 +46,7 @@ set -g pane-border-style 'fg=colour19 bg=colour0'
 set -g pane-active-border-style 'bg=colour0 fg=colour9'
 
 # statusbar
-set -g status-position bottom
+set -g status-position top
 set -g status-justify left
 set -g status-style 'bg=colour18 fg=colour137 dim'
 set -g status-left ''
