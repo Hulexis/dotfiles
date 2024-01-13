@@ -18,6 +18,7 @@ return {
         "graphql-language-service-cli",
         "cspell",
         "angular-language-server",
+        "bash-language-server",
       },
     },
   },
