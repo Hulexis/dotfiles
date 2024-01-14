@@ -139,14 +139,13 @@ def get_right_widgets():
             **getCommonOptions(),
         ),
         widget.Systray(
-            decorations=getWidgetDecorations(colors[3]),
             **getCommonOptions(),
         ),
         widget.ThermalSensor(
-            foreground=colors[4],
+            foreground=colors[7],
             threshold=90,
             fmt='Temp: {}',
-            decorations=getWidgetDecorations(colors[4]),
+            decorations=getWidgetDecorations(colors[7]),
             **getCommonOptions(),
         ),
         widget.CheckUpdates(
@@ -154,7 +153,7 @@ def get_right_widgets():
             distro="Arch_checkupdates",
             display_format="Updates: {updates} ",
             colour_have_updates=colors[5],
-            colour_no_updates=colors[5],
+            colour_no_updates=colors[7],
             mouse_callbacks={
                 'Button1':
                 lambda: qtile.cmd_spawn(settings.myTerm +
@@ -162,7 +161,7 @@ def get_right_widgets():
             },
             no_update_string='No updates',
             foreground=colors[5],
-            decorations=getWidgetDecorations(colors[5]),
+            decorations=getWidgetDecorations(colors[7]),
             **getCommonOptions(),
         ),
         widget.Memory(

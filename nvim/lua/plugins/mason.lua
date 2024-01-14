@@ -19,6 +19,7 @@ return {
         "cspell",
         "angular-language-server",
         "bash-language-server",
+        "pyright",
       },
     },
   },

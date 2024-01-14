@@ -2,6 +2,7 @@
 import os
 import socket
 import subprocess
+from os import path
 from libqtile.config import Click, Drag, Group, Match
 from libqtile.command import lazy
 from libqtile import layout, hook
@@ -11,7 +12,9 @@ from typing import List  # noqa: F401from typing import List  # noqa: F401
 
 from libqtile.utils import guess_terminal
 
-from custom.settings import settings
+from custom.settings import settings 
+from custom.settings.path import qtile_path
+# from custom.settings.path import qtile_path
 
 from custom.widget.widgets import get_screens
 from custom.keymaps.keys import getKeys
@@ -173,8 +176,13 @@ auto_minimize = True
 
 @hook.subscribe.startup_once
 def start_once():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/autostart.sh'])
+		subprocess.call([path.join(qtile_path, "autostart.sh")])
+
+last_client = None
+
+@hook.subscribe.client_focus
+def win_focus(current_client):
+    last_client = current_client
 
 @hook.subscribe.startup
 def dbus_register():

@@ -22,6 +22,7 @@ rm -r ~/.config/kitty
 rm -r ~/.config/dunst
 rm -r ~/.config/tmux
 rm -r ~/.config/nvim
+rm -r ~/.config/leftwm
 
 ln -s ~/.dotfiles/alacritty ~/.config/alacritty
 ln -s ~/.dotfiles/qtile ~/.config/qtile
@@ -31,5 +32,6 @@ ln -s ~/.dotfiles/kitty ~/.config/kitty
 ln -s ~/.dotfiles/dunst ~/.config/dunst
 ln -s ~/.dotfiles/tmux ~/.config/tmux
 ln -s ~/.dotfiles/nvim ~/.config/nvim
+ln -s ~/.dotfiles/leftwm ~/.config/leftwm
 
 

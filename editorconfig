@@ -1,0 +1,57 @@
+[*.ts]
+indent_style = tab
+
+[*.dart]
+indent_style = tab
+indent_size = 2
+curly_bracket_next_line = true
+trim_trailing_whitespace = true
+
+[*.js]
+indent_style = tab
+
+[*.json]
+indent_style = tab
+indent_size = 2
+
+[*.html]
+indent_style = tab
+
+[*.css]
+indent_style = tab
+trim_trailing_whitespace = true
+
+[*.swift]
+indent_style = tab
+trim_trailing_whitespace = true
+
+[*.yaml]
+indent_style = space
+indent_size = 2
+
+[*.yml]
+indent_style = space
+indent_size = 2
+
+[*.hjson]
+indent_style = tab
+indent_size = 2
+
+[*.py]
+indent_style = tab
+trim_trailing_whitespace = true
+
+[*.md]
+indent_style = tab
+
+[*.hs]
+indent_style = space
+indent_size = 4
+
+[*.lua]
+indent_style = tab
+indent_size = 2
+
+[*.rs]
+indent_style = tab
+trim_trailing_whitespace = true
