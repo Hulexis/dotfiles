@@ -430,6 +430,7 @@ bind-key -n M-7 select-window -t 7
 bind-key -n M-8 select-window -t 8
 bind-key -n M-9 select-window -t 9
 
+bind-key -n M-z if-shell "tmux display -p '#{window_zoomed_flag}#{pane_index}' | grep '^1'" "select-pane -t 2" "resize-pane -t 1 -Z \; select-pane -t 1"
 
 # -- custom variables ----------------------------------------------------------
 
