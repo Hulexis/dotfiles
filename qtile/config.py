@@ -26,7 +26,7 @@ terminal = guess_terminal()
 
 mod = "mod4"  # Sets mod key to SUPER/WINDOWS
 myTerm = "kitty"  # My terminal of choice
-myBrowser = "firefox"  # My browser of choice
+myBrowser = "chromium"  # My browser of choice
 
 keys = getKeys()
 
@@ -40,14 +40,14 @@ def getLayout():
 groups = [
     Group("1", label="", layout='monadtall'),
     Group("2", label="", layout='monadtall'),
-    Group("3", label="", layout='monadtall'),
-    Group("4", label="", layout='monadtall'),
+    Group("3", label="", layout='monadtall'),
+    Group("4", label="󱠓", layout='monadtall'),
     Group("5", label="", layout='monadtall'),
-    Group("6", label="", layout=getLayout(), spawn=['slack', 'discord']),
-    Group("7", label="", layout=getLayout(), spawn=['chromium']),
+    Group("6", label="", layout=getLayout(), spawn=['slack', 'discord']),
+    Group("7", label="󰖺", layout='monadtall'),
     Group("8", label="", layout=getLayout(), spawn=['obsidian']),
     Group("9", label="", layout='monadtall', spawn=['spotify', 'spotify-launcher']),
-    Group("0", label="", layout='monadtall')
+    Group("0", label="", layout='monadtall')
 ]
 
 # Allow MODKEY+[0 through 9] to bind to groups, see https://docs.qtile.org/en/stable/manual/config/groups.html
@@ -65,38 +65,38 @@ layout_theme = {
 }
 
 layouts = [
-    #layout.MonadWide(**layout_theme),
-    #layout.Bsp(**layout_theme),
-    #layout.Stack(stacks=2, **layout_theme),
-    #layout.Columns(**layout_theme),
-    #layout.RatioTile(**layout_theme),
-    #layout.Tile(shift_windows=True, **layout_theme),
-    #layout.VerticalTile(**layout_theme),
-    #layout.Matrix(**layout_theme),
-    #layout.Zoomy(**layout_theme),
+    # layout.MonadWide(**layout_theme),
+    # layout.Bsp(**layout_theme),
+    # layout.Stack(stacks=2, **layout_theme),
+    # layout.Columns(**layout_theme),
+    # layout.RatioTile(**layout_theme),
+    # layout.Tile(shift_windows=True, **layout_theme),
+    # layout.VerticalTile(**layout_theme),
+    # layout.Matrix(**layout_theme),
+    # layout.Zoomy(**layout_theme),
     layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme),
-    layout.Stack(num_stacks=2),
+    # layout.Stack(num_stacks=2),
     layout.RatioTile(**layout_theme),
     layout.Tile(**layout_theme),
-    layout.TreeTab(font="Ubuntu",
-                   fontsize=10,
-                   sections=["FIRST", "SECOND", "THIRD", "FOURTH"],
-                   section_fontsize=10,
-                   border_width=2,
-                   bg_color="1c1f24",
-                   active_bg="c678dd",
-                   active_fg="000000",
-                   inactive_bg="a9a1e1",
-                   inactive_fg="1c1f24",
-                   padding_left=0,
-                   padding_x=0,
-                   padding_y=5,
-                   section_top=10,
-                   section_bottom=20,
-                   level_shift=8,
-                   vspace=3,
-                   panel_width=200),
+    # layout.TreeTab(font="Ubuntu",
+    #                fontsize=10,
+    #                sections=["FIRST", "SECOND", "THIRD", "FOURTH"],
+    #                section_fontsize=10,
+    #                border_width=2,
+    #                bg_color="1c1f24",
+    #                active_bg="c678dd",
+    #                active_fg="000000",
+    #                inactive_bg="a9a1e1",
+    #                inactive_fg="1c1f24",
+    #                padding_left=0,
+    #                padding_x=0,
+    #                padding_y=5,
+    #                section_top=10,
+    #                section_bottom=20,
+    #                level_shift=8,
+    #                vspace=3,
+    #                panel_width=200),
     layout.Floating(**layout_theme)
 ]
 

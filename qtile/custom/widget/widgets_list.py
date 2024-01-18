@@ -56,7 +56,7 @@ def get_widgets(screen):
 def getWidgetDecorations(color):
     return [
         RectDecoration(
-            colour="#004040",
+            colour="#16213E",
             radius=10,
             filled=True,
             group=False,
@@ -66,7 +66,7 @@ def getWidgetDecorations(color):
 
 
 def getCommonOptions():
-    return {"padding": 10}
+    return {"padding": 15}
 
 
 def get_left_widgets():
@@ -83,12 +83,14 @@ def get_left_widgets():
             margin_y=3,
             margin_x=5,
             padding_y=5,
-            padding_x=3,
+            padding_x=6,
             borderwidth=3,
-            inactive=colors2[6],
-            active=colors2[4],
+            inactive=colors2[0],
+            active=colors2[8],
+						other_current_screen_border=colors2[0],
+						this_current_screen_border=colors2[0],
             rounded=True,
-            highlight_color=colors2[0],
+            highlight_color=colors2[1],
             highlight_method="block",
         ),
         widget.OpenWeather(
