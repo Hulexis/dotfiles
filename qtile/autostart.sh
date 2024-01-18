@@ -1,7 +1,6 @@
 #!/usr/bin/env bash 
 
-autorandr -c &
-sleep .10 &
+variety &
 picom -b --config ~/.config/picom/picom-corners.conf &
 nitrogen --restore &
 dunst &
