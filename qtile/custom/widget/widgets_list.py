@@ -103,7 +103,7 @@ def get_left_widgets():
 			**getCommonOptions(),
 		),
 		widget.GlobalMenu(
-			foreground=color_secondary_fg,
+			foreground=color_primary_fg,
 			decorations=getWidgetDecorations(),
 			**getCommonOptions(),
 		),
