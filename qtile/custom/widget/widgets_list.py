@@ -3,14 +3,17 @@ from libqtile import bar
 from libqtile import qtile
 
 from qtile_extras import widget
-from qtile_extras.widget import decorations
-from qtile_extras.widget.decorations import BorderDecoration
 from qtile_extras.widget.decorations import RectDecoration
 from qtile_extras.widget import modify
 
 from ..settings import settings
 
 from .spotify import Spotify
+
+color_primary_fg = settings.color_primary_fg
+color_secondary_fg = settings.color_secondary_fg
+
+color_primary_bg = settings.color_primary_bg
 
 
 def get_widgets(screen):
@@ -20,24 +23,15 @@ def get_widgets(screen):
 	centerWidgets = get_center_widgets()
 	rightWidgets = get_right_widgets()
 
-	indexes = [0, 1]
-	laptopDockedIndexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-	laptopIndexes = [5, 6, 7, 8, 9]
+	rightIndexes = [0, 1, 2, 3, 4, 5, 6]
+	leftIndexes = [1]
 
-	colors = settings.colors
-	colors2 = settings.colors2
-
-	# if settings.isLaptop:
-	#     indexes = laptopDockedIndexes
-
-	if screen == 2:
-		for index in sorted(indexes, reverse=True):
+	if screen != 1:
+		for index in sorted(rightIndexes, reverse=True):
 			del rightWidgets[index]
 
-	# if settings.numberOfScreens == 1:
-	#     for index in sorted(laptopIndexes, reverse=True):
-	#         if 0 <= index < len(laptopIndexes):
-	#             del rightWidgets[index]
+		for index in sorted(leftIndexes, reverse=True):
+			del leftWidgets[index]
 
 	# Get the widgets for the top left side of the screen
 	widgets.extend(leftWidgets)
@@ -53,10 +47,10 @@ def get_widgets(screen):
 	return list(widgets)
 
 
-def getWidgetDecorations(color):
+def getWidgetDecorations():
 	return [
 		RectDecoration(
-			colour="#16213E",
+			colour=color_primary_bg,
 			radius=10,
 			filled=True,
 			group=False,
@@ -70,7 +64,6 @@ def getCommonOptions():
 
 
 def get_left_widgets():
-	colors = settings.colors
 	colors2 = settings.colors2
 
 	xx = 14
@@ -92,24 +85,26 @@ def get_left_widgets():
 			rounded=True,
 			highlight_color=colors2[1],
 			highlight_method="block",
+			decorations=getWidgetDecorations(),
+			**getCommonOptions(),
 		),
 		widget.OpenWeather(
 			app_key=settings.openWeaterApiKey,
 			location='Stavanger,NO',
-			foreground=colors[7],
-			decorations=getWidgetDecorations(colors[7]),
+			foreground=color_primary_fg,
+			decorations=getWidgetDecorations(),
 			**getCommonOptions(),
 		),
 		widget.CurrentLayoutIcon(
 			custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
-			foreground=colors[2],
+			foreground=color_secondary_fg,
 			scale=0.7,
-			decorations=getWidgetDecorations(colors[7]),
+			decorations=getWidgetDecorations(),
 			**getCommonOptions(),
 		),
 		widget.GlobalMenu(
-			foreground=colors[6],
-			decorations=getWidgetDecorations(colors[7]),
+			foreground=color_secondary_fg,
+			decorations=getWidgetDecorations(),
 			**getCommonOptions(),
 		),
 	]
@@ -117,14 +112,12 @@ def get_left_widgets():
 
 
 def get_center_widgets():
-	colors = settings.colors
-
 	center_widgets = [
 		widget.Clock(
-			foreground=colors[9],
+			foreground=color_primary_fg,
 			format="%A, %B %d - %H:%M ",
 			margin_x=5,
-			decorations=getWidgetDecorations(colors[9]),
+			decorations=getWidgetDecorations(),
 			**getCommonOptions(),
 		),
 	]
@@ -137,17 +130,10 @@ def get_right_widgets():
 
 	right_widgets = [
 		widget.Notify(
-			decorations=getWidgetDecorations(colors[3]),
+			decorations=getWidgetDecorations(),
 			**getCommonOptions(),
 		),
 		widget.Systray(**getCommonOptions(),),
-		widget.ThermalSensor(
-			foreground=colors[7],
-			threshold=90,
-			fmt='Temp: {}',
-			decorations=getWidgetDecorations(colors[7]),
-			**getCommonOptions(),
-		),
 		widget.CheckUpdates(
 			update_interval=1800,
 			distro="Arch_checkupdates",
@@ -160,8 +146,8 @@ def get_right_widgets():
 											' -e sudo pacman -Syu')
 			},
 			no_update_string='No updates',
-			foreground=colors[5],
-			decorations=getWidgetDecorations(colors[7]),
+			foreground=color_primary_fg,
+			decorations=getWidgetDecorations(),
 			**getCommonOptions(),
 		),
 		widget.Memory(
@@ -169,51 +155,26 @@ def get_right_widgets():
 				'Button1': lambda: qtile.cmd_spawn(settings.myTerm + ' -e htop')
 			},
 			fmt='Mem: {}',
-			decorations=getWidgetDecorations(colors[6]),
-			foreground=colors[6],
+			decorations=getWidgetDecorations(),
+			foreground=color_primary_fg,
 			**getCommonOptions(),
 		),
-		modify(
-			Spotify,
-			foreground=colors[7],
-			decorations=getWidgetDecorations(colors[7]),
-			**getCommonOptions(),
-		),
+		modify(Spotify, foreground=color_primary_fg,
+				decorations=getWidgetDecorations(), initialise=True,
+				**getCommonOptions(), max_chars=30),
 		widget.Volume(
-			decorations=getWidgetDecorations(colors[2]),
-			foreground=colors[2],
+			decorations=getWidgetDecorations(),
+			foreground=color_primary_fg,
 			**getCommonOptions(),
 		),
-	# widget.Bluetooth(
-	#     hci='/dev_C8_BD_4D_F7_B1_70',
-	#     foreground=colors[6],
-	#     decorations=getWidgetDecorations(colors[6]),
-	#     **getCommonOptions(),
-	# ),
-	# idget.Volume(
-	#     fmt='Vol: {}',
-	#     decorations=getWidgetDecorations(colors[8]),
-	#     foreground=colors[8],
-	#     margin=10,
-	#     **getCommonOptions(),
-	# ),
 		widget.KeyboardLayout(
 			fmt='{}',
 			configured_keyboards=settings.keyBoardLayouts,
-			decorations=getWidgetDecorations(colors[2]),
-			foreground=colors[2],
+			decorations=getWidgetDecorations(),
+			foreground=color_primary_fg,
 			**getCommonOptions(),
 		),
 	]
-
-	# if settings.isLaptop:
-	#     right_widgets.extend([
-	#         widget.Battery(
-	#             foreground=colors[9],
-	#             decorations=getWidgetDecorations(colors[9]),
-	#             **getCommonOptions(),
-	#         ),
-	#     ])
 
 	widgetList = []
 
