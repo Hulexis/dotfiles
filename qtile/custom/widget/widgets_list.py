@@ -23,12 +23,11 @@ def get_widgets(screen):
 	centerWidgets = get_center_widgets()
 	rightWidgets = get_right_widgets()
 
-	rightIndexes = [0, 1, 2, 3, 4, 5, 6]
 	leftIndexes = [1]
 
 	if screen != 1:
-		for index in sorted(rightIndexes, reverse=True):
-			del rightWidgets[index]
+		rightWidgets = centerWidgets
+		centerWidgets = []
 
 		for index in sorted(leftIndexes, reverse=True):
 			del leftWidgets[index]
