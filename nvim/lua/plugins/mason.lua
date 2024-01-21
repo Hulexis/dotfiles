@@ -1,19 +1,16 @@
 return {
 	{
 		"williamboman/mason.nvim",
+		keys = { {} },
 		opts = {
 			ensure_installed = {
 				"stylua",
 				"shellcheck",
-				-- "cssls",
 				"eslint_d",
 				"eslint-lsp",
 				"gopls",
 				"html-lsp",
 				"json-lsp",
-				-- "lua_ls",
-				-- "tailwindcss-language-server",
-				-- "tsserver",
 				"prettier",
 				"graphql-language-service-cli",
 				"cspell",
