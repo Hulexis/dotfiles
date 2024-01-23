@@ -15,9 +15,6 @@ return {
 				winbar = false,
 				statusline = false,
 			},
-			window = {
-				position = "right",
-			},
 		},
 	},
 }
