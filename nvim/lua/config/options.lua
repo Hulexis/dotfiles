@@ -15,3 +15,5 @@ vim.o.autoindent = true
 
 vim.o.listchars = "tab:!·,trail:·"
 vim.o.list = false
+
+vim.opt_local.conceallevel = 2
