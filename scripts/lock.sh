@@ -1,5 +1,5 @@
 #!/bin/bash
-playerctl play-pause --player=spotify
+playerctl pause --player=spotify
 
 pkill -xu $EUID -USR1 dunst
 i3lock --color 000000 &
