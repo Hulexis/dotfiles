@@ -177,6 +177,8 @@ export PATH=$PATH:/opt/flutter/bin
 export PATH="$PATH:/home/arne/custom/flutter/bin"
 export PATH="$PATH:/home/arne/dev/flutter/sdk/bin"
 
+export PATH="$PATH:$GOPATH/bin"
+
 export EDITOR=/usr/bin/nvim
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -33,7 +33,9 @@ local keymaps = {}
 
 map_normal("<leader>cs", cmd(":noa w"), { desc = "Save file without formatting", remap = true })
 map_normal("<leader>ct", cmd(":set list!"), { desc = "Toggle tabs indicator", remap = true })
+map_normal("<leader>cl", require("utils.ui").open_diagnostics, { desc = "[l]ist TODOs and Issues", remap = true })
 
+map_common("<C-b>", cmd("Neotree toggle"), { desc = "Open filetree", remap = true })
 map_common("<C-b>", cmd("Neotree toggle"), { desc = "Open filetree", remap = true })
 
 return keymaps
