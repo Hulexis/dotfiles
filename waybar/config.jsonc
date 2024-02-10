@@ -32,19 +32,19 @@
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
+    "on-click": "~/scripts/hypr/dispatch.sh 1",
     "warp-on-scroll": false,
     "format": "{icon}",
     "format-icons": {
-      "1": "", // home
-      "2": "", // dev
-      "3": "", // misc
-      "4": "", // chat
-      "5": "", // gfx
-      "6": "", // mail
-      "7": "", // phones
-      "8": "", // games
-      "9": "", // music
-      "10": "" // web
+      "1": "", // home
+      "2": "", // dev
+      "3": "", // misc
+      "4": "󱠓", // chat
+      "5": "󰒱", // gfx
+      "6": "󰖺", // mail
+      "7": "", // phones
+      "8": "󰓇", // games
+      "9": "" // music
     },
     "persistent-workspaces": {
       "1": [],
