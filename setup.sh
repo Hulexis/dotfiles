@@ -25,6 +25,8 @@ rm -r ~/.config/nvim
 rm -r ~/.config/leftwm
 rm -r ~/.config/hypr
 rm -r ~/.config/waybar
+rm -r ~/.config/swaylock
+rm -r ~/.config/eww
 
 ln -s ~/.dotfiles/alacritty ~/.config/alacritty
 ln -s ~/.dotfiles/qtile ~/.config/qtile
@@ -37,5 +39,7 @@ ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/leftwm ~/.config/leftwm
 ln -s ~/.dotfiles/hypr ~/.config/hypr
 ln -s ~/.dotfiles/waybar ~/.config/waybar
+ln -s ~/.dotfiles/swaylock ~/.config/swaylock
+ln -s ~/.dotfiles/eww ~/.config/eww
 
 
