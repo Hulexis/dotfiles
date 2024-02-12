@@ -34,6 +34,27 @@ local keymaps = {}
 map_normal("<leader>cs", cmd(":noa w"), { desc = "Save file without formatting", remap = true })
 map_normal("<leader>ct", cmd(":set list!"), { desc = "Toggle tabs indicator", remap = true })
 map_normal("<leader>cl", require("utils.ui").open_diagnostics, { desc = "[l]ist TODOs and Issues", remap = true })
+map_normal(
+	"<leader>ma",
+	cmd(':lua require("monorepo").add_project()'),
+	{ desc = "Add project to project list", remap = true }
+)
+map_normal(
+	"<leader>mr",
+	cmd(':lua require("monorepo").remove_project()'),
+	{ desc = "Remove project to project list", remap = true }
+)
+map_normal(
+	"<leader>mt",
+	cmd(':lua require("monorepo").toggle_project()'),
+	{ desc = "Remove project to project list", remap = true }
+)
+
+for i = 1, 9 do
+	map_normal("<leader>m" .. i, function()
+		require("monorepo").go_to_project(i)
+	end, { desc = "Go to proejct " .. i, remap = true })
+end
 
 map_common("<C-b>", cmd("Neotree toggle"), { desc = "Open filetree", remap = true })
 map_common("<C-b>", cmd("Neotree toggle"), { desc = "Open filetree", remap = true })
