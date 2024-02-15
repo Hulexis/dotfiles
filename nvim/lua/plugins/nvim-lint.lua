@@ -7,7 +7,6 @@ return {
 			events = { "BufWritePost", "BufReadPost", "InsertLeave" },
 			linters_by_ft = {
 				fish = { "fish" },
-				typescriptreact = { "typos" },
 
 				["*"] = { "typos" },
 				-- Use the "*" filetype to run linters on all filetypes.

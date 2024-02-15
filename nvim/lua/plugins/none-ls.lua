@@ -35,10 +35,10 @@ return {
 				or require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git")
 			opts.sources = vim.list_extend(opts.sources or {}, {
 				nls.builtins.formatting.stylua,
-				nls.builtins.formatting.prettier,
-				nls.builtins.formatting.black,
+				-- nls.builtins.formatting.prettier,
+				-- nls.builtins.formatting.black,
 				nls.builtins.diagnostics.typos,
-				nls.builtins.diagnostics.write_good,
+				-- nls.builtins.diagnostics.write_good,
 			})
 		end,
 	},
