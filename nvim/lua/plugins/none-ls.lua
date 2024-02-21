@@ -64,6 +64,23 @@ return {
 				["graphql"] = { "prettier" },
 				["handlebars"] = { "prettier" },
 				["python"] = { "yapf" },
+				["swift"] = { "swift_format_ext" },
+			},
+			formatters = {
+				swift_format_ext = {
+					command = "swiftformat",
+					args = { "--stdinpath", "$FILENAME" },
+					range_args = function(self, ctx)
+						return {
+							"--linerange",
+							ctx.range.start[1] .. "," .. ctx.range["end"][1],
+						}
+					end,
+					stdin = true,
+					condition = function(self, ctx)
+						return vim.fs.basename(ctx.filename) ~= "README.md"
+					end,
+				},
 			},
 		},
 	},
