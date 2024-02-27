@@ -14,27 +14,40 @@ fi
 tmux new-session -d -s $session
 
 window=1
-tmux rename-window -t $session:$window 'serve'
-tmux send-keys -t $session:$window 'cd ~/work/web/electra-kit/' C-m "git pull" C-m "pnpm i" C-m "pnpm run dev" C-m
-
-tmux split-window -t $session:$window
-tmux send-keys -t $session:$window 'cd ~/work/web/electra-go' C-m "git pull" C-m "make run" C-m
-
-tmux split-window -t $session:$window.1 -h
-tmux send-keys -t $session:$window 'cd ~/work/web/electra-kit/' C-m "pnpm run storybook" C-m
+tmux rename-window -t $session:$window 'blocks'
 
 window=2
-tmux new-window -t $session:$window -n 'kit'
-tmux split-window -t $session:$window
-tmux send-keys -t $session:$window 'cd web/electra-kit' C-m "clear" C-m
-
-tmux resize-pane -t $session:$window.1 -Z
-tmux send-keys -t $session:$window.1 'cd web/electra-kit' C-m "nvim" C-m
+tmux new-window -t $session:$window -n 'api'
 
 window=3
-tmux new-window -t $session:$window -n 'go'
-tmux split-window -t $session:$window
-tmux send-keys -t $session:$window 'cd web/electra-go' C-m "clear" C-m
+tmux new-window -t $session:$window -n 'fix'
 
-tmux resize-pane -t $session:$window.1 -Z
-tmux send-keys -t $session:$window.1 'cd web/electra-go' C-m "nvim" C-m
+window=4
+tmux new-window -t $session:$window -n 'control'
+
+window=4
+tmux new-window -t $session:$window -n 'releasee'
+
+# tmux send-keys -t $session:$window 'cd ~/work/web/electra-kit/' C-m "git pull" C-m "pnpm i" C-m "pnpm run dev" C-m
+#
+# tmux split-window -t $session:$window
+# tmux send-keys -t $session:$window 'cd ~/work/web/electra-go' C-m "git pull" C-m "make run" C-m
+#
+# tmux split-window -t $session:$window.1 -h
+# tmux send-keys -t $session:$window 'cd ~/work/web/electra-kit/' C-m "pnpm run storybook" C-m
+#
+# window=2
+# tmux new-window -t $session:$window -n 'kit'
+# tmux split-window -t $session:$window
+# tmux send-keys -t $session:$window 'cd web/electra-kit' C-m "clear" C-m
+#
+# tmux resize-pane -t $session:$window.1 -Z
+# tmux send-keys -t $session:$window.1 'cd web/electra-kit' C-m "nvim" C-m
+#
+# window=3
+# tmux new-window -t $session:$window -n 'go'
+# tmux split-window -t $session:$window
+# tmux send-keys -t $session:$window 'cd web/electra-go' C-m "clear" C-m
+#
+# tmux resize-pane -t $session:$window.1 -Z
+# tmux send-keys -t $session:$window.1 'cd web/electra-go' C-m "nvim" C-m
