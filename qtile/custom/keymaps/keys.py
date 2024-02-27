@@ -45,6 +45,8 @@ def getKeys():
 		Key([mod], "w", lazy.spawn(myBrowser), desc='Qutebrowser'),
 		Key([mod], "s", lazy.spawn("flameshot gui"),
 			desc='Open screenshot tool'),
+		Key([mod, k.shift], "s", lazy.spawn("peek"),
+			desc='Open screencast tool'),
 		Key([k.mod], "n", lazy.spawn(files), desc="Launch file browser"),
 		Key([mod], "d", lazy.spawn(launcher), desc='Run Launcher'),
 
