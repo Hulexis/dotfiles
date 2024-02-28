@@ -21,6 +21,7 @@ return {
 				"black",
 				"typos",
 				"write-good",
+				"css-lsp",
 			},
 		},
 	},
