@@ -1,7 +1,10 @@
 [style]
-based_on_style = google
-spaces_before_comment = 4
-split_before_logical_operator = true
 use_tabs = true
-split_before_named_assigns = false
-continuation_align_style = VALIGN-RIGHT
+column_limit=120
+based_on_style = pep8
+DEDENT_CLOSING_BRACKETS = True
+SPLIT_BEFORE_FIRST_ARGUMENT = True
+SPLIT_ARGUMENTS_WHEN_COMMA_TERMINATED = True
+CONTINUATION_ALIGN_STYLE = valign-right
+INDENT_WIDTH = 1
+CONTINUATION_INDENT_WIDTH = 1

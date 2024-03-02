@@ -73,9 +73,6 @@ button:hover {
   box-shadow: inset 0 -3px #ff0000;
 }
 
-#workspaces button.persistent {
-}
-
 #workspaces button.empty {
   opacity: 0.5;
 }
@@ -101,11 +98,20 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #custom-clipboard,
+#custom-spotify,
 #mpd {
-  padding: 0 10px;
+  padding: 10px 10px;
   color: #ffffff;
   /* background-color: #64727D; */
   background-color: transparent;
+}
+
+#clock label {
+  padding: 10px 10px;
+  background: hotpink;
+}
+
+#custom-spotifyk {
 }
 
 #custom-clipboard {
@@ -125,9 +131,6 @@ button:hover {
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
   margin-right: 0;
-}
-
-#battery {
 }
 
 #battery.charging,

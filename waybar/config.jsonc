@@ -11,6 +11,7 @@
   // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces"
+    // "custom/workspaces"
     // "custom/separator",
     // "sway/scratchpad"
   ],
@@ -26,13 +27,15 @@
     "memory",
     "temperature",
     "hyprland/language",
+    "custom/spotify",
+    "custom/pacman",
     "clock"
   ],
   // Modules configuration
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "on-click": "~/scripts/hypr/dispatch.sh 1",
+    "on-click": "close",
     "warp-on-scroll": false,
     "format": "{icon}",
     "format-icons": {
@@ -55,12 +58,11 @@
       "6": [],
       "7": [],
       "8": [],
-      "9": [],
-      "10": []
+      "9": []
     }
   },
   "hyprland/language": {
-    "format": " {}"
+    "format": "   {}"
   },
   "keyboard-state": {
     "numlock": true,
@@ -81,32 +83,6 @@
     "tooltip": true,
     "tooltip-format": "{app}: {title}"
   },
-  "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "unknown-tag": "N/A",
-    "interval": 2,
-    "consume-icons": {
-      "on": " "
-    },
-    "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
-      "on": " "
-    },
-    "repeat-icons": {
-      "on": " "
-    },
-    "single-icons": {
-      "on": "1 "
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
-    },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
-  },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -124,13 +100,13 @@
     "spacing": 10
   },
   "clock": {
-    "format": " {:%d/%m - %H:%M}",
+    "format": "  {:%d/%m - %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": " {:%d/%m/%Y %H:%M:%S}"
+    "format-alt": "  {:%d/%m/%Y %H:%M:%S}"
   },
   "cpu": {
-    "format": " {usage}%",
-    "tooltip": false
+    "format": "  {usage}%",
+    "tooltip": true
   },
   "memory": {
     "format": " {}%"
@@ -148,29 +124,12 @@
     "format": "{percent}% {icon}",
     "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
-  "battery": {
-    "states": {
-      // "good": 95,
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
-    "format-icons": ["", "", "", "", ""]
-  },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": " {essid} ({signalStrength}%)",
+    "format-wifi": "  {essid} ({signalStrength}%)",
     "format-ethernet": "",
-    "tooltip-format": " {ifname} via {gwaddr}",
-    "format-linked": " (No IP)",
+    "tooltip-format": "  {ifname} via {gwaddr}",
+    "format-linked": "  (No IP)",
     "format-disconnected": "⚠ Disconnected",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
@@ -193,16 +152,25 @@
     },
     "on-click": "pavucontrol"
   },
-  "custom/media": {
-    "format": "{icon} {}",
+  "custom/spotify": {
+    "exec": "/usr/bin/python3 $HOME/scripts/audio/mediaplayer.py --player spotify",
+    "format": "{}",
     "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜"
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "max-length": 20
+  },
+  "custom/pacman": {
+    "format": "   {}",
+    "interval": 3600,
+    "exec": "checkupdates | wc -l",
+    "signal": 4
+  },
+  "custom/workspaces": {
+    "format": "{}",
+    "return-type": "json",
+    "on-click": "/usr/bin/python3 $HOME/scripts/hypr/workspaces.py -w 1 -e -vvv -a click",
+    "exec": "/usr/bin/python3 $HOME/scripts/hypr/workspaces.py -w 1 -e -vvv  -a output"
   }
 }

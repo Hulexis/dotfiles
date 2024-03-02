@@ -1,0 +1,290 @@
+2024-03-02 15:44:43,408 __main__ INFO:44 Creating workspace manager
+2024-03-02 15:44:43,408 __main__ INFO:46 Action: output
+2024-03-02 15:44:43,452 __main__ INFO:44 Creating workspace manager
+2024-03-02 15:44:43,452 __main__ INFO:46 Action: output
+2024-03-02 15:46:03,720 __main__ INFO:44 Creating workspace manager
+2024-03-02 15:46:03,720 __main__ INFO:46 Action: output
+2024-03-02 15:46:03,762 __main__ INFO:44 Creating workspace manager
+2024-03-02 15:46:03,762 __main__ INFO:46 Action: output
+2024-03-02 15:46:11,955 __main__ INFO:44 Creating workspace manager
+2024-03-02 15:46:11,955 __main__ INFO:46 Action: click
+2024-03-02 15:47:06,169 __main__ INFO:44 Creating workspace manager
+2024-03-02 15:47:06,169 __main__ INFO:46 Action: click
+2024-03-02 15:47:07,315 __main__ INFO:44 Creating workspace manager
+2024-03-02 15:47:07,315 __main__ INFO:46 Action: click
+2024-03-02 15:47:07,547 __main__ INFO:44 Creating workspace manager
+2024-03-02 15:47:07,547 __main__ INFO:46 Action: click
+2024-03-02 15:47:28,563 __main__ INFO:44 Creating workspace manager
+2024-03-02 15:47:28,563 __main__ INFO:46 Action: output
+2024-03-02 15:47:28,604 __main__ INFO:44 Creating workspace manager
+2024-03-02 15:47:28,604 __main__ INFO:46 Action: output
+2024-03-02 15:47:33,707 __main__ INFO:44 Creating workspace manager
+2024-03-02 15:47:33,707 __main__ INFO:46 Action: click
+2024-03-02 16:06:03,466 __main__ INFO:45 Creating workspace manager
+2024-03-02 16:06:03,466 __main__ INFO:47 Action: output
+2024-03-02 16:06:03,511 __main__ INFO:45 Creating workspace manager
+2024-03-02 16:06:03,512 __main__ INFO:47 Action: output
+2024-03-02 16:07:13,393 __main__ INFO:38 Creating workspace manager
+2024-03-02 16:07:13,393 __main__ INFO:40 Action: output
+2024-03-02 16:07:13,436 __main__ INFO:38 Creating workspace manager
+2024-03-02 16:07:13,436 __main__ INFO:40 Action: output
+2024-03-02 16:17:23,426 __main__ INFO:72 Creating workspace manager
+2024-03-02 16:17:23,426 __main__ INFO:74 Action: output
+2024-03-02 16:17:23,469 __main__ INFO:72 Creating workspace manager
+2024-03-02 16:17:23,469 __main__ INFO:74 Action: output
+2024-03-02 16:18:49,163 __main__ INFO:72 Creating workspace manager
+2024-03-02 16:18:49,163 __main__ INFO:74 Action: output
+2024-03-02 16:18:49,163 __main__ INFO:85 work: 1
+2024-03-02 16:18:49,207 __main__ INFO:72 Creating workspace manager
+2024-03-02 16:18:49,207 __main__ INFO:74 Action: output
+2024-03-02 16:18:49,207 __main__ INFO:85 work: 1
+2024-03-02 16:19:31,364 __main__ INFO:72 Creating workspace manager
+2024-03-02 16:19:31,364 __main__ INFO:74 Action: output
+2024-03-02 16:19:31,364 __main__ INFO:85 work: Workspace.ONE
+2024-03-02 16:19:31,408 __main__ INFO:72 Creating workspace manager
+2024-03-02 16:19:31,408 __main__ INFO:74 Action: output
+2024-03-02 16:19:31,408 __main__ INFO:85 work: Workspace.ONE
+2024-03-02 16:24:39,462 __main__ INFO:85 Creating workspace manager
+2024-03-02 16:24:39,462 __main__ INFO:87 Action: output
+2024-03-02 16:24:39,462 __main__ INFO:98 work: 
+2024-03-02 16:24:39,506 __main__ INFO:85 Creating workspace manager
+2024-03-02 16:24:39,506 __main__ INFO:87 Action: output
+2024-03-02 16:24:39,506 __main__ INFO:98 work: 
+2024-03-02 16:28:46,835 __main__ INFO:98 Creating workspace manager
+2024-03-02 16:28:46,835 __main__ INFO:100 Action: output
+2024-03-02 16:28:46,835 __main__ INFO:111 work: 
+2024-03-02 16:28:46,877 __main__ INFO:98 Creating workspace manager
+2024-03-02 16:28:46,877 __main__ INFO:100 Action: output
+2024-03-02 16:28:46,877 __main__ INFO:111 work: 
+2024-03-02 16:33:47,832 __main__ INFO:113 Creating workspace manager
+2024-03-02 16:33:47,832 __main__ INFO:115 Action: output
+2024-03-02 16:33:47,875 __main__ INFO:113 Creating workspace manager
+2024-03-02 16:33:47,875 __main__ INFO:115 Action: output
+2024-03-02 16:34:05,514 __main__ INFO:113 Creating workspace manager
+2024-03-02 16:34:05,514 __main__ INFO:115 Action: output
+2024-03-02 16:34:05,558 __main__ INFO:113 Creating workspace manager
+2024-03-02 16:34:05,558 __main__ INFO:115 Action: output
+2024-03-02 16:35:28,316 __main__ INFO:112 Creating workspace manager
+2024-03-02 16:35:28,316 __main__ INFO:114 Action: output
+2024-03-02 16:35:28,359 __main__ INFO:112 Creating workspace manager
+2024-03-02 16:35:28,359 __main__ INFO:114 Action: output
+2024-03-02 16:36:59,032 __main__ INFO:112 Creating workspace manager
+2024-03-02 16:36:59,032 __main__ INFO:114 Action: output
+2024-03-02 16:36:59,075 __main__ INFO:112 Creating workspace manager
+2024-03-02 16:36:59,075 __main__ INFO:114 Action: output
+2024-03-02 16:49:30,726 __main__ INFO:102 Creating workspace manager
+2024-03-02 16:49:30,726 __main__ INFO:104 Action: output
+2024-03-02 16:49:30,768 __main__ INFO:102 Creating workspace manager
+2024-03-02 16:49:30,768 __main__ INFO:104 Action: output
+2024-03-02 16:54:49,096 __main__ INFO:117 Creating workspace manager
+2024-03-02 16:54:49,096 __main__ INFO:119 Action: output
+2024-03-02 16:54:49,097 __main__ INFO:73 {
+    "id": 3,
+    "name": "3",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd717060d80",
+    "lastwindowtitle": "tmux attach"
+}
+2024-03-02 16:54:49,138 __main__ INFO:117 Creating workspace manager
+2024-03-02 16:54:49,139 __main__ INFO:119 Action: output
+2024-03-02 16:54:49,140 __main__ INFO:73 {
+    "id": 3,
+    "name": "3",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd717060d80",
+    "lastwindowtitle": "tmux attach"
+}
+2024-03-02 16:55:55,534 __main__ INFO:127 Creating workspace manager
+2024-03-02 16:55:55,534 __main__ INFO:129 Action: output
+2024-03-02 16:55:55,537 __main__ INFO:73 {
+    "id": 3,
+    "name": "3",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd717060d80",
+    "lastwindowtitle": "tmux attach"
+}
+2024-03-02 16:55:55,537 __main__ INFO:74 {
+    "id": 3,
+    "name": "3",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd717060d80",
+    "lastwindowtitle": "tmux attach"
+}
+2024-03-02 16:55:55,577 __main__ INFO:127 Creating workspace manager
+2024-03-02 16:55:55,577 __main__ INFO:129 Action: output
+2024-03-02 16:55:55,580 __main__ INFO:73 {
+    "id": 3,
+    "name": "3",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd717060d80",
+    "lastwindowtitle": "tmux attach"
+}
+2024-03-02 16:55:55,580 __main__ INFO:74 {
+    "id": 3,
+    "name": "3",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd717060d80",
+    "lastwindowtitle": "tmux attach"
+}
+2024-03-02 16:56:16,409 __main__ INFO:127 Creating workspace manager
+2024-03-02 16:56:16,409 __main__ INFO:129 Action: output
+2024-03-02 16:56:16,411 __main__ WARNING:96 Failed to get current workspace: Command '['hyprctl', 'workspace', '-j']' returned non-zero exit status 1.
+2024-03-02 16:56:16,411 __main__ INFO:73 {
+    "id": 3,
+    "name": "3",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd717060d80",
+    "lastwindowtitle": "tmux attach"
+}
+2024-03-02 16:56:16,411 __main__ INFO:74 None
+2024-03-02 16:56:16,452 __main__ INFO:127 Creating workspace manager
+2024-03-02 16:56:16,452 __main__ INFO:129 Action: output
+2024-03-02 16:56:16,455 __main__ WARNING:96 Failed to get current workspace: Command '['hyprctl', 'workspace', '-j']' returned non-zero exit status 1.
+2024-03-02 16:56:16,455 __main__ INFO:73 {
+    "id": 3,
+    "name": "3",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd717060d80",
+    "lastwindowtitle": "tmux attach"
+}
+2024-03-02 16:56:16,455 __main__ INFO:74 None
+2024-03-02 16:57:27,610 __main__ INFO:121 Creating workspace manager
+2024-03-02 16:57:27,610 __main__ INFO:123 Action: output
+2024-03-02 16:57:27,612 __main__ INFO:70 {
+    "id": 3,
+    "name": "3",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd717060d80",
+    "lastwindowtitle": "tmux attach"
+}
+2024-03-02 16:57:27,613 __main__ INFO:71 [{
+    "id": 1,
+    "name": "1",
+    "monitor": "HDMI-A-2",
+    "monitorID": 1,
+    "windows": 2,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd71706f780",
+    "lastwindowtitle": "hyprland/workspaces - Google Search - Chromium"
+},{
+    "id": 5,
+    "name": "5",
+    "monitor": "HDMI-A-2",
+    "monitorID": 1,
+    "windows": 2,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd715da7fb0",
+    "lastwindowtitle": "Slack - * DM: Tord Aron Leonard Stene Nygaard - Easee"
+},{
+    "id": 8,
+    "name": "8",
+    "monitor": "HDMI-A-2",
+    "monitorID": 1,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd716fed1d0",
+    "lastwindowtitle": "Victoria Nadine - Be Okay"
+},{
+    "id": 6,
+    "name": "6",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd716fff1e0",
+    "lastwindowtitle": "Steam"
+},{
+    "id": 3,
+    "name": "3",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd717060d80",
+    "lastwindowtitle": "tmux attach"
+}]
+2024-03-02 16:57:27,653 __main__ INFO:121 Creating workspace manager
+2024-03-02 16:57:27,653 __main__ INFO:123 Action: output
+2024-03-02 16:57:27,655 __main__ INFO:70 {
+    "id": 3,
+    "name": "3",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd717060d80",
+    "lastwindowtitle": "tmux attach"
+}
+2024-03-02 16:57:27,655 __main__ INFO:71 [{
+    "id": 1,
+    "name": "1",
+    "monitor": "HDMI-A-2",
+    "monitorID": 1,
+    "windows": 2,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd71706f780",
+    "lastwindowtitle": "hyprland/workspaces - Google Search - Chromium"
+},{
+    "id": 5,
+    "name": "5",
+    "monitor": "HDMI-A-2",
+    "monitorID": 1,
+    "windows": 2,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd715da7fb0",
+    "lastwindowtitle": "Slack - * DM: Tord Aron Leonard Stene Nygaard - Easee"
+},{
+    "id": 8,
+    "name": "8",
+    "monitor": "HDMI-A-2",
+    "monitorID": 1,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd716fed1d0",
+    "lastwindowtitle": "Victoria Nadine - Be Okay"
+},{
+    "id": 6,
+    "name": "6",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd716fff1e0",
+    "lastwindowtitle": "Steam"
+},{
+    "id": 3,
+    "name": "3",
+    "monitor": "DP-1",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x5cd717060d80",
+    "lastwindowtitle": "tmux attach"
+}]
