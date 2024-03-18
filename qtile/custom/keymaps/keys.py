@@ -7,7 +7,7 @@ mod = "mod4"
 
 mod = "mod4"    # Sets mod key to SUPER/WINDOWS
 myTerm = "kitty"    # My terminal of choice
-myBrowser = "chromium"    # My browser of choice
+myBrowser = "brave"    # My browser of choice
 files = "thunar"
 
 launcher = "/home/aj/scripts/launcher.sh"
@@ -42,13 +42,14 @@ def getKeys():
 		Key([k.mod], k.space, lazy.spawn(toggle_keys), desc="Toggle keyboard"),
 
 	### Apps
-		Key([mod], "w", lazy.spawn(myBrowser), desc='Qutebrowser'),
+		Key([mod], "w", lazy.spawn(myBrowser), desc='Open browser'),
 		Key([mod], "s", lazy.spawn("flameshot gui"),
 			desc='Open screenshot tool'),
 		Key([mod, k.shift], "s", lazy.spawn("peek"),
 			desc='Open screencast tool'),
 		Key([k.mod], "n", lazy.spawn(files), desc="Launch file browser"),
 		Key([mod], "d", lazy.spawn(launcher), desc='Run Launcher'),
+		Key([k.alt], k.space, lazy.spawn(launcher), desc='Run Launcher'),
 
 	### Layout
 		Key([k.control], k.tab, lazy.next_layout(),
