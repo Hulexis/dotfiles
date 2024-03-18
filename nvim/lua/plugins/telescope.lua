@@ -1,6 +1,7 @@
 return {
 	{
 		"telescope.nvim",
+		commit = "1fa3b801f034caa609e2570cd2e422cf9416819c",
 		dependencies = {
 			"nvim-telescope/telescope-fzf-native.nvim",
 			"nvim-telescope/telescope-dap.nvim",
