@@ -1,7 +1,6 @@
 return {
 	{
 		"telescope.nvim",
-		commit = "1fa3b801f034caa609e2570cd2e422cf9416819c",
 		dependencies = {
 			"nvim-telescope/telescope-fzf-native.nvim",
 			"nvim-telescope/telescope-dap.nvim",
@@ -9,6 +8,7 @@ return {
 			config = function()
 				require("telescope").load_extension("fzf")
 				require("telescope").load_extension("dap")
+				require("telescope").load_extension("rest")
 			end,
 		},
 		opts = {
@@ -28,6 +28,9 @@ return {
 				},
 			},
 			pickers = {
+				find_files = {
+					find_command = { "rg", "--files", "--hidden", "--glob", "!.git" },
+				},
 				live_grep = {
 					only_sort_text = true,
 				},

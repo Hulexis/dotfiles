@@ -37,8 +37,12 @@ return {
 				nls.builtins.formatting.stylua,
 				-- nls.builtins.formatting.prettier,
 				-- nls.builtins.formatting.black,
-				nls.builtins.diagnostics.typos,
+				-- nls.builtins.diagnostics.typos,
 				-- nls.builtins.diagnostics.write_good,
+				nls.builtins.code_actions.gomodifytags,
+				nls.builtins.code_actions.impl,
+				nls.builtins.formatting.goimports,
+				nls.builtins.formatting.gofumpt,
 			})
 		end,
 	},
@@ -65,6 +69,7 @@ return {
 				["handlebars"] = { "prettier" },
 				["python"] = { "yapf" },
 				["swift"] = { "swift_format_ext" },
+				["go"] = { "goimports", "gofumpt" },
 			},
 			formatters = {
 				swift_format_ext = {

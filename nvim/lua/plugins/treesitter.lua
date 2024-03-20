@@ -24,6 +24,9 @@ return {
 				"css",
 				"graphql",
 				"go",
+				"xml",
+				"http",
+				"pkl",
 				-- "swift", -- Disabled was to laggy
 			},
 			indent = {

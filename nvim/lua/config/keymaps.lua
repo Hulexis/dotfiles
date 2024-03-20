@@ -59,4 +59,8 @@ end
 map_common("<C-b>", cmd("Neotree toggle"), { desc = "Open filetree", remap = true })
 map_common("<C-b>", cmd("Neotree toggle"), { desc = "Open filetree", remap = true })
 
+map_normal("<leader>re", function()
+	require("telescope").extensions.rest.select_env()
+end, { desc = "Select [e]nvironment for http request", remap = true })
+
 return keymaps
