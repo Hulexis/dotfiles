@@ -167,6 +167,8 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 
 ~/scripts/base-16.sh
 
+. "$HOME/.cargo/env"
+
 export DOTNET_ROOT=/snap/dotnet-sdk/current
 
 export PATH="$HOME/.local/bin:$PATH"
