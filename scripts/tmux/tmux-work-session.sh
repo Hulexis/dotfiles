@@ -15,82 +15,82 @@ tmux new-session -d -s $session
 
 window=1
 tmux rename-window -t $session:$window 'blocks'
-tmux send-keys -t $session:$window 'cd ~/work/web/electra-kit/' C-m "git pull" C-m "pnpm i" C-m "nvim" C-m
+tmux send-keys -t $session:$window 'cd ~/work/web/electra-kit/' C-m
 
-tmux split-window -t $session:$window
-tmux split-window -t $session:$window.1 -h
-tmux split-window -t $session:$window.2
-tmux split-window -t $session:$window.4 -h
-tmux resize-pane -t $session:$window.1 -Z
+# tmux split-window -t $session:$window
+# tmux split-window -t $session:$window.1 -h
+# tmux split-window -t $session:$window.2
+# tmux split-window -t $session:$window.4 -h
+# tmux resize-pane -t $session:$window.1 -Z
 
 window=2
 tmux new-window -t $session:$window -n 'api'
-tmux send-keys -t $session:$window 'cd ~/work/web/electra-kit-api/' C-m "git pull" C-m "pnpm i" C-m "nvim" C-m
+tmux send-keys -t $session:$window 'cd ~/work/web/electra-kit-api/' C-m
 
-tmux split-window -t $session:$window
-tmux split-window -t $session:$window.1 -h
-tmux split-window -t $session:$window.2
-tmux split-window -t $session:$window.4 -h
-tmux resize-pane -t $session:$window.1 -Z
+# tmux split-window -t $session:$window
+# tmux split-window -t $session:$window.1 -h
+# tmux split-window -t $session:$window.2
+# tmux split-window -t $session:$window.4 -h
+# tmux resize-pane -t $session:$window.1 -Z
 
 window=3
 tmux new-window -t $session:$window -n 'fix'
-tmux send-keys -t $session:$window 'cd ~/work/web/web.fix/' C-m "git pull" C-m "pnpm i" C-m "nvim" C-m
+tmux send-keys -t $session:$window 'cd ~/work/web/web.fix/' C-m
 
-tmux split-window -t $session:$window
-tmux split-window -t $session:$window.1 -h
-tmux split-window -t $session:$window.2
-tmux split-window -t $session:$window.4 -h
-tmux resize-pane -t $session:$window.1 -Z
+# tmux split-window -t $session:$window
+# tmux split-window -t $session:$window.1 -h
+# tmux split-window -t $session:$window.2
+# tmux split-window -t $session:$window.4 -h
+# tmux resize-pane -t $session:$window.1 -Z
 
 window=4
 tmux new-window -t $session:$window -n 'control'
 
-tmux split-window -t $session:$window
-tmux split-window -t $session:$window.1 -h
-tmux split-window -t $session:$window.2
-tmux split-window -t $session:$window.4 -h
-tmux resize-pane -t $session:$window.1 -Z
+# tmux split-window -t $session:$window
+# tmux split-window -t $session:$window.1 -h
+# tmux split-window -t $session:$window.2
+# tmux split-window -t $session:$window.4 -h
+# tmux resize-pane -t $session:$window.1 -Z
 
 window=5
 tmux new-window -t $session:$window -n 'releasee'
-tmux send-keys -t $session:$window 'cd ~/work/releasee/' C-m "git pull" C-m "pnpm i" C-m "nvim" C-m
+tmux send-keys -t $session:$window 'cd ~/work/releasee/' C-m
 
-tmux split-window -t $session:$window
-tmux split-window -t $session:$window.1 -h
-tmux split-window -t $session:$window.2
-tmux split-window -t $session:$window.4 -h
-tmux resize-pane -t $session:$window.1 -Z
+# tmux split-window -t $session:$window
+# tmux split-window -t $session:$window.1 -h
+# tmux split-window -t $session:$window.2
+# tmux split-window -t $session:$window.4 -h
+# tmux resize-pane -t $session:$window.1 -Z
 
 window=6
 tmux new-window -t $session:$window -n 'portal'
-tmux send-keys -t $session:$window 'cd ~/work/web/easee-cloud-portal/' C-m "git pull" C-m "pnpm i" C-m "nvim" C-m
+tmux send-keys -t $session:$window 'cd ~/work/web/easee-cloud-portal/' C-m
 
-tmux split-window -t $session:$window
-tmux split-window -t $session:$window.1 -h
-tmux split-window -t $session:$window.2
-tmux split-window -t $session:$window.4 -h
-tmux resize-pane -t $session:$window.1 -Z
+# tmux split-window -t $session:$window
+# tmux split-window -t $session:$window.1 -h
+# tmux split-window -t $session:$window.2
+# tmux split-window -t $session:$window.4 -h
+# tmux resize-pane -t $session:$window.1 -Z
 
 window=7
 tmux new-window -t $session:$window -n 'st'
-tmux send-keys -t $session:$window 'cd ~/work/web/st-portal/' C-m "git pull" C-m "pnpm i" C-m "nvim" C-m
+tmux send-keys -t $session:$window 'cd ~/work/web/st-portal/' C-m
 
-tmux split-window -t $session:$window
-tmux split-window -t $session:$window.1 -h
-tmux split-window -t $session:$window.2
-tmux split-window -t $session:$window.4 -h
-tmux resize-pane -t $session:$window.1 -Z
+# tmux split-window -t $session:$window
+# tmux split-window -t $session:$window.1 -h
+# tmux split-window -t $session:$window.2
+# tmux split-window -t $session:$window.4 -h
+# tmux resize-pane -t $session:$window.1 -Z
 
 window=8
 tmux new-window -t $session:$window -n 'app'
-tmux send-keys -t $session:$window 'cd ~/work/app/easee-kit/' C-m "git pull" C-m "pnpm i" C-m "nvim" C-m
+tmux send-keys -t $session:$window 'cd ~/work/app/easee-kit/' C-m
 
-tmux split-window -t $session:$window
-tmux split-window -t $session:$window.1 -h
-tmux split-window -t $session:$window.2
-tmux split-window -t $session:$window.4 -h
-tmux resize-pane -t $session:$window.1 -Z
+# tmux split-window -t $session:$window
+# tmux split-window -t $session:$window.1 -h
+# tmux split-window -t $session:$window.2
+# tmux split-window -t $session:$window.4 -h
+# tmux resize-pane -t $session:$window.1 -Z
 
 # tmux send-keys -t $session:$window 'cd ~/work/web/electra-kit/' C-m "git pull" C-m "pnpm i" C-m "pnpm run dev" C-m
 #
