@@ -27,6 +27,7 @@ return {
 				"delve",
 				"goimports",
 				"gofumpt",
+				"omnisharp",
 			},
 		},
 	},
