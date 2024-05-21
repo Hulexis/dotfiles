@@ -10,7 +10,7 @@ vim.g.python_recommended_style = 0
 
 vim.o.expandtab = false
 vim.o.tabstop = 2
-vim.o.smartident = true
+-- vim.o.smartident = true
 vim.o.autoindent = true
 
 vim.o.listchars = "tab:!·,trail:·"
