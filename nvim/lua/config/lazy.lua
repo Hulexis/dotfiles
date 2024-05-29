@@ -17,6 +17,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.tailwind" },
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		{ import = "lazyvim.plugins.extras.lsp.none-ls" },
+		{ import = "lazyvim.plugins.extras.coding.luasnip" },
 		-- import/override with your plugins
 		{ import = "plugins" },
 	},

@@ -34,6 +34,8 @@ local keymaps = {}
 map_normal("<leader>cs", cmd(":noa w"), { desc = "Save file without formatting", remap = true })
 map_normal("<leader>ct", cmd(":set list!"), { desc = "Toggle tabs indicator", remap = true })
 map_normal("<leader>cl", require("utils.ui").open_diagnostics, { desc = "[l]list TODOs and Issues", remap = true })
+map_normal("<leader>ch", require("utils.code").toggle_inlay_hints, { desc = "Toggle inlay hint", remap = true })
+
 map_normal(
 	"<leader>ma",
 	cmd(':lua require("monorepo").add_project()'),
