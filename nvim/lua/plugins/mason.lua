@@ -28,6 +28,7 @@ return {
 				"goimports",
 				"gofumpt",
 				"omnisharp",
+				"dart-debug-adapter",
 			},
 		},
 	},
