@@ -150,6 +150,8 @@ if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
 
+source ~/.zshenv
+
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
@@ -179,6 +181,7 @@ export PATH=$PATH:/opt/flutter/bin
 export PATH="$PATH:/home/arne/custom/flutter/bin"
 export PATH="$PATH:/home/arne/dev/flutter/sdk/bin"
 export PATH="$PATH:/home/aj/.cargo/bin"
+export PATH="$PATH:/usr/local/bin/flutter/bin"
 export PATH="$PATH:$GOPATH/bin"
 
 export PATH="$PATH:$GOPATH/bin"
