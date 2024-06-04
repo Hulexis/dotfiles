@@ -4,7 +4,6 @@ import socket
 import subprocess
 from os import path
 from libqtile.config import Click, Drag, Group, Match
-from libqtile.lazy import lazy
 from libqtile import layout, hook
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
