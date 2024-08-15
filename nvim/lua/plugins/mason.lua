@@ -29,6 +29,7 @@ return {
 				"gofumpt",
 				"omnisharp",
 				"dart-debug-adapter",
+				"biome"
 			},
 		},
 	},

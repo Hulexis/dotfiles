@@ -201,3 +201,10 @@ alias config='/usr/bin/git --git-dir=/home/arne/.cfg/ --work-tree=/home/arne'
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+# bun completions
+[ -s "/home/aj/.bun/_bun" ] && source "/home/aj/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
