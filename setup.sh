@@ -9,9 +9,12 @@ rm ~/.vimrc
 rm ~/.zshrc
 rm ~/.tmux.conf
 
+rm -r ~/.zsh
+
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/.zsh ~/.zsh
 
 # Setup folders
 rm -r ~/.config/alacritty
@@ -27,6 +30,7 @@ rm -r ~/.config/hypr
 rm -r ~/.config/waybar
 rm -r ~/.config/swaylock
 rm -r ~/.config/eww
+rm -r ~/.config/starship.toml
 
 ln -s ~/.dotfiles/alacritty ~/.config/alacritty
 ln -s ~/.dotfiles/qtile ~/.config/qtile
@@ -41,5 +45,4 @@ ln -s ~/.dotfiles/hypr ~/.config/hypr
 ln -s ~/.dotfiles/waybar ~/.config/waybar
 ln -s ~/.dotfiles/swaylock ~/.config/swaylock
 ln -s ~/.dotfiles/eww ~/.config/eww
-
-
+ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
