@@ -103,6 +103,17 @@ return {
 					{ text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
 				)
 			end
+
+			local dap = require("dap")
+
+			dap.adapters.codelldb = {
+				type = "server",
+				port = "${port}",
+				executable = {
+					command = "codelldb",
+					args = { "--port", "${port}" },
+				},
+			}
 		end,
 	},
 	{
