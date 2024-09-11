@@ -20,6 +20,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.coding.luasnip" },
 		{ import = "lazyvim.plugins.extras.dap.nlua" },
 		{ import = "lazyvim.plugins.extras.dap.core" },
+		{ import = "lazyvim.plugins.extras.lang.kotlin" },
 
 		-- import/override with your plugins
 		{ import = "plugins" },

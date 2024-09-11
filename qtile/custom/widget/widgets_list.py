@@ -23,7 +23,7 @@ def get_widgets(screen):
 	centerWidgets = get_center_widgets()
 	rightWidgets = get_right_widgets()
 
-	leftIndexes = [1]
+	leftIndexes = []
 
 	if screen != 1:
 		rightWidgets = centerWidgets
@@ -87,9 +87,7 @@ def get_left_widgets():
 			decorations=getWidgetDecorations(),
 			**getCommonOptions(),
 		),
-		widget.OpenWeather(
-			app_key=settings.openWeaterApiKey,
-			location='Stavanger,NO',
+		widget.StatusNotifier(
 			foreground=color_primary_fg,
 			decorations=getWidgetDecorations(),
 			**getCommonOptions(),
@@ -132,35 +130,36 @@ def get_right_widgets():
 			decorations=getWidgetDecorations(),
 			**getCommonOptions(),
 		),
-		widget.Systray(**getCommonOptions(),),
+		widget.Systray(
+			**getCommonOptions(),
+		),
 		widget.CheckUpdates(
 			update_interval=1800,
 			distro="Arch_checkupdates",
 			display_format="Updates: {updates} ",
 			colour_have_updates=colors[5],
 			colour_no_updates=colors[7],
-			mouse_callbacks={
-				'Button1':
-					lambda: qtile.cmd_spawn(settings.myTerm +
-											' -e sudo pacman -Syu')
-			},
+			mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(settings.myTerm + ' -e sudo pacman -Syu')},
 			no_update_string='No updates',
 			foreground=color_primary_fg,
 			decorations=getWidgetDecorations(),
 			**getCommonOptions(),
 		),
 		widget.Memory(
-			mouse_callbacks={
-				'Button1': lambda: qtile.cmd_spawn(settings.myTerm + ' -e htop')
-			},
+			mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(settings.myTerm + ' -e htop')},
 			fmt='Mem: {}',
 			decorations=getWidgetDecorations(),
 			foreground=color_primary_fg,
 			**getCommonOptions(),
 		),
-		modify(Spotify, foreground=color_primary_fg,
-				decorations=getWidgetDecorations(), initialise=True,
-				**getCommonOptions(), max_chars=30),
+		modify(
+			Spotify,
+			foreground=color_primary_fg,
+			decorations=getWidgetDecorations(),
+			initialise=True,
+			**getCommonOptions(),
+			max_chars=30
+		),
 		widget.Volume(
 			decorations=getWidgetDecorations(),
 			foreground=color_primary_fg,
