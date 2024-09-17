@@ -59,7 +59,7 @@ return {
 				["css"] = { "biome" },
 				["scss"] = { "biome" },
 				["less"] = { "biome" },
-				["html"] = { "biome" },
+				["html"] = { "prettier" },
 				["json"] = { "biome" },
 				["jsonc"] = { "biome" },
 				["yaml"] = { "biome" },
