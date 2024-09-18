@@ -1,42 +1,23 @@
 return {
-	-- {
-	-- 	"vhyrro/luarocks.nvim",
-	-- 	config = function()
-	-- 		require("luarocks").setup({})
-	-- 	end,
-	-- },
-	-- {
-	-- 	"rest-nvim/rest.nvim",
-	-- 	ft = "http",
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"luarocks.nvim",
-	-- 	},
-	-- 	config = function()
-	-- 		require("rest-nvim").setup({
-	-- 			result = {
-	-- 				formatters = {
-	-- 					json = "jq",
-	-- 					problem = "jq",
-	-- 					html = function(body)
-	-- 						return vim.fn.system({ "tidy", "-i", "-q", "-" }, body)
-	-- 					end,
-	-- 				},
-	-- 			},
-	-- 			env_pattern = "\\.http.env$",
-	-- 			keybinds = {
-	-- 				{
-	-- 					"<leader>rr",
-	-- 					"<cmd>Rest run<cr>",
-	-- 					"[r]un http request",
-	-- 				},
-	-- 				{
-	-- 					"<leader>rl",
-	-- 					"<cmd>Rest run last<cr>",
-	-- 					"Re-run latest request",
-	-- 				},
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
+	{ import = "lazyvim.plugins.extras.util.rest" },
+	{
+		"mistweaverco/kulala.nvim",
+		ft = "http",
+		keys = {
+			{ "<leader>r", "", desc = "+Rest" },
+			{ "<leader>rs", "<cmd>lua require('kulala').run()<cr>", desc = "Send the request" },
+			{ "<leader>rt", "<cmd>lua require('kulala').toggle_view()<cr>", desc = "Toggle headers/body" },
+			{ "<leader>rp", "<cmd>lua require('kulala').jump_prev()<cr>", desc = "Jump to previous request" },
+			{ "<leader>rn", "<cmd>lua require('kulala').jump_next()<cr>", desc = "Jump to next request" },
+			{
+				"<leader>re",
+				"<cmd>lua require('kulala').set_selected_env()<cr>",
+				desc = "Select environment for http request",
+			},
+		},
+		opts = {
+			default_winbar_panes = { "body", "headers", "headers_body", "script_output" },
+			winbar = true,
+		},
+	},
 }

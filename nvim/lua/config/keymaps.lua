@@ -63,8 +63,18 @@ end
 map_common("<C-b>", cmd("Neotree toggle"), { desc = "Open filetree", remap = true })
 map_common("<C-b>", cmd("Neotree toggle"), { desc = "Open filetree", remap = true })
 
-map_normal("<leader>re", function()
-	require("telescope").extensions.rest.select_env()
-end, { desc = "Select [e]nvironment for http request", remap = true })
+-- Telescope
+map_normal("<leader>/", function()
+	local git_root = require("lspconfig.util").find_git_ancestor(vim.fn.getcwd()) or vim.loop.cwd()
+	require("telescope.builtin").live_grep({
+		cwd = git_root,
+	})
+end, { desc = "Grep (Git Root Dir)", remap = true })
+map_normal("<leader><space>", function()
+	local git_root = require("lspconfig.util").find_git_ancestor(vim.fn.getcwd()) or vim.loop.cwd()
+	require("telescope.builtin").find_files({
+		cwd = git_root,
+	})
+end, { desc = "Find Files (Git Root Dir)", remap = true })
 
 return keymaps
