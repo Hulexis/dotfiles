@@ -1,5 +1,6 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
+from libqtile.core.manager import Qtile
 
 from ..settings.keys import Keys
 
@@ -29,6 +30,35 @@ player_stop = "playerctl stop --player=spotify"
 real_layout = {}
 
 
+def toggle_fullscreen_and_bar(qt: Qtile, toggle_bar: bool, layout: str = "max"):
+	group = qt.current_window.group
+	if group in real_layout:
+		group.layout = real_layout.pop(group)
+		if toggle_bar:
+			qt.current_screen.top.show(True)
+	else:
+		real_layout[group] = group.layout.name
+		group.layout = layout
+		if toggle_bar:
+			qt.current_screen.top.show(False)
+	qt.current_window.group = group
+
+
+@lazy.function
+def toggle_fullscreen(qt: Qtile):
+	toggle_fullscreen_and_bar(qt, True)
+
+
+@lazy.function
+def toggle_maxscreen(qt: Qtile):
+	toggle_fullscreen_and_bar(qt, False)
+
+
+@lazy.function
+def toggle_monadwide(qt: Qtile):
+	toggle_fullscreen_and_bar(qt, False, layout="monadwide")
+
+
 def getKeys():
 	return [
 		### The essentials
@@ -53,7 +83,10 @@ def getKeys():
 		Key([k.control, k.shift], k.tab, lazy.prev_layout(), desc="Toggle between layouts"),
 		Key([k.mod], "b", lazy.hide_show_bar("top"), desc='toggle the display of the bar'),
 		Key([k.mod], "t", lazy.window.toggle_floating(), desc="Toggle floating"),
-		Key([k.mod], "m", lazy.window.toggle_maximize(), desc="Toggle maximize"),
+		# Key([k.mod], "m", lazy.window.toggle_maximize(), desc="Toggle maximize"),
+		Key([k.mod], "m", toggle_maxscreen, desc="Toggle maximize"),
+		Key([k.mod], "f", toggle_fullscreen, desc="Toggle fullscreen"),
+		Key([k.mod], "j", toggle_monadwide, desc="Toggle wide"),
 
 		### Navigate
 		Key([k.mod, k.control], k.down, lazy.layout.shuffle_down(), desc="Move window down in current stack "),
