@@ -24,6 +24,11 @@ def get_widgets(screen):
 	rightWidgets = get_right_widgets()
 
 	leftIndexes = []
+	centerIndexes = [0, 1]
+
+	if screen != 3:
+		for index in sorted(centerIndexes, reverse=True):
+			del centerWidgets[index]
 
 	if screen != 1:
 		rightWidgets = centerWidgets
@@ -110,6 +115,13 @@ def get_left_widgets():
 
 def get_center_widgets():
 	center_widgets = [
+		widget.Notify(
+			decorations=getWidgetDecorations(),
+			**getCommonOptions(),
+		),
+		widget.Systray(
+			**getCommonOptions(),
+		),
 		widget.Clock(
 			foreground=color_primary_fg,
 			format="%A, %B %d - %H:%M ",
@@ -126,13 +138,6 @@ def get_right_widgets():
 	colors = settings.colors
 
 	right_widgets = [
-		widget.Notify(
-			decorations=getWidgetDecorations(),
-			**getCommonOptions(),
-		),
-		widget.Systray(
-			**getCommonOptions(),
-		),
 		widget.CheckUpdates(
 			update_interval=1800,
 			distro="Arch_checkupdates",
