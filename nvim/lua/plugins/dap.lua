@@ -31,6 +31,11 @@ return {
 				end,
 			},
 
+			{
+				"leoluz/nvim-dap-go",
+				opts = {},
+			},
+
 			-- virtual text for the debugger
 			{
 				"theHamsta/nvim-dap-virtual-text",
