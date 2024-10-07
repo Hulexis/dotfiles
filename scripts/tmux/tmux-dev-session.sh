@@ -1,18 +1,18 @@
 #!/bin/bash
 
+source ~/scripts/tmux/tmux_functions.sh
+
 session="dev"
 
 cd ~/ || exit
 
 SESSIONEXISTS=$(tmux list-sessions | grep "$session")
 
-if [ "$SESSIONEXISTS" != "" ]
-then
+if [ "$SESSIONEXISTS" != "" ]; then
 	echo "Session $session already running"
-  exit
+	exit
 fi
 
 tmux new-session -d -s $session
 
-window=1
-tmux rename-window -t $session:$window 'dev'
+setup_tmux_window $session 1 ~/dev dev
