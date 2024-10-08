@@ -21,20 +21,17 @@ return {
 		},
 		config = function()
 			require("kulala.api").on("after_request", function(data)
-				-- Try to decode the JSON body
 				local success, parsed_json = pcall(vim.fn.json_decode, data.body)
 
-				-- If the body is valid JSON, format it as a pretty string
 				local body_to_display
 				if success then
 					body_to_display = require("utils.ui").pretty_print_json(parsed_json)
 				else
-					body_to_display = data.body -- fallback to raw body if not JSON
+					body_to_display = data.body
 				end
 
 				require("utils.ui").set_last_response(body_to_display)
 
-				-- Create the floating window and show the formatted JSON
 				require("utils.ui").create_floating_window(body_to_display)
 			end)
 		end,
