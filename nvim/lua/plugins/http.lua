@@ -44,42 +44,6 @@ return {
 				end
 			end
 
-			local function create_floating_window(content)
-				-- Define the size and position of the floating window
-				local width = math.floor(vim.o.columns * 0.8)
-				local height = math.floor(vim.o.lines * 0.8)
-				local row = math.floor((vim.o.lines - height) / 2)
-				local col = math.floor((vim.o.columns - width) / 2)
-
-				-- Create a new buffer
-				local buf = vim.api.nvim_create_buf(false, true)
-
-				-- Set the buffer content to the JSON data
-				vim.api.nvim_buf_set_lines(buf, 0, -1, false, vim.split(content, "\n"))
-
-				-- Open the floating window with the buffer
-				local win = vim.api.nvim_open_win(buf, true, {
-					relative = "editor",
-					width = width,
-					height = height,
-					row = row,
-					col = col,
-					style = "minimal",
-					border = "rounded",
-				})
-
-				-- Enable JSON syntax highlighting with Tree-sitter
-				vim.api.nvim_buf_set_option(buf, "filetype", "json")
-
-				-- Set keybindings to close the window
-				vim.api.nvim_buf_set_keymap(buf, "n", "q", "<Cmd>bd!<CR>", { noremap = true, silent = true })
-			end
-
-			-- Helper function to pretty print a Lua table (parsed JSON)
-			local function pretty_print_json(value)
-				return vim.fn.system("jq '.'", vim.fn.json_encode(value)) -- Use jq for pretty printing
-			end
-
 			require("kulala.api").on("after_request", function(data)
 				-- Try to decode the JSON body
 				local success, parsed_json = pcall(vim.fn.json_decode, data.body)
@@ -87,13 +51,15 @@ return {
 				-- If the body is valid JSON, format it as a pretty string
 				local body_to_display
 				if success then
-					body_to_display = pretty_print_json(parsed_json)
+					body_to_display = require("utils.ui").pretty_print_json(parsed_json)
 				else
 					body_to_display = data.body -- fallback to raw body if not JSON
 				end
 
+				require("utils.ui").set_last_response(body_to_display)
+
 				-- Create the floating window and show the formatted JSON
-				create_floating_window(body_to_display)
+				require("utils.ui").create_floating_window(body_to_display)
 			end)
 		end,
 	},

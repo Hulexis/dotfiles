@@ -77,4 +77,6 @@ map_normal("<leader><space>", function()
 	})
 end, { desc = "Find Files (Git Root Dir)", remap = true })
 
+map_normal("<leader>ro", require("utils.ui").open_last_request, { desc = "Open last response", remap = true })
+
 return keymaps
