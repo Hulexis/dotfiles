@@ -1,3 +1,3 @@
 return {
-	{ import = "lazyvim.plugins.extras.lang.elixir" },
+	-- { import = "lazyvim.plugins.extras.lang.elixir" },
 }
