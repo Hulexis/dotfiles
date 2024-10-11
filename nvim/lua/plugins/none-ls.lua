@@ -70,6 +70,7 @@ return {
 				["python"] = { "yapf" },
 				["swift"] = { "swift_format_ext" },
 				["go"] = { "goimports", "gofumpt" },
+				-- ["rust"] = { "rustfmt" },
 			},
 			formatters = {
 				swift_format_ext = {
