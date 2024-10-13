@@ -3,7 +3,7 @@ import os
 import socket
 import subprocess
 from os import path
-from libqtile.config import Click, Drag, Group, Match
+from libqtile.config import Click, Drag, Group, Match, Key
 from libqtile import layout, hook
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -19,6 +19,14 @@ from custom.widget.widgets import get_screens
 from custom.keymaps.keys import getKeys
 
 settings.settingsInit()
+
+icons = settings.icons
+k = settings.keys
+
+mod = k.mod
+alt = k.alt
+shift = k.shift
+control = k.control
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -36,22 +44,63 @@ def getLayout():
 	return 'monadtall'
 
 
-groups = [
-	Group("1", label="", layout='monadtall'),
-	Group("2", label="", layout='monadtall'),
-	Group("3", label="", layout='monadtall'),
-	Group("4", label="󱠓", layout='monadtall'),
-	Group("5", label="", layout='monadtall'),
-	Group("6", label="󰒱", layout='max', spawn=['slack', 'discord']),
-	Group("7", label="󰖺", layout='monadtall'),
-	Group("8", label="", layout=getLayout(), spawn=['obsidian']),
-	Group("9", label="󰓇", layout='monadtall', spawn=['spotify', 'spotify-launcher']),
-	Group("0", label="", layout='monadtall')
+class Workspace(object):
+
+	def __init__(
+		self,
+		name: str,
+		shortcut: str | None = None,
+		layout: str = "monadtall",
+		icon: str | None = None,
+		matches: list | None = None,
+		spawn: str | list[str] | None = None
+	):
+		self.name = name
+		self.layout = layout
+		self.shortcut = shortcut
+		self.matches = matches
+		self.spawn = spawn
+		if icon is not None:
+			self.label = icon
+		else:
+			self.label = self.name
+
+	def group(self):
+		return Group(self.name, layout=self.layout, label=self.label, matches=self.matches, spawn=self.spawn)
+
+
+workspaces = [
+	Workspace("home", "1", icon=icons.home),
+	Workspace("code", "2", icon=icons.code),
+	Workspace("dev", "3", icon=icons.dev, matches=[Match(wm_class="brave")]),
+	Workspace("chat", "4", icon=icons.chat, layout='max', matches=[Match(wm_class="Slack")], spawn=["slack", "discord"]),
+	Workspace("gfx", "5", icon=icons.gfx),
+	Workspace("email", "6", icon=icons.email, matches=[Match(wm_class="thunderbird")], spawn=["thunderbird"]),
+	Workspace("games", "7", icon=icons.games),
+	Workspace("docs", "8", icon=icons.doc, layout="max", spawn=['obsidian']),
+	Workspace("music", "9", icon=icons.music, spawn=['spotify', 'spotify-launcher']),
+	Workspace("misc", "0", icon=icons.misc)
 ]
 
-# Allow MODKEY+[0 through 9] to bind to groups, see https://docs.qtile.org/en/stable/manual/config/groups.html
-# MOD4 + index Number : Switch to Group[index]
-# MOD4 + shift + index Number : Send active window to another Group
+groups = list()
+
+for ws in workspaces:
+	i = ws.group()
+	groups.append(i)
+	if ws.shortcut is None:
+		continue
+	keys.extend(
+		[
+			Key([mod], ws.shortcut, lazy.group[i.name].toscreen(), desc="Switch to group {}".format(i.name)),
+			Key(
+				[mod, shift],
+				ws.shortcut,
+				lazy.window.togroup(i.name, switch_group=False),
+				desc="Switch to & move focused window to group {}".format(i.name)
+			),
+		]
+	)
+
 from libqtile.dgroups import simple_key_binder
 
 dgroups_key_binder = simple_key_binder("mod4")
@@ -98,6 +147,14 @@ prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 if __name__ in ["config", "__main__"]:
 	screens = get_screens()
+
+
+@hook.subscribe.client_new
+def move_to_dev_workspace(window):
+	wm_class = window.window.get_wm_class()
+	window_name = window.name
+	if (wm_class and any(cls.startswith("bevy") for cls in wm_class)) or (window_name and window_name.startswith("bevy")):
+		window.togroup("dev")
 
 
 def window_to_prev_group(qtile):

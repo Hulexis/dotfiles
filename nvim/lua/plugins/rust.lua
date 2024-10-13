@@ -1,5 +1,5 @@
 return {
-	-- { import = "lazyvim.plugins.extras.lang.rust" },
+	{ import = "lazyvim.plugins.extras.lang.rust" },
 	-- Extend auto completion
 	-- {
 	-- 	"hrsh7th/nvim-cmp",

@@ -87,7 +87,7 @@ def getKeys():
 		Key([k.mod], "m", toggle_maxscreen, desc="Toggle maximize"),
 		Key([k.mod], "f", toggle_fullscreen, desc="Toggle fullscreen"),
 		Key([k.mod], "j", toggle_monadwide, desc="Toggle wide"),
-		Key([mod], "C", lazy.screen.toggle_group("6"), desc="Switch to Chat"),
+		Key([mod], "C", lazy.screen.toggle_group("chat"), desc="Switch to Chat"),
 
 		### Navigate
 		Key([k.mod, k.control], k.down, lazy.layout.shuffle_down(), desc="Move window down in current stack "),
