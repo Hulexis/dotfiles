@@ -169,12 +169,7 @@ def get_right_widgets(is_primary=False):
 			**getCommonOptions(),
 		),
 		modify(
-			Spotify,
-			foreground=color_primary_fg,
-			decorations=getWidgetDecorations(),
-			initialise=True,
-			**getCommonOptions(),
-			max_chars=30
+			Spotify, foreground=color_primary_fg, decorations=getWidgetDecorations(), initialise=True, **getCommonOptions(), max_chars=30
 		),
 		widget.Volume(
 			decorations=getWidgetDecorations(),

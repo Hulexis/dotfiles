@@ -30,10 +30,8 @@ def settingsInit():
 
 	myTerm = "alacritty"  # My terminal of choice
 	colors = [
-		["#16213E", "#0F3460"], ["#1c1f24", "#1c1f24"], ["#dfdfdf", "#dfdfdf"], ["#507DBC",
-																																																																											"#507DBC"], ["#98be65", "#98be65"],
-		["#E94560", "#E94560"], ["#51afef", "#51afef"], ["#c678dd", "#c678dd"], ["#46d9ff", "#46d9ff"],
-		["#a9a1e1", "#a9a1e1"]
+		["#16213E", "#0F3460"], ["#1c1f24", "#1c1f24"], ["#dfdfdf", "#dfdfdf"], ["#507DBC", "#507DBC"], ["#98be65", "#98be65"],
+		["#E94560", "#E94560"], ["#51afef", "#51afef"], ["#c678dd", "#c678dd"], ["#46d9ff", "#46d9ff"], ["#a9a1e1", "#a9a1e1"]
 	]
 
 	colors2 = [
@@ -109,12 +107,6 @@ def get_display_info():
 		modes = set()
 		for mode in params.modes:
 			modes.add(find_mode(mode, res.modes))
-		result.append(
-			{
-				'name': params.name,
-				'resolution': "{}x{}".format(crtc.width, crtc.height),
-				'available_resolutions': list(modes)
-			}
-		)
+		result.append({'name': params.name, 'resolution': "{}x{}".format(crtc.width, crtc.height), 'available_resolutions': list(modes)})
 
 	return result

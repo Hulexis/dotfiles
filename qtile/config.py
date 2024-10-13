@@ -47,12 +47,7 @@ def getLayout():
 class Workspace(object):
 
 	def __init__(
-		self,
-		name: str,
-		shortcut: str | None = None,
-		layout: str = "monadtall",
-		icon: str | None = None,
-		matches: list | None = None,
+		self, name: str, shortcut: str | None = None, layout: str = "monadtall", icon: str | None = None, matches: list | None = None,
 		spawn: str | list[str] | None = None
 	):
 		self.name = name
@@ -76,7 +71,12 @@ workspaces = [
 	Workspace("chat", "4", icon=icons.chat, layout='max', matches=[Match(wm_class="Slack")], spawn=["slack", "discord"]),
 	Workspace("gfx", "5", icon=icons.gfx),
 	Workspace("email", "6", icon=icons.email, matches=[Match(wm_class="thunderbird")], spawn=["thunderbird"]),
-	Workspace("games", "7", icon=icons.games),
+	Workspace(
+		"games",
+		"7",
+		icon=icons.games,
+		matches=[Match(wm_class="battle.net.exe"), Match(wm_class="steam")],
+	),
 	Workspace("docs", "8", icon=icons.doc, layout="max", spawn=['obsidian']),
 	Workspace("music", "9", icon=icons.music, spawn=['spotify', 'spotify-launcher']),
 	Workspace("misc", "0", icon=icons.misc)
@@ -93,9 +93,7 @@ for ws in workspaces:
 		[
 			Key([mod], ws.shortcut, lazy.group[i.name].toscreen(), desc="Switch to group {}".format(i.name)),
 			Key(
-				[mod, shift],
-				ws.shortcut,
-				lazy.window.togroup(i.name, switch_group=False),
+				[mod, shift], ws.shortcut, lazy.window.togroup(i.name, switch_group=False),
 				desc="Switch to & move focused window to group {}".format(i.name)
 			),
 		]
