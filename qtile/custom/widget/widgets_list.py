@@ -19,23 +19,25 @@ color_primary_bg = settings.color_primary_bg
 def get_widgets(screen):
 	widgets = []
 
+	is_primary = screen == 1
+
 	leftWidgets = get_left_widgets()
-	centerWidgets = get_center_widgets()
-	rightWidgets = get_right_widgets()
+	centerWidgets = get_center_widgets(is_primary)
+	rightWidgets = get_right_widgets(is_primary)
 
 	leftIndexes = []
-	centerIndexes = [0, 1]
+	centerIndexes = [0, 1, 2]
 
-	if screen != 3:
-		for index in sorted(centerIndexes, reverse=True):
-			del centerWidgets[index]
+	# if screen != 3:
+	# 	for index in sorted(centerIndexes, reverse=True):
+	# 		del centerWidgets[index]
 
-	if screen != 1:
-		rightWidgets = centerWidgets
-		centerWidgets = []
+	# if screen != 1:
+	# rightWidgets = centerWidgets
+	# centerWidgets = []
 
-		for index in sorted(leftIndexes, reverse=True):
-			del leftWidgets[index]
+	# for index in sorted(leftIndexes, reverse=True):
+	# 	del leftWidgets[index]
 
 	# Get the widgets for the top left side of the screen
 	widgets.extend(leftWidgets)
@@ -116,15 +118,12 @@ def get_left_widgets():
 	return list(left_widgets)
 
 
-def get_center_widgets():
-	center_widgets = [
-		widget.Notify(
-			decorations=getWidgetDecorations(),
-			**getCommonOptions(),
-		),
-		widget.Systray(
-			**getCommonOptions(),
-		),
+def get_center_widgets(is_primary=False):
+	indexes = [0]
+	if is_primary:
+		indexes = []
+
+	widgets = [
 		widget.Clock(
 			foreground=color_primary_fg,
 			format="%A, %B %d - %H:%M ",
@@ -134,13 +133,22 @@ def get_center_widgets():
 		),
 	]
 
-	return list(center_widgets)
+	for index in sorted(indexes, reverse=True):
+		del widgets[index]
+
+	return list(widgets)
 
 
-def get_right_widgets():
+def get_right_widgets(is_primary=False):
 	colors = settings.colors
+	indexes = [0, 1]
+	if is_primary:
+		indexes = []
 
-	right_widgets = [
+	widgets = [
+		widget.Systray(
+			**getCommonOptions(),
+		),
 		widget.CheckUpdates(
 			update_interval=1800,
 			distro="Arch_checkupdates",
@@ -182,9 +190,7 @@ def get_right_widgets():
 		),
 	]
 
-	widgetList = []
+	for index in sorted(indexes, reverse=True):
+		del widgets[index]
 
-	for rightWidget in right_widgets:
-		widgetList.append(rightWidget)
-
-	return list(widgetList)
+	return list(widgets)
