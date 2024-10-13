@@ -82,7 +82,7 @@ def get_left_widgets():
 			padding_y=5,
 			padding_x=7,
 			borderwidth=3,
-			inactive=colors2[1],
+			inactive=colors2[0],
 			active=colors2[5],
 			center_aligned=True,
 			this_screen_border="#1F4068",
