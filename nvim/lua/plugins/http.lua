@@ -28,22 +28,22 @@ return {
 			local kulala = require("kulala")
 			kulala.setup(opts)
 
-			require("kulala.api").on("after_request", function(data)
-				local success, parsed_json = pcall(vim.fn.json_decode, data.body)
-
-				local body_to_display
-				if success then
-					body_to_display = require("utils.ui").pretty_print_json(parsed_json)
-				else
-					body_to_display = data.body
-				end
-
-				require("utils.ui").set_last_response(body_to_display)
-
-				require("utils.ui").create_floating_window(body_to_display)
-
-				return true
-			end)
+			-- require("kulala.api").on("after_request", function(data)
+			-- 	local success, parsed_json = pcall(vim.fn.json_decode, data.body)
+			--
+			-- 	local body_to_display
+			-- 	if success then
+			-- 		body_to_display = require("utils.ui").pretty_print_json(parsed_json)
+			-- 	else
+			-- 		body_to_display = data.body
+			-- 	end
+			--
+			-- 	require("utils.ui").set_last_response(body_to_display)
+			--
+			-- 	require("utils.ui").create_floating_window(body_to_display)
+			--
+			-- 	return true
+			-- end)
 		end,
 	},
 }
