@@ -163,7 +163,7 @@ def get_right_widgets(is_primary=False):
 		),
 		widget.Memory(
 			mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(settings.myTerm + ' -e btop')},
-			fmt='{}',
+			fmt='Mem: {}',
 			format="{MemPercent}%",
 			decorations=getWidgetDecorations(),
 			foreground=color_primary_fg,
@@ -175,6 +175,8 @@ def get_right_widgets(is_primary=False):
 		widget.Volume(
 			decorations=getWidgetDecorations(),
 			foreground=color_primary_fg,
+			emoji=True,
+			emoji_list=["󰝟", "󰕿", "󰖀", "󰕾"],
 			**getCommonOptions(),
 		),
 		widget.KeyboardLayout(
