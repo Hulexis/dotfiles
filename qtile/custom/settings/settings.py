@@ -9,7 +9,7 @@ from .icons import Icons
 from .keys import Keys
 
 laptopNames = ["arne-work", "aj-work", "aj-arch-work"]
-usKeyboardPc = ["arne-work", "aj-work-station", "aj-home-pc", "hoth"]
+usKeyboardPc = ["arne-work", "aj-work-station", "aj-home-pc", "hoth", "mustafar"]
 
 color_primary_fg = "#dfdfdf"
 color_secondary_fg = "#1c1f24"

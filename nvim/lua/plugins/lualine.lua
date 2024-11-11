@@ -11,6 +11,7 @@ return {
 				["Warning"] = Util.ui.fg("DiagnosticError"),
 				["InProgress"] = Util.ui.fg("DiagnosticWarn"),
 			}
+			opts.sections.lualine_z = {}
 			table.insert(opts.sections.lualine_x, 2, {
 				function()
 					local icon = require("lazyvim.config").icons.kinds.Copilot
