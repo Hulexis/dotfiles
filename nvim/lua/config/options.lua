@@ -17,3 +17,8 @@ vim.o.listchars = "tab:!·,trail:·"
 vim.o.list = false
 
 vim.opt_local.conceallevel = 2
+
+vim.opt.guicursor = {
+	"n-v-c:block-Cursor/lCursor", -- Block cursor for normal, visual, and command modes
+	"i:ver25-Cursor/lCursor", -- Thin vertical line for insert mode
+}

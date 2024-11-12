@@ -1,7 +1,7 @@
 if status is-login
     and status is-interactive
-    # To add a key, set -Ua SSH_KEYS_TO_AUTOLOAD keypath
-    # To remove a key, set -U --erase
-    SSH_KEYS_TO_AUTOLOAD[index_of_key]
-    keychain --eval $SSH_KEYS_TO_AUTOLOAD | source
+
+    for key in $SSH_KEYS_TO_AUTOLOAD
+        set -l temp_output (keychain --quiet --eval $key 2>/dev/null)
+    end
 end

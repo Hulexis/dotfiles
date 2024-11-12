@@ -17,15 +17,6 @@ set -g fish_prompt_pwd_dir_length 0
 
 set -q scm_prompt_blacklist; or set scm_prompt_blacklist
 
-# ===========================
-# Color setting
-
-# You can set these variables in config.fish like:
-# set -g color_dir_bg red
-# If not set, default color from agnoster will be used.
-# ===========================
-
-
 source ~/.config/fish/themes/hoth.fish
 # source ~/.config/fish/themes/mustafar.fish
 
@@ -33,4 +24,13 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+
 reload_aliases
+
+set -x BUN_INSTALL "$HOME/.bun"
+set -x GOPATH "$HOME/go"
+set -x CARGO_PATH "$HOME/.cargo"
+
+set -x PATH "$BUN_INSTALL/bin" $PATH
+set -x PATH "$GOPATH/bin" $PATH
+set -x PATH "$CARGO_PATH/bin" $PATH
