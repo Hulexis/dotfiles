@@ -25,6 +25,8 @@ if status is-interactive
 end
 
 
+source ~/.zsh_profile
+
 reload_aliases
 
 set -x BUN_INSTALL "$HOME/.bun"
