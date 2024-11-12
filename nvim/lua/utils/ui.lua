@@ -45,10 +45,7 @@ M.close_picker = function(prompt_bufnr)
 end
 
 M.open_diagnostics = function()
-	local prompt = M.open_picker("diagnostics")
-	require("telescope.builtin").diagnostics({
-		default_text = prompt,
-	})
+	require("telescope.builtin").diagnostics({})
 end
 
 M.search_all_files = function()

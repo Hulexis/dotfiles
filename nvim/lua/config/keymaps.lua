@@ -36,29 +36,7 @@ map_normal("<leader>ct", cmd(":set list!"), { desc = "Toggle tabs indicator", re
 map_normal("<leader>cl", require("utils.ui").open_diagnostics, { desc = "[l]list TODOs and Issues", remap = true })
 map_normal("<leader>ch", require("utils.code").toggle_inlay_hints, { desc = "Toggle inlay hint", remap = true })
 
-map_normal(
-	"<leader>ma",
-	cmd(':lua require("monorepo").add_project()'),
-	{ desc = "Add project to project list", remap = true }
-)
-map_normal(
-	"<leader>mr",
-	cmd(':lua require("monorepo").remove_project()'),
-	{ desc = "Remove project to project list", remap = true }
-)
-map_normal(
-	"<leader>mt",
-	cmd(':lua require("monorepo").toggle_project()'),
-	{ desc = "Remove project to project list", remap = true }
-)
-
 map_normal("<leader>fa", require("utils.ui").search_all_files, { desc = "Search all files", remap = true })
-
-for i = 1, 9 do
-	map_normal("<leader>m" .. i, function()
-		require("monorepo").go_to_project(i)
-	end, { desc = "Go to project" .. i, remap = true })
-end
 
 map_common("<C-b>", cmd("Neotree toggle"), { desc = "Open filetree", remap = true })
 map_common("<C-b>", cmd("Neotree toggle"), { desc = "Open filetree", remap = true })
@@ -78,5 +56,11 @@ map_normal("<leader><space>", function()
 end, { desc = "Find Files (Git Root Dir)", remap = true })
 
 map_normal("<leader>ro", require("utils.ui").open_last_request, { desc = "Open last response", remap = true })
+
+map_normal("<leader>or", require("overseer").run_template, { desc = "Run a project task", remap = true })
+map_normal("<leader>ot", require("overseer").toggle, { desc = "Toggle overseer task list", remap = true })
+
+map_common("<C-p>", cmd("Telescope find_files"), { desc = "Jump to file", remap = true })
+map_common("<C-t>", cmd("Telescope filetypes"), { desc = "Select filetype", remap = true })
 
 return keymaps
