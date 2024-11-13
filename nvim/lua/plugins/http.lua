@@ -23,7 +23,7 @@ return {
 		opts = {
 			default_winbar_panes = { "body", "headers", "headers_body", "script_output" },
 			winbar = true,
-			display_mode = "float",
+			-- display_mode = "float",
 		},
 		config = function(_, opts)
 			local kulala = require("kulala")
