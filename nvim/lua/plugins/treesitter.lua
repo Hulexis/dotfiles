@@ -33,7 +33,7 @@ return {
 			},
 			indent = {
 				enable = true,
-				disable = { "python", "dart", "swift" },
+				disable = { "dart", "swift" },
 			},
 		},
 	},
