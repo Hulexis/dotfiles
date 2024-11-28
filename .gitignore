@@ -6,3 +6,5 @@ tmux/plugins
 .worktrees
 .DS_Store
 *.pyc
+
+fish_variables

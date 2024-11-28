@@ -4,6 +4,8 @@ alias ga="git add"
 alias gc="git commit"
 alias gcm="git commit -m"
 alias gw="git worktree"
+alias gpush="git push"
+
 alias vim="nvim"
 alias icat="kitty +kitten icat"
 
