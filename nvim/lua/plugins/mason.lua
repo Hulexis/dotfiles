@@ -11,7 +11,7 @@ return {
 				"gopls",
 				"html-lsp",
 				"json-lsp",
-				"prettier",
+				-- "prettier",
 				"graphql-language-service-cli",
 				"cspell",
 				"angular-language-server",
@@ -29,7 +29,7 @@ return {
 				"gofumpt",
 				"omnisharp",
 				"dart-debug-adapter",
-				"biome"
+				"biome",
 			},
 		},
 	},
