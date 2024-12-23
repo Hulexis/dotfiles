@@ -119,6 +119,28 @@ return {
 					args = { "--port", "${port}" },
 				},
 			}
+
+			-- Add configuration for cargo test
+			dap.configurations.rust = {
+				{
+					name = "Debug Cargo Test",
+					type = "codelldb",
+					request = "launch",
+					program = function()
+						-- Automatically find the test binary after `cargo test --no-run`
+						local cwd = vim.fn.getcwd()
+						return vim.fn.input("Path to test binary: ", cwd .. "/target/debug/", "file")
+					end,
+					cwd = "${workspaceFolder}",
+					stopOnEntry = false,
+					args = function()
+						-- Prompt for test arguments (e.g., a specific test name or flags)
+						local input = vim.fn.input("Test arguments (e.g., --nocapture <test_name>): ")
+						return vim.split(input, " ")
+					end,
+					runInTerminal = false,
+				},
+			}
 		end,
 	},
 	{
