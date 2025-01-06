@@ -18,6 +18,8 @@ from custom.settings.path import qtile_path
 from custom.widget.widgets import get_screens
 from custom.keymaps.keys import getKeys
 
+from custom.layouts.full import Full
+
 settings.settingsInit()
 
 icons = settings.icons
@@ -138,7 +140,8 @@ layouts = [
 	#                level_shift=8,
 	#                vspace=3,
 	#                panel_width=200),
-	layout.Floating(**layout_theme)
+	layout.Floating(**layout_theme),
+	Full(max_margin=0, **layout_theme),
 ]
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())

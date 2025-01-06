@@ -7,7 +7,7 @@ from ..settings.keys import Keys
 mod = "mod4"
 
 mod = "mod4"  # Sets mod key to SUPER/WINDOWS
-myTerm = "kitty"  # My terminal of choice
+myTerm = "ghostty"  # My terminal of choice
 myBrowser = "brave"  # My browser of choice
 files = "thunar"
 
@@ -30,7 +30,7 @@ player_stop = "playerctl stop --player=spotify"
 real_layout = {}
 
 
-def toggle_fullscreen_and_bar(qt: Qtile, toggle_bar: bool, layout: str = "max"):
+def toggle_fullscreen_and_bar(qt: Qtile, toggle_bar: bool, layout: str = "full"):
 	group = qt.current_window.group
 	if group in real_layout:
 		group.layout = real_layout.pop(group)

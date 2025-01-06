@@ -24,3 +24,7 @@ vim.opt.guicursor = {
 }
 
 vim.g.lazyvim_prettier_needs_config = true
+
+local opt = vim.opt
+
+opt.smoothscroll = true

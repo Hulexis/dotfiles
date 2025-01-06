@@ -1,13 +1,13 @@
-background-opacity = 0.93
+background-opacity = 0.95
 background = 000000
 
 font-family = "JetBrains Mono"
-font-size = 14
+font-size = 12
 
 window-decoration = false
 window-padding-y = 8,0
 
-theme = tokyonight
+theme = carbonfox
 
 confirm-close-surface = false
 

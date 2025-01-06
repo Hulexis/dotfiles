@@ -28,7 +28,7 @@ def settingsInit():
 	global icons
 	global keys
 
-	myTerm = "kitty"  # My terminal of choice
+	myTerm = "ghostty"  # My terminal of choice
 	colors = [
 		["#16213E", "#0F3460"], ["#1c1f24", "#1c1f24"], ["#dfdfdf", "#dfdfdf"], ["#507DBC", "#507DBC"], ["#98be65", "#98be65"],
 		["#E94560", "#E94560"], ["#51afef", "#51afef"], ["#c678dd", "#c678dd"], ["#46d9ff", "#46d9ff"], ["#a9a1e1", "#a9a1e1"]
