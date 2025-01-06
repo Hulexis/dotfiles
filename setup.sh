@@ -32,6 +32,7 @@ rm -r ~/.config/swaylock
 rm -r ~/.config/eww
 rm -r ~/.config/starship.toml
 rm -r ~/.config/fish
+rm -r ~/.config/ghostty
 
 ln -s ~/.dotfiles/alacritty ~/.config/alacritty
 ln -s ~/.dotfiles/qtile ~/.config/qtile
@@ -48,3 +49,4 @@ ln -s ~/.dotfiles/swaylock ~/.config/swaylock
 ln -s ~/.dotfiles/eww ~/.config/eww
 ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/.dotfiles/fish ~/.config/fish
+ln -s ~/.dotfiles/ghostty ~/.config/ghostty

@@ -31,7 +31,9 @@ return {
 						-- { "<leader>cR", cmd("RustCodeAction"), desc = "Code Action (Rust)" },
 					},
 					settings = {
-						["rust-analyzer"] = { diagnostics = { disabled = { "unresolved-proc-macro" }, enable_experimental = true } },
+						["rust-analyzer"] = {
+							diagnostics = { enable = true, disabled = { "unresolved-proc-macro" }, enable_experimental = true },
+						},
 					},
 				},
 				lua_ls = {
