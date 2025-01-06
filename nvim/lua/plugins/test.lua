@@ -1,5 +1,4 @@
 return {
-
 	{
 		"quolpr/quicktest.nvim",
 		config = function()

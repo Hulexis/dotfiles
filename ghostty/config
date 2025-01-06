@@ -10,6 +10,7 @@ window-padding-y = 8,0
 theme = carbonfox
 
 confirm-close-surface = false
+mouse-scroll-multiplier = 0.5
 
 keybind = alt+one=text:\x1b1
 keybind = alt+two=text:\x1b2

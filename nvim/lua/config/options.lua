@@ -25,6 +25,11 @@ vim.opt.guicursor = {
 
 vim.g.lazyvim_prettier_needs_config = true
 
-local opt = vim.opt
-
-opt.smoothscroll = true
+-- local opt = vim.opt
+--
+-- opt.smoothscroll = true
+--
+-- vim.o.scrolloff = 3
+-- vim.o.sidescrolloff = 3
+-- vim.o.ttymouse = "sgr"
+-- vim.o.updatetime = 50

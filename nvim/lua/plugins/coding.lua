@@ -13,4 +13,13 @@ vim.api.nvim_create_autocmd("ModeChanged", {
 	group = luasnip_fix_augroup,
 })
 
-return {}
+return {
+	{ "notjedi/nvim-rooter.lua" },
+	{ "echasnovski/mini.pairs", enabled = false },
+	{ "echasnovski/mini.surround" },
+
+	{ import = "lazyvim.plugins.extras.coding.mini-surround" },
+	{ import = "lazyvim.plugins.extras.coding.mini-comment" },
+	{ import = "lazyvim.plugins.extras.coding.yanky" },
+	{ import = "lazyvim.plugins.extras.coding.luasnip" },
+}

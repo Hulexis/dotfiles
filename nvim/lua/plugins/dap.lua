@@ -1,7 +1,8 @@
 return {
+	{ import = "lazyvim.plugins.extras.dap.nlua" },
+	{ import = "lazyvim.plugins.extras.dap.core" },
 	{
 		"mfussenegger/nvim-dap",
-
 		dependencies = {
 
 			-- fancy UI for the debugger
@@ -143,6 +144,7 @@ return {
 			}
 		end,
 	},
+
 	{
 		"rcarriga/nvim-dap-ui",
   -- stylua: ignore
@@ -168,6 +170,7 @@ return {
 			end
 		end,
 	},
+
 	{
 		"jay-babu/mason-nvim-dap.nvim",
 		dependencies = "mason.nvim",
@@ -188,4 +191,6 @@ return {
 			},
 		},
 	},
+
+	{ "nvim-neotest/nvim-nio" },
 }
