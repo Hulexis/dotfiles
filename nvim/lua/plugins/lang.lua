@@ -262,4 +262,14 @@ return {
 	-- ### Kotlin ###
 	-- ##############
 	{ import = "lazyvim.plugins.extras.lang.kotlin" },
+
+	-- ##############
+	-- ### Docker ###
+	-- ##############
+	{ import = "lazyvim.plugins.extras.lang.docker" },
+
+	-- ############
+	-- ### Json ###
+	-- ############
+	{ import = "lazyvim.plugins.extras.lang.json" },
 }

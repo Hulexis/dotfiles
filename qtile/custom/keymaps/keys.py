@@ -30,7 +30,7 @@ player_stop = "playerctl stop --player=spotify"
 real_layout = {}
 
 
-def toggle_fullscreen_and_bar(qt: Qtile, toggle_bar: bool, layout: str = "full"):
+def toggle_fullscreen_and_bar(qt: Qtile, toggle_bar: bool, layout: str = "max"):
 	group = qt.current_window.group
 	if group in real_layout:
 		group.layout = real_layout.pop(group)
@@ -46,7 +46,7 @@ def toggle_fullscreen_and_bar(qt: Qtile, toggle_bar: bool, layout: str = "full")
 
 @lazy.function
 def toggle_fullscreen(qt: Qtile):
-	toggle_fullscreen_and_bar(qt, True)
+	toggle_fullscreen_and_bar(qt, True, layout="full")
 
 
 @lazy.function
