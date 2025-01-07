@@ -257,6 +257,23 @@ return {
 	-- ### Rust ###
 	-- ############
 	{ import = "lazyvim.plugins.extras.lang.rust" },
+	-- {
+	-- 	"mrcjkb/rustaceanvim",
+	-- 	opts = {
+	-- 		server = {
+	-- 			default_settings = {
+	-- 				-- Extend the existing rust-analyzer settings
+	-- 				["rust-analyzer"] = {
+	-- 					diagnostics = {
+	-- 						enable = true, -- Ensure diagnostics are enabled
+	-- 						disabled = { "unresolved-proc-macro" }, -- Disable the specific diagnostic
+	-- 						enableExperimental = true,
+	-- 					},
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 
 	-- ##############
 	-- ### Kotlin ###
