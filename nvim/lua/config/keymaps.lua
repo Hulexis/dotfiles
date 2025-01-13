@@ -34,7 +34,7 @@ local keymaps = {}
 -- Coding
 map_normal("<leader>cs", cmd(":noa w"), { desc = "Save file without formatting", remap = true })
 map_normal("<leader>ct", cmd(":set list!"), { desc = "Toggle tabs indicator", remap = true })
-map_normal("<leader>ct", cmd("TodoTelescope"), { desc = "List [t]odos", remap = true })
+-- map_normal("<leader>ct", cmd("TodoTelescope"), { desc = "List [t]odos", remap = true })
 map_normal("<leader>cd", require("utils.ui").open_diagnostics, { desc = "[l]list TODOs and Issues", remap = true })
 map_normal("<leader>ch", require("utils.code").toggle_inlay_hints, { desc = "Toggle inlay hint", remap = true })
 
@@ -54,8 +54,6 @@ map_normal("<leader><space>", function()
 		cwd = git_root,
 	})
 end, { desc = "Find Files (Git Root Dir)", remap = true })
-
-map_normal("<leader>ro", require("utils.ui").open_last_request, { desc = "Open last response", remap = true })
 
 map_normal("<leader>or", require("overseer").run_template, { desc = "Run a project task", remap = true })
 map_normal("<leader>ot", require("overseer").toggle, { desc = "Toggle overseer task list", remap = true })

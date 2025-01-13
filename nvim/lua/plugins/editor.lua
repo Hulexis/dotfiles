@@ -3,7 +3,6 @@ local Util = require("lazyvim.util")
 return {
 	{ import = "lazyvim.plugins.extras.editor.harpoon2" },
 	{ import = "lazyvim.plugins.extras.editor.dial" },
-	{ import = "lazyvim.plugins.extras.editor.fzf" },
 	{
 		"telescope.nvim",
 		dependencies = {
@@ -261,7 +260,7 @@ return {
 		"folke/which-key.nvim",
 		optional = true,
 		opts = {
-			defaults = {
+			spec = {
 				["<leader>d"] = { name = "+debug" },
 			},
 		},
