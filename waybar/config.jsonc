@@ -18,7 +18,6 @@
 	],
 	"modules-center": ["hyprland/window"],
 	"modules-right": [
-		"custom/clipboard",
 		"idle_inhibitor",
 		"custom/separator",
 		"tray",
