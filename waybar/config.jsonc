@@ -22,21 +22,20 @@
 		"custom/separator",
 		"tray",
 		"pulseaudio",
-		"network",
-		"cpu",
 		"memory",
-		"temperature",
-		"hyprland/language",
 		"custom/spotify",
 		"custom/pacman",
+		"hyprland/language",
 		"clock"
 	],
 	// Modules configuration
 	"hyprland/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": true,
-		"on-click": "close",
+		"on-click": "activate",
+		"move-to-monitor": true,
 		"warp-on-scroll": false,
+		"show-special": true,
 		"format": "{icon}",
 		"format-icons": {
 			"1": "󰍳", // home
@@ -48,7 +47,7 @@
 			"7": "", // games
 			"8": "", // docs
 			"9": "󰓇", // music
-			"0": "" // misc
+			"10": "" // misc
 		},
 		"persistent-workspaces": {
 			"1": [],
@@ -63,7 +62,8 @@
 		}
 	},
 	"hyprland/language": {
-		"format": "   {}"
+		"format": "   {}",
+		"on-click": "/usr/bin/python3 $HOME/.dotfiles/scripts/toggle_keyboard_layout.py"
 	},
 	"keyboard-state": {
 		"numlock": true,
@@ -157,6 +157,7 @@
 		"exec": "/usr/bin/python3 $HOME/scripts/audio/mediaplayer.py --player spotify",
 		"format": "{}",
 		"return-type": "json",
+		"on-click-right": "/usr/bin/python3 $HOME/scripts/hypr/toggle_workspace.py 9",
 		"on-click": "playerctl play-pause",
 		"on-scroll-up": "playerctl next",
 		"on-scroll-down": "playerctl previous",

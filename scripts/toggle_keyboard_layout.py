@@ -12,8 +12,7 @@ def change_to_us():
 	os.system("setxkbmap us,no")
 
 
-ret = subprocess.check_output("setxkbmap -query |grep layout",
-								stderr=subprocess.STDOUT, shell=True)
+ret = subprocess.check_output("setxkbmap -query |grep layout", stderr=subprocess.STDOUT, shell=True)
 ret = ret.decode("utf-8")
 index = ret.find(":") + 1
 ret = ret[index:len(ret) - 1].strip()
@@ -24,3 +23,5 @@ if layout == "no":
 	change_to_us()
 elif layout == "us":
 	change_to_norwegian()
+
+os.system("hyprctl switchxkblayout kbdcraft-adam0110 next")
