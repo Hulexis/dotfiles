@@ -2,12 +2,13 @@
 	"layer": "top", // Waybar at top layer
 	// "output": ["DP-1"],
 	// "position": "bottom", // Waybar position (top|bottom|left|right)
-	"height": 40, // Waybar height (to be removed for auto height)
+	"height": 20, // Waybar height (to be removed for auto height)
 	// "width": 1280, // Waybar width
 	"spacing": 4, // Gaps between modules (4px)
 	"margin-left": 20,
 	"margin-right": 20,
-	"margin-top": 8,
+	"margin-top": 4,
+	"margin-bottom": 4,
 	// Choose the order of the modules
 	"modules-left": [
 		"hyprland/workspaces"
@@ -87,8 +88,8 @@
 	"idle_inhibitor": {
 		"format": "{icon}",
 		"format-icons": {
-			"activated": "",
-			"deactivated": ""
+			"activated": "󰈈",
+			"deactivated": "󰈉"
 		}
 	},
 	"custom/separator": {
