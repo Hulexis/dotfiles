@@ -1,15 +1,43 @@
 {
-	"modules-left": ["hyprland/workspaces"],
-	"modules-center": ["hyprland/window"],
+	"modules-left": [
+		"hyprland/workspaces",
+		"custom/right-arrow-light-end",
+		"custom/right-arrow-dark-end"
+	],
+	"modules-center": [
+		"custom/left-arrow-light-start",
+		"custom/left-arrow-dark-start",
+		"clock#one",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#two",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#three",
+		"custom/right-arrow-light-end",
+		"custom/right-arrow-dark-end"
+	],
 	"modules-right": [
-		"idle_inhibitor",
-		"custom/separator",
-		"tray",
+		"custom/left-arrow-light-start",
+		"custom/left-arrow-dark-start",
 		"pulseaudio",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"idle_inhibitor",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
 		"memory",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
 		"custom/spotify",
-		"custom/pacman",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
 		"hyprland/language",
-		"clock"
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"custom/pacman",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"tray"
 	]
 }
