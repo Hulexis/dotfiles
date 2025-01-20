@@ -16,11 +16,9 @@ def copy_waybar_files(source_dir, target_dir, exclude_file):
 		source_path = os.path.join(source_dir, item)
 		target_path = os.path.join(target_dir, item)
 
-		# Skip the excluded file
 		if os.path.isfile(source_path) and item == exclude_file:
 			continue
 
-		# Copy file or directory
 		if os.path.isfile(source_path):
 			shutil.copy2(source_path, target_path)
 		elif os.path.isdir(source_path):
@@ -34,31 +32,25 @@ def deep_merge(base, override):
 	Override values fully replace base values for matching keys.
 	"""
 	for key, value in override.items():
-		# If the value is a dictionary and the base has a corresponding dictionary, merge recursively
 		if isinstance(value, dict) and key in base and isinstance(base[key], dict):
 			deep_merge(base[key], value)
 		else:
-			# Replace the base value with the override value
 			base[key] = value
 
 def merge_configs(base_config_path, override_config_path, output_path):
 	"""Merge base and override JSON configs and write the result to the output file."""
 	try:
-		# Load the base JSON file
 		with open(base_config_path, 'r') as base_file:
 			base_config = json.load(base_file)
 
-		# Load the override JSON file if it exists
 		if os.path.exists(override_config_path):
 			with open(override_config_path, 'r') as override_file:
 				override_config = json.load(override_file)
 		else:
 			override_config = {}
 
-		# Perform a deep merge
 		deep_merge(base_config, override_config)
 
-		# Write the merged configuration to the output file
 		with open(output_path, 'w') as output_file:
 			json.dump(base_config, output_file, indent=4)
 
@@ -82,12 +74,10 @@ def main():
 	dwaybar_base_folder = os.path.join(hypr, "waybar")
 	dwaybar_output = os.path.join(cwaybar, "config.jsonc")
 
-	# Remove existing symlinks or files
 	for path in [clocal, cwaybar, chypr]:
 		if os.path.exists(path):
 			os.remove(path)
 
-	# Create symlinks
 	os.symlink(hypr, chypr)
 	os.symlink(dmonitors, clocal)
 
@@ -95,7 +85,6 @@ def main():
 
 	copy_waybar_files(dwaybar_base_folder, cwaybar, "config.json")
 
-	# Handle Waybar configuration
 	if os.path.exists(dwaybar):
 		merge_configs(dwaybar_base, dwaybar, dwaybar_output)
 	else:
