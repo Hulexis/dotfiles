@@ -1,3 +1,10 @@
+set -U fish_prompt_git_status_added '✚'
+set -U fish_prompt_git_status_modified '*'
+set -U fish_prompt_git_status_renamed '➜'
+set -U fish_prompt_git_status_deleted '✖'
+set -U fish_prompt_git_status_unmerged '═'
+set -U fish_prompt_git_status_untracked '.'
+
 function prompt_dir -d "Display the current directory"
     prompt_segment $color_dir_bg $color_dir_str (prompt_pwd)
 end
@@ -15,24 +22,64 @@ function prompt_finish -d "Close open segments"
 > "
 end
 
+
 function prompt_git -d "Display the current git state"
-    set -l ref
-    set -l dirty
-    if command git rev-parse --is-inside-work-tree >/dev/null 2>&1
-        set dirty (parse_git_dirty)
-        set ref (command git symbolic-ref HEAD 2> /dev/null)
-        if [ $status -gt 0 ]
-            set -l branch (command git show-ref --head -s --abbrev |head -n1 2> /dev/null)
-            set ref "➦ $branch "
+    set -l branch (git symbolic-ref --quiet --short HEAD 2>/dev/null)
+    if test -z $branch
+        return
+    end
+
+    prompt_segment
+
+    set -l index (git status --porcelain 2>/dev/null)
+    if test -z "$index"
+        set_color $fish_color_git_clean
+        printf $branch'✓'
+        set_color normal
+        return
+    end
+
+    git diff-index --quiet --cached HEAD 2>/dev/null
+    set -l staged $status
+    if test $staged = 1
+        set_color -b $fish_color_git_staged
+    else
+        set_color -b $fish_color_git_dirty
+    end
+
+    set -l info
+    for i in $index
+        switch $i
+            case 'A  *'
+                set i added
+            case 'M  *' ' M *'
+                set i modified
+            case 'R  *'
+                set i renamed
+            case 'D  *' ' D *'
+                set i deleted
+            case 'U  *'
+                set i unmerged
+            case '?? *'
+                set i untracked
         end
-        set branch_symbol \uE0A0
-        set -l branch (echo $ref | sed  "s-refs/heads/-$branch_symbol -")
-        if [ "$dirty" != "" ]
-            prompt_segment $color_git_dirty_bg $color_git_dirty_str "$branch $dirty"
-        else
-            prompt_segment $color_git_bg $color_git_str "$branch $dirty"
+
+        if not contains $i $info
+            set info $info $i
         end
     end
+
+    for i in added modified renamed deleted unmerged untracked
+        if contains $i $info
+            # eval 'set_color -b $fish_color_git_'$i
+            eval 'set_color $color_git_str'
+            printf ' '$branch'⚡'
+
+            eval 'printf $fish_prompt_git_status_'$i' '
+        end
+    end
+
+    set_color normal
 end
 
 function prompt_segment -d "Function to draw a segment"

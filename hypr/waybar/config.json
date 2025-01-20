@@ -1,13 +1,19 @@
 {
 	"layer": "top",
-	"height": 20,
-	"spacing": 4,
-	"margin-left": 10,
-	"margin-right": 10,
-	"margin-top": 4,
-	"margin-bottom": 0,
+	"position": "top",
+
 	"modules-left": ["hyprland/workspaces"],
-	"modules-center": ["hyprland/window"],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#2",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#3",
+		"custom/right-arrow-dark"
+	],
 	"modules-right": [
 		"idle_inhibitor",
 		"custom/separator",
@@ -19,6 +25,37 @@
 		"hyprland/language",
 		"clock"
 	],
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"clock#one": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#two": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+	"clock#three": {
+		"format": "{:%m-%d}",
+		"tooltip": false
+	},
+
 	"hyprland/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": true,
@@ -51,6 +88,7 @@
 			"9": []
 		}
 	},
+
 	"hyprland/language": {
 		"format": "   {}",
 		"on-click": "/usr/bin/python3 $HOME/.dotfiles/scripts/toggle_keyboard_layout.py"
@@ -86,20 +124,10 @@
 		"interval": "once",
 		"tooltip": false
 	},
-	"tray": {
-		"spacing": 10
-	},
 	"clock": {
 		"format": "  {:%d/%m - %H:%M}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"format-alt": "  {:%d/%m/%Y %H:%M:%S}"
-	},
-	"cpu": {
-		"format": "  {usage}%",
-		"tooltip": true
-	},
-	"memory": {
-		"format": " {}%"
 	},
 	"temperature": {
 		"critical-threshold": 80,
@@ -117,24 +145,6 @@
 		"format-linked": "  (No IP)",
 		"format-disconnected": "! Disconnected",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}"
-	},
-	"pulseaudio": {
-		"format": "{volume}% {icon} {format_source}",
-		"format-bluetooth": "{volume}% {icon} {format_source}",
-		"format-bluetooth-muted": " {icon} {format_source}",
-		"format-muted": " {format_source}",
-		"format-source": "{volume}% ",
-		"format-source-muted": "",
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": ["", "", ""]
-		},
-		"on-click": "pavucontrol"
 	},
 	"custom/spotify": {
 		"exec": "/usr/bin/python3 $HOME/scripts/audio/mediaplayer.py --player spotify",
@@ -157,5 +167,42 @@
 		"return-type": "json",
 		"on-click": "/usr/bin/python3 $HOME/scripts/hypr/workspaces.py -w 1 -e -vvv -a click",
 		"exec": "/usr/bin/python3 $HOME/scripts/hypr/workspaces.py -w 1 -e -vvv  -a output"
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": "{icon}  {volume}%",
+		"format-muted": "MUTE",
+		"format-icons": {
+			"headphones": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 5,
+		"on-click": "pamixer -t",
+		"on-click-right": "pavucontrol"
+	},
+	"memory": {
+		"interval": 5,
+		"format": "Mem {}%"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": "CPU {usage:2}%"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"disk": {
+		"interval": 5,
+		"format": "Disk {percentage_used:2}%",
+		"path": "/"
+	},
+	"tray": {
+		"icon-size": 20
 	}
 }

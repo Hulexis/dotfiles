@@ -1,15 +1,33 @@
 {
-	"modules-left": ["hyprland/workspaces"],
-	"modules-center": ["hyprland/window"],
+	"modules-left": ["hyprland/workspaces", "custom/right-arrow-dark"],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#one",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#two",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#three",
+		"custom/right-arrow-dark"
+	],
 	"modules-right": [
-		"idle_inhibitor",
-		"custom/separator",
-		"tray",
+		"custom/left-arrow-dark",
 		"pulseaudio",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
 		"memory",
-		"custom/spotify",
-		"custom/pacman",
-		"hyprland/language",
-		"clock"
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"disk",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"tray"
 	]
 }

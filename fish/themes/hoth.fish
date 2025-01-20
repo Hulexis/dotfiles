@@ -36,6 +36,19 @@ set -q color_git_str; or set color_git_str '#333F4D'
 set -q color_svn_bg; or set color_svn_bg '#91B3E1'
 set -q color_svn_str; or set color_svn_str '#333F4D'
 
+set -U fish_color_git_clean green
+set -U fish_color_git_dirty red
+set -U fish_color_git_ahead red
+set -U fish_color_git_staged yellow
+
+set -U fish_color_git_added green
+set -U fish_color_git_modified blue
+set -U fish_color_git_renamed magenta
+set -U fish_color_git_deleted red
+set -U fish_color_git_unmerged yellow
+set -U fish_color_git_untracked cyan
+
+
 # Status Indicators
 set -q color_status_nonzero_bg; or set color_status_nonzero_bg '#333F4D' # Dark gray for failed status
 set -q color_status_nonzero_str; or set color_status_nonzero_str '#E6B1B1' # Soft red for errors
