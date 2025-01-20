@@ -1,0 +1,178 @@
+{
+	"layer": "top", // Waybar at top layer
+	// "output": ["DP-1"],
+	// "position": "bottom", // Waybar position (top|bottom|left|right)
+	"height": 20, // Waybar height (to be removed for auto height)
+	// "width": 1280, // Waybar width
+	"spacing": 4, // Gaps between modules (4px)
+	"margin-left": 10,
+	"margin-right": 10,
+	"margin-top": 4,
+	"margin-bottom": 0,
+	// Choose the order of the modules
+	"modules-left": [
+		"hyprland/workspaces"
+		// "custom/workspaces"
+		// "custom/separator",
+		// "sway/scratchpad"
+	],
+	"modules-center": ["hyprland/window"],
+	"modules-right": [
+		"idle_inhibitor",
+		"custom/separator",
+		"tray",
+		"pulseaudio",
+		"memory",
+		"custom/spotify",
+		"custom/pacman",
+		"hyprland/language",
+		"clock"
+	],
+	// Modules configuration
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"on-click": "activate",
+		"move-to-monitor": true,
+		"warp-on-scroll": false,
+		"show-special": true,
+		"format": "{icon}",
+		"format-icons": {
+			"1": "󰍳", // home
+			"2": "", // code
+			"3": "󰾰", // dev
+			"4": "󰭹", // chat
+			"5": "󱠓", // gfx
+			"6": "󰇮", // mail
+			"7": "", // games
+			"8": "", // docs
+			"9": "󰓇", // music
+			"10": "" // misc
+		},
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": []
+		}
+	},
+	"hyprland/language": {
+		"format": "   {}",
+		"on-click": "/usr/bin/python3 $HOME/.dotfiles/scripts/toggle_keyboard_layout.py"
+	},
+	"keyboard-state": {
+		"numlock": true,
+		"capslock": true,
+		"format": "{name} {icon}",
+		"format-icons": {
+			"locked": "",
+			"unlocked": ""
+		}
+	},
+	"sway/mode": {
+		"format": "<span style=\"italic\">{}</span>"
+	},
+	"sway/scratchpad": {
+		"format": "{icon} {count}",
+		"show-empty": true,
+		"format-icons": [",", ""],
+		"tooltip": true,
+		"tooltip-format": "{app}: {title}"
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "󰈈",
+			"deactivated": "󰈉"
+		}
+	},
+	"custom/separator": {
+		"format": "|",
+		"interval": "once",
+		"tooltip": false
+	},
+	"tray": {
+		// "icon-size": 21,
+		"spacing": 10
+	},
+	"clock": {
+		"format": "  {:%d/%m - %H:%M}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "  {:%d/%m/%Y %H:%M:%S}"
+	},
+	"cpu": {
+		"format": "  {usage}%",
+		"tooltip": true
+	},
+	"memory": {
+		"format": " {}%"
+	},
+	"temperature": {
+		// "thermal-zone": 2,
+		// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		"critical-threshold": 80,
+		// "format-critical": "{temperatureC}°C {icon}",
+		"format": "{icon} {temperatureC}°C",
+		"format-icons": ["", "", ""]
+	},
+	"backlight": {
+		// "device": "acpi_video1",
+		"format": "{percent}% {icon}",
+		"format-icons": ["", "", "", "", "", "", "", "", ""]
+	},
+	"network": {
+		// "interface": "wlp2*", // (Optional) To force the use of this interface
+		"format-wifi": "  {essid} ({signalStrength}%)",
+		"format-ethernet": "",
+		"tooltip-format": "  {ifname} via {gwaddr}",
+		"format-linked": "  (No IP)",
+		"format-disconnected": "! Disconnected",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"pulseaudio": {
+		// "scroll-step": 1, // %, can be a float
+		"format": "{volume}% {icon} {format_source}",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": " {format_source}",
+		"format-source": "{volume}% ",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		},
+		"on-click": "pavucontrol"
+	},
+	"custom/spotify": {
+		"exec": "/usr/bin/python3 $HOME/scripts/audio/mediaplayer.py --player spotify",
+		"format": "{}",
+		"return-type": "json",
+		"on-click-right": "/usr/bin/python3 $HOME/scripts/hypr/toggle_workspace.py 9",
+		"on-click": "playerctl play-pause",
+		"on-scroll-up": "playerctl next",
+		"on-scroll-down": "playerctl previous",
+		"max-length": 20
+	},
+	"custom/pacman": {
+		"format": "   {}",
+		"interval": 3600,
+		"exec": "checkupdates | wc -l",
+		"signal": 4
+	},
+	"custom/workspaces": {
+		"format": "{}",
+		"return-type": "json",
+		"on-click": "/usr/bin/python3 $HOME/scripts/hypr/workspaces.py -w 1 -e -vvv -a click",
+		"exec": "/usr/bin/python3 $HOME/scripts/hypr/workspaces.py -w 1 -e -vvv  -a output"
+	}
+}

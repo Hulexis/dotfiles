@@ -44,9 +44,10 @@ ln -s ~/.dotfiles/tmux ~/.config/tmux
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/leftwm ~/.config/leftwm
 ln -s ~/.dotfiles/hypr ~/.config/hypr
-ln -s ~/.dotfiles/waybar ~/.config/waybar
 ln -s ~/.dotfiles/swaylock ~/.config/swaylock
 ln -s ~/.dotfiles/eww ~/.config/eww
 ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/.dotfiles/fish ~/.config/fish
 ln -s ~/.dotfiles/ghostty ~/.config/ghostty
+
+python ./hypr/setup.py
