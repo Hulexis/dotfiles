@@ -22,19 +22,16 @@ function prompt_finish -d "Close open segments"
 > "
 end
 
-
 function prompt_git -d "Display the current git state"
     set -l branch (git symbolic-ref --quiet --short HEAD 2>/dev/null)
     if test -z $branch
         return
     end
 
-    prompt_segment
-
     set -l index (git status --porcelain 2>/dev/null)
     if test -z "$index"
-        set_color $fish_color_git_clean
-        printf $branch'✓'
+        prompt_segment $color_git_bg $color_git_str
+        printf $branch' ✓'
         set_color normal
         return
     end
@@ -42,8 +39,10 @@ function prompt_git -d "Display the current git state"
     git diff-index --quiet --cached HEAD 2>/dev/null
     set -l staged $status
     if test $staged = 1
+        prompt_segment $fish_color_git_staged $color_git_str
         set_color -b $fish_color_git_staged
     else
+        prompt_segment $fish_color_git_dirty $color_git_str
         set_color -b $fish_color_git_dirty
     end
 
@@ -69,15 +68,21 @@ function prompt_git -d "Display the current git state"
         end
     end
 
+
+    eval 'set_color $color_git_str'
+    printf $branch' '
+
     for i in added modified renamed deleted unmerged untracked
         if contains $i $info
             # eval 'set_color -b $fish_color_git_'$i
-            eval 'set_color $color_git_str'
-            printf ' '$branch'⚡'
 
-            eval 'printf $fish_prompt_git_status_'$i' '
+            # This eval will print a symbol or text specific to each git status type.
+            eval 'printf $fish_prompt_git_status_'$i
         end
     end
+
+
+    printf ' '
 
     set_color normal
 end

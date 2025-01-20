@@ -36,17 +36,18 @@ set -q color_git_str; or set color_git_str '#333F4D'
 set -q color_svn_bg; or set color_svn_bg '#91B3E1'
 set -q color_svn_str; or set color_svn_str '#333F4D'
 
-set -U fish_color_git_clean green
-set -U fish_color_git_dirty red
-set -U fish_color_git_ahead red
-set -U fish_color_git_staged yellow
+# Git Repository Colors
+set -U fish_color_git_clean '#91B3E1' # Calm, icy blue
+set -U fish_color_git_dirty '#C47272' # Dusty rose or muted red
+set -U fish_color_git_ahead '#6699CC' # Brighter, vibrant blue
+set -U fish_color_git_staged '#7799BB' # Blue-gray, distinct from clean
 
-set -U fish_color_git_added green
-set -U fish_color_git_modified blue
-set -U fish_color_git_renamed magenta
-set -U fish_color_git_deleted red
-set -U fish_color_git_unmerged yellow
-set -U fish_color_git_untracked cyan
+set -U fish_color_git_added '#D6E6F0' # Light frosty blue
+set -U fish_color_git_modified '#E0E9F4' # Icy blue-white
+set -U fish_color_git_renamed '#A9C0DA' # Soft, light blue
+set -U fish_color_git_deleted '#333F4D' # Dark gray
+set -U fish_color_git_unmerged '#E6E1A9' # Pale yellow
+set -U fish_color_git_untracked '#B6A7E6' # Soft purple
 
 
 # Status Indicators
