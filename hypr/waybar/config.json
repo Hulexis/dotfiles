@@ -1,21 +1,12 @@
 {
-	"layer": "top", // Waybar at top layer
-	// "output": ["DP-1"],
-	// "position": "bottom", // Waybar position (top|bottom|left|right)
-	"height": 20, // Waybar height (to be removed for auto height)
-	// "width": 1280, // Waybar width
-	"spacing": 4, // Gaps between modules (4px)
+	"layer": "top",
+	"height": 20,
+	"spacing": 4,
 	"margin-left": 10,
 	"margin-right": 10,
 	"margin-top": 4,
 	"margin-bottom": 0,
-	// Choose the order of the modules
-	"modules-left": [
-		"hyprland/workspaces"
-		// "custom/workspaces"
-		// "custom/separator",
-		// "sway/scratchpad"
-	],
+	"modules-left": ["hyprland/workspaces"],
 	"modules-center": ["hyprland/window"],
 	"modules-right": [
 		"idle_inhibitor",
@@ -28,7 +19,6 @@
 		"hyprland/language",
 		"clock"
 	],
-	// Modules configuration
 	"hyprland/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": true,
@@ -38,16 +28,16 @@
 		"show-special": true,
 		"format": "{icon}",
 		"format-icons": {
-			"1": "󰍳", // home
-			"2": "", // code
-			"3": "󰾰", // dev
-			"4": "󰭹", // chat
-			"5": "󱠓", // gfx
-			"6": "󰇮", // mail
-			"7": "", // games
-			"8": "", // docs
-			"9": "󰓇", // music
-			"10": "" // misc
+			"1": "󰍳",
+			"2": "",
+			"3": "󰾰",
+			"4": "󰭹",
+			"5": "󱠓",
+			"6": "󰇮",
+			"7": "",
+			"8": "",
+			"9": "󰓇",
+			"10": ""
 		},
 		"persistent-workspaces": {
 			"1": [],
@@ -97,7 +87,6 @@
 		"tooltip": false
 	},
 	"tray": {
-		// "icon-size": 21,
 		"spacing": 10
 	},
 	"clock": {
@@ -113,20 +102,15 @@
 		"format": " {}%"
 	},
 	"temperature": {
-		// "thermal-zone": 2,
-		// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
 		"critical-threshold": 80,
-		// "format-critical": "{temperatureC}°C {icon}",
 		"format": "{icon} {temperatureC}°C",
 		"format-icons": ["", "", ""]
 	},
 	"backlight": {
-		// "device": "acpi_video1",
 		"format": "{percent}% {icon}",
 		"format-icons": ["", "", "", "", "", "", "", "", ""]
 	},
 	"network": {
-		// "interface": "wlp2*", // (Optional) To force the use of this interface
 		"format-wifi": "  {essid} ({signalStrength}%)",
 		"format-ethernet": "",
 		"tooltip-format": "  {ifname} via {gwaddr}",
@@ -135,7 +119,6 @@
 		"format-alt": "{ifname}: {ipaddr}/{cidr}"
 	},
 	"pulseaudio": {
-		// "scroll-step": 1, // %, can be a float
 		"format": "{volume}% {icon} {format_source}",
 		"format-bluetooth": "{volume}% {icon} {format_source}",
 		"format-bluetooth-muted": " {icon} {format_source}",
