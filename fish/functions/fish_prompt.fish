@@ -85,6 +85,19 @@ function prompt_git -d "Display the current git state"
     printf ' '
 
     set_color normal
+
+    # set -g __fish_git_prompt_showupstream auto
+    # set -g __fish_git_prompt_showdirtystate 1
+    # set -g __fish_git_prompt_show_informative_status 1
+    #
+    # printf $__fish_git_prompt_char_dirtystate
+    # printf $__fish_git_prompt_char_invalidstate
+    #
+    # printf '%s' (fish_git_prompt)
+    #
+    # printf $__fish_git_prompt_char_dirtystate
+    # printf $__fish_git_prompt_char_invalidstate
+
 end
 
 function prompt_segment -d "Function to draw a segment"
