@@ -22,4 +22,12 @@ return {
 	{ import = "lazyvim.plugins.extras.coding.mini-comment" },
 	{ import = "lazyvim.plugins.extras.coding.yanky" },
 	{ import = "lazyvim.plugins.extras.coding.luasnip" },
+	{ import = "lazyvim.plugins.extras.coding.blink" },
+	{
+		"saghen/blink.cmp",
+		opts = function(_, opts)
+			opts.completion.accept.auto_brackets.enabled = false
+			opts.completion.list = { selection = { preselect = false, auto_insert = true } }
+		end,
+	},
 }

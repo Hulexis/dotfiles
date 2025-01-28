@@ -117,6 +117,12 @@ return {
 		ft = { "go", "gomod" },
 		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
 	},
+	{
+		"neovim/nvim-lspconfig",
+		opts = function(_, opts)
+			opts.servers.gopls.settings.gopls.usePlaceholders = false
+		end,
+	},
 
 	-- ###########
 	-- ### PKL ###
@@ -202,18 +208,21 @@ return {
 			},
 		},
 	},
+	-- { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
 			{ "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
 		},
 		opts = function(_, opts)
+			local cmp = require("cmp")
 			-- original LazyVim kind icon formatter
 			local format_kinds = opts.formatting.format
 			opts.formatting.format = function(entry, item)
 				format_kinds(entry, item) -- add icons
 				return require("tailwindcss-colorizer-cmp").formatter(entry, item)
 			end
+			-- opts.preselect = cmp.PreselectMode.None
 		end,
 	},
 	{
@@ -257,23 +266,28 @@ return {
 	-- ### Rust ###
 	-- ############
 	{ import = "lazyvim.plugins.extras.lang.rust" },
-	-- {
-	-- 	"mrcjkb/rustaceanvim",
-	-- 	opts = {
-	-- 		server = {
-	-- 			default_settings = {
-	-- 				-- Extend the existing rust-analyzer settings
-	-- 				["rust-analyzer"] = {
-	-- 					diagnostics = {
-	-- 						enable = true, -- Ensure diagnostics are enabled
-	-- 						disabled = { "unresolved-proc-macro" }, -- Disable the specific diagnostic
-	-- 						enableExperimental = true,
-	-- 					},
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 	},
-	-- },
+	{
+		"Saecki/crates.nvim",
+		opts = function(_, opts)
+			opts.lsp.completion = false
+		end,
+	},
+	{
+		"mrcjkb/rustaceanvim",
+		version = vim.fn.has("nvim-0.10.0") == 0 and "^4" or false,
+		ft = { "rust" },
+		opts = function(_, opts)
+			opts.server.default_settings = vim.tbl_deep_extend("force", opts.server.default_settings or {}, {
+				["rust-analyzer"] = {
+					completion = {
+						callable = {
+							snippets = "none", -- Don't want to complete function arguments
+						},
+					},
+				},
+			})
+		end,
+	},
 
 	-- ##############
 	-- ### Kotlin ###
