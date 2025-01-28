@@ -73,12 +73,12 @@ return {
 					-- capabilities = require("user.lsp.handlers").capabilities,
 					settings = {
 						showTodos = true,
-						completeFunctionCalls = true,
+						completeFunctionCalls = false,
 						enableSdkFormatter = false,
 						analysisExcludedFolders = {
 							".dart_tool",
-							"/home/skela/files/sdks/flutter",
-							"/home/skela/.pub-cache",
+							"/home/aj/packages/flutter",
+							"/home/aj/.pub-cache",
 						},
 						enableSnippets = true,
 						updateImportsOnRename = true,
@@ -274,8 +274,6 @@ return {
 	},
 	{
 		"mrcjkb/rustaceanvim",
-		version = vim.fn.has("nvim-0.10.0") == 0 and "^4" or false,
-		ft = { "rust" },
 		opts = function(_, opts)
 			opts.server.default_settings = vim.tbl_deep_extend("force", opts.server.default_settings or {}, {
 				["rust-analyzer"] = {
@@ -303,4 +301,6 @@ return {
 	-- ### Json ###
 	-- ############
 	{ import = "lazyvim.plugins.extras.lang.json" },
+
+	{ "luckasRanarison/tree-sitter-hyprlang", dependencies = { "nvim-treesitter/nvim-treesitter" } },
 }

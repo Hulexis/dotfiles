@@ -32,9 +32,11 @@ reload_aliases
 set -x BUN_INSTALL "$HOME/.bun"
 set -x GOPATH "$HOME/go"
 set -x CARGO_PATH "$HOME/.cargo"
+set -x FLUTTER_PATH "$HOME/packages/flutter"
 
 set -x PATH "$BUN_INSTALL/bin" $PATH
 set -x PATH "$GOPATH/bin" $PATH
 set -x PATH "$CARGO_PATH/bin" $PATH
+set -x PATH "$FLUTTER_PATH/bin" $PATH
 
 alias assume="source /usr/local/bin/assume.fish"
