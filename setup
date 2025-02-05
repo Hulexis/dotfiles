@@ -34,7 +34,6 @@ rm -r ~/.config/starship.toml
 rm -r ~/.config/fish
 rm -r ~/.config/ghostty
 rm -r ~/.config/posting
-rm -r ~/.config/btop
 
 ln -s ~/.dotfiles/alacritty ~/.config/alacritty
 ln -s ~/.dotfiles/qtile ~/.config/qtile
@@ -52,6 +51,5 @@ ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/.dotfiles/fish ~/.config/fish
 ln -s ~/.dotfiles/ghostty ~/.config/ghostty
 ln -s ~/.dotfiles/posting ~/.config/posting
-ln -s ~/.dotfiles/btop ~/.config/btop
 
 python ./hypr/setup.py

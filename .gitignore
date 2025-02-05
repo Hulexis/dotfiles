@@ -8,3 +8,5 @@ tmux/plugins
 *.pyc
 
 fish_variables
+
+btop/btop.log

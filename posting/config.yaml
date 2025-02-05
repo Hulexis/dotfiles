@@ -1,0 +1,11 @@
+theme: tokyo-night
+
+editor: nvim
+#layout: vertical
+layout: horizontal
+
+theme: nordic
+theme_directory: /home/aj/.config/posting/themes
+
+focus:
+  on_startup: collection

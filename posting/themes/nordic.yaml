@@ -1,0 +1,10 @@
+name: nordic  # use this name in your config file
+
+primary: '#5E81AC'  # buttons, fixed table columns (using blue0)
+secondary: '#D08770'  # method selector, some minor labels (using orange.base)
+accent: '#BF616A'  # header text, scrollbars, cursors, focus highlights (using red.base)
+background: '#191D24'  # background colors (using black0)
+surface: '#222630'  # panels, etc (using black2)
+error: '#BF616A'  # error messages (using red.base)
+success: '#A3BE8C'  # success messages (using green.base)
+warning: '#EBCB8B'  # warning messages (using yellow.base)
