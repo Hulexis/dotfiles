@@ -102,7 +102,6 @@ return {
 	-- ###############
 	-- ### Go lang ###
 	-- ###############
-	{ import = "lazyvim.plugins.extras.lang.go" },
 	{
 		"ray-x/go.nvim",
 		dependencies = { -- optional packages
@@ -208,7 +207,6 @@ return {
 			},
 		},
 	},
-	-- { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
@@ -244,7 +242,6 @@ return {
 	-- ##################
 	-- ### Typescript ###
 	-- ##################
-	{ import = "lazyvim.plugins.extras.lang.typescript" },
 	{
 		"neovim/nvim-lspconfig",
 		opts = function(_, opts)
@@ -265,7 +262,6 @@ return {
 	-- ############
 	-- ### Rust ###
 	-- ############
-	{ import = "lazyvim.plugins.extras.lang.rust" },
 	{
 		"Saecki/crates.nvim",
 		opts = function(_, opts)
@@ -286,21 +282,6 @@ return {
 			})
 		end,
 	},
-
-	-- ##############
-	-- ### Kotlin ###
-	-- ##############
-	{ import = "lazyvim.plugins.extras.lang.kotlin" },
-
-	-- ##############
-	-- ### Docker ###
-	-- ##############
-	{ import = "lazyvim.plugins.extras.lang.docker" },
-
-	-- ############
-	-- ### Json ###
-	-- ############
-	{ import = "lazyvim.plugins.extras.lang.json" },
 
 	{ "luckasRanarison/tree-sitter-hyprlang", dependencies = { "nvim-treesitter/nvim-treesitter" } },
 }

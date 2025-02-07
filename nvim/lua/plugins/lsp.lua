@@ -30,6 +30,7 @@ return {
 				"biome",
 				"bacon",
 				"bacon-ls",
+				"debugpy",
 			},
 		},
 	},

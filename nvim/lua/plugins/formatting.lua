@@ -1,5 +1,4 @@
 return {
-	{ import = "lazyvim.plugins.extras.lsp.none-ls" },
 	{
 		"stevearc/conform.nvim",
 		optional = true,
