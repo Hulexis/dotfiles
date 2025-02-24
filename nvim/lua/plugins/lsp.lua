@@ -28,8 +28,6 @@ return {
 				"omnisharp",
 				"dart-debug-adapter",
 				"biome",
-				"bacon",
-				"bacon-ls",
 				"debugpy",
 			},
 		},
@@ -38,7 +36,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"simrat39/rust-tools.nvim",
 			"mfussenegger/nvim-dap-python",
 		},
 		init = function()
