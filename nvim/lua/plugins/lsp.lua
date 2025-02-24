@@ -38,6 +38,9 @@ return {
 		dependencies = {
 			"mfussenegger/nvim-dap-python",
 		},
+		opts = {
+			inlay_hints = { enabled = false },
+		},
 		init = function()
 			local keys = require("lazyvim.plugins.lsp.keymaps").get()
 			keys[#keys + 1] = { "<leader>cl", false }
