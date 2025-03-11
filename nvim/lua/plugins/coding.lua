@@ -25,4 +25,16 @@ return {
 			opts.completion.list = { selection = { preselect = false, auto_insert = true } }
 		end,
 	},
+
+	{
+		"L3MON4D3/LuaSnip",
+		--   lazy = false,
+		config = function()
+			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets/" })
+			require("luasnip").config.setup({
+				update_events = "TextChanged,TextChangedI",
+				enable_autosnippets = true,
+			})
+		end,
+	},
 }
