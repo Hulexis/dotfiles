@@ -9,6 +9,7 @@ return {
 				names = false,
 				RGB = false,
 				virtualtext = " ",
+				tailwind = true,
 			},
 		},
 	},
