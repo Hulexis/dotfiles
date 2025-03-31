@@ -19,6 +19,7 @@ cd ~/.dotfiles
 ./setup.sh
 ```
 
+
 ## Author
 
 ```plaintext
