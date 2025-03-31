@@ -10,3 +10,5 @@ tmux/plugins
 fish_variables
 
 btop/btop.log
+
+ghostty/config.local
