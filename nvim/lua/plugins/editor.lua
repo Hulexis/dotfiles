@@ -96,6 +96,10 @@ return {
 				winbar = false,
 				statusline = false,
 			},
+			window = {
+				position = "right",
+				width = 60,
+			},
 		},
 		keys = {
 			{
