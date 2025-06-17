@@ -20,13 +20,21 @@ return {
 				["markdown.mdx"] = { "biome" },
 				["graphql"] = { "biome" },
 				["handlebars"] = { "biome" },
+				["astro"] = { "biome" },
 				["python"] = { "yapf" },
 				["swift"] = { "swift_format_ext" },
 				["go"] = { "goimports", "gofumpt" },
 				["fish"] = { "fish_indent" },
+				["dart"] = { "blink" },
 				-- ["rust"] = { "rustfmt" },
 			},
 			formatters = {
+				blink = {
+					command = "/home/aj/packages/blink/target/release/blink",
+					args = { "$FILENAME" },
+					stdin = false,
+					cwd = require("conform.util").root_file({ ".editorconfig", "pubspec.yaml" }),
+				},
 				swift_format_ext = {
 					command = "swiftformat",
 					args = { "--stdinpath", "$FILENAME" },
