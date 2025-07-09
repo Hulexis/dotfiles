@@ -97,7 +97,7 @@ return {
 				statusline = false,
 			},
 			window = {
-				-- position = "right",
+				position = "right",
 				width = 60,
 			},
 		},
