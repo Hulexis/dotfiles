@@ -32,11 +32,16 @@ set -x BUN_INSTALL "$HOME/.bun"
 set -x GOPATH "$HOME/go"
 set -x CARGO_PATH "$HOME/.cargo"
 set -x FLUTTER_PATH "$HOME/packages/flutter"
+set -x FLUTTER_PATH_OSX "$HOME/development/flutter"
+set -x GEM_HOME "$HOME/.gem"
 
 set -x PATH "$BUN_INSTALL/bin" $PATH
 set -x PATH "$GOPATH/bin" $PATH
 set -x PATH "$CARGO_PATH/bin" $PATH
 set -x PATH "$FLUTTER_PATH/bin" $PATH
 set -x PATH "$HOME/.local/bin" $PATH
+
+set -x PATH "$FLUTTER_PATH_OSX/bin" $PATH
+set -x PATH "$GEM_HOME/bin" $PATH
 
 alias assume="source /usr/local/bin/assume.fish"

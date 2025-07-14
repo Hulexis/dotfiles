@@ -7,18 +7,4 @@ alias gw="git worktree"
 alias gpush="git push"
 
 alias vim="nvim"
-alias icat="kitty +kitten icat"
 
-alias ls='eza -al --color=always --group-directories-first' # my preferred listing
-alias la='eza -a --color=always --group-directories-first'  # all files and dirs
-alias ll='eza -l --color=always --group-directories-first'  # long format
-alias lt='eza -aT --color=always --group-directories-first' # tree listing
-alias l.='eza -al --color=always --group-directories-first ../' # ls on the PARENT directory
-alias l..='eza -al --color=always --group-directories-first ../../' # ls on directory 2 levels up
-alias l...='eza -al --color=always --group-directories-first ../../../' # ls on directory 3 levels up
-
-alias df='df -h'               # human-readable sizes
-alias free='free -m'           # show sizes in MB
-
-alias tmux='TERM=xterm-256color /usr/bin/tmux'
-alias devcom="git add . ; git commit -m meh ; git push origin HEAD"

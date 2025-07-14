@@ -10,3 +10,16 @@ keybind = cmd+nine=text:\x1b9
 keybind = cmd+zero=text:\x1b0
 keybind = cmd+left=text:\x1b[1;3D
 keybind = cmd+right=text:\x1b[1;3C
+
+keybind = cmd+s=text:\x1bs
+
+keybind = cmd+z=text:\x1bz
+keybind = cmd+left=text:\x1b[1;3D
+keybind = cmd+right=text:\x1b[1;3C
+keybind = cmd+up=text:\x1b[1;3A
+keybind = cmd+down=text:\x1b[1;3B
+
+keybind = cmd+shift+left=text:\x1b[1;4D
+keybind = cmd+shift+right=text:\x1b[1;4C
+keybind = cmd+shift+up=text:\x1b[1;4A
+keybind = cmd+shift+down=text:\x1b[1;4B
