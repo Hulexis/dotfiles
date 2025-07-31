@@ -63,9 +63,16 @@ M.show_code_options = function()
 end
 
 M.dashboard_name = function()
-	local hostname = vim.loop.os_gethostname():gsub("%..*$", ""):lower()
+	local raw = vim.loop.os_gethostname()
+	local hostname = raw:gsub("%..*$", ""):lower() -- strip .local, .lan, etc.
 
-	if hostname == "hoth" then
+	vim.notify("Snacks: hostname = " .. raw .. " -> " .. hostname, vim.log.levels.INFO)
+
+	local function is(name)
+		return hostname:match("^" .. name)
+	end
+
+	if is("hoth") then
 		return [[
 ██╗  ██╗ ██████╗ ████████╗██╗  ██╗
 ██║  ██║██╔═══██╗╚══██╔══╝██║  ██║
@@ -74,7 +81,7 @@ M.dashboard_name = function()
 ██║  ██║╚██████╔╝   ██║   ██║  ██║
 ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝
 ]]
-	elseif hostname == "mustafar" then
+	elseif is("mustafar") then
 		return [[
 ███╗   ███╗██╗   ██╗███████╗████████╗ █████╗ ███████╗ █████╗ ██████╗
 ████╗ ████║██║   ██║██╔════╝╚══██╔══╝██╔══██╗██╔════╝██╔══██╗██╔══██╗
@@ -83,7 +90,7 @@ M.dashboard_name = function()
 ██║ ╚═╝ ██║╚██████╔╝███████║   ██║   ██║  ██║██║     ██║  ██║██║  ██║
 ╚═╝     ╚═╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝
 ]]
-	elseif hostname == "alderaan" then
+	elseif is("alderaan") then
 		return [[
  █████╗ ██╗     ██████╗ ███████╗██████╗  █████╗  █████╗ ███╗   ██╗
 ██╔══██╗██║     ██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔══██╗████╗  ██║
