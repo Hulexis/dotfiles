@@ -166,6 +166,8 @@ return {
 						{ "Styles \\=([^;]*);", "'([^']*)'" },
 						{ "Styles \\=([^;]*);", '"([^"]*)"' },
 						{ "Styles \\=([^;]*);", "\\`([^\\`]*)\\`" },
+						{ "slotClasses%s*=%s*{[^}]*}", "[\"']%w+[\"']%s*:%s*[\"']([^\"']+)[\"']" },
+						{ "slotClasses%s*=%s*{[^}]*}", "%w+%s*:%s*`([^`]+)`" },
 					},
 				},
 			},
@@ -173,6 +175,7 @@ return {
 				tailwindCSS = {
 					experimental = {},
 					classAttributes = {
+						"slotClasses",
 						"class",
 						"className",
 						"ngClass",
