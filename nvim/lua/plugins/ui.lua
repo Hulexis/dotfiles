@@ -90,14 +90,7 @@ return {
 						{ icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
 						{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 					},
-					header = [[
-██╗  ██╗██╗   ██╗██╗     ███████╗██╗  ██╗██╗███████╗
-██║  ██║██║   ██║██║     ██╔════╝╚██╗██╔╝██║██╔════╝
-███████║██║   ██║██║     █████╗   ╚███╔╝ ██║███████╗
-██╔══██║██║   ██║██║     ██╔══╝   ██╔██╗ ██║╚════██║
-██║  ██║╚██████╔╝███████╗███████╗██╔╝ ██╗██║███████║
-╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚══════╝
-]],
+					header = require("utils.ui").dashboard_name(),
 				},
 
 				sections = {
@@ -106,13 +99,13 @@ return {
 					-- { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
 					-- { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
 
-					{
-						pane = 2,
-						section = "terminal",
-						cmd = "colorscript -e square",
-						height = 5,
-						padding = 1,
-					},
+					-- {
+					-- 	pane = 2,
+					-- 	section = "terminal",
+					-- 	cmd = "colorscript -e square",
+					-- 	height = 5,
+					-- 	padding = 1,
+					-- },
 					-- {
 					-- 	pane = 1,
 					-- 	section = "terminal",
@@ -135,15 +128,15 @@ return {
 					-- 	indent = 3,
 					-- },
 
-					{
-						section = "terminal",
-						cmd = "pokemon-colorscripts-go --no-title; sleep .1",
-						random = 10,
-						pane = 2,
-						indent = 10,
-						height = 30,
-						padding = 10,
-					},
+					-- {
+					-- 	section = "terminal",
+					-- 	cmd = "pokemon-colorscripts-go --no-title; sleep .1",
+					-- 	random = 10,
+					-- 	pane = 2,
+					-- 	indent = 10,
+					-- 	height = 30,
+					-- 	padding = 10,
+					-- },
 					{ section = "startup", pane = 1 },
 				},
 			},
