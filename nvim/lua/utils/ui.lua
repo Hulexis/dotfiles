@@ -63,7 +63,7 @@ M.show_code_options = function()
 end
 
 M.dashboard_name = function()
-	local hostname = vim.loop.os_gethostname()
+	local hostname = vim.loop.os_gethostname():gsub("%..*$", ""):lower()
 
 	if hostname == "hoth" then
 		return [[
