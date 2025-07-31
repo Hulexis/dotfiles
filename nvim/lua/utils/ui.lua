@@ -66,8 +66,6 @@ M.dashboard_name = function()
 	local raw = vim.loop.os_gethostname()
 	local hostname = raw:gsub("%..*$", ""):lower() -- strip .local, .lan, etc.
 
-	vim.notify("Snacks: hostname = " .. raw .. " -> " .. hostname, vim.log.levels.INFO)
-
 	local function is(name)
 		return hostname:match("^" .. name)
 	end
