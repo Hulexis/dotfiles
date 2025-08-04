@@ -7,8 +7,8 @@ hyprpaper &
 waybar &
 
 # Notification Daemon
-# swaync &
-dunst &
+swaync &
+# dunst &
 
 # Idle daemon to screen lock
 hypridle &

@@ -3,6 +3,7 @@ import socket
 import json
 import shutil
 
+
 def copy_waybar_files(source_dir, target_dir, exclude_file):
 	"""Copy all files from source_dir to target_dir, excluding a specific file."""
 	if not os.path.exists(source_dir):
@@ -26,6 +27,7 @@ def copy_waybar_files(source_dir, target_dir, exclude_file):
 				shutil.rmtree(target_path)
 			shutil.copytree(source_path, target_path)
 
+
 def deep_merge(base, override):
 	"""
 	Recursively merge override properties into base.
@@ -36,6 +38,7 @@ def deep_merge(base, override):
 			deep_merge(base[key], value)
 		else:
 			base[key] = value
+
 
 def merge_configs(base_config_path, override_config_path, output_path):
 	"""Merge base and override JSON configs and write the result to the output file."""
@@ -76,7 +79,10 @@ def main():
 
 	for path in [clocal, cwaybar, chypr]:
 		if os.path.exists(path):
-			os.remove(path)
+			if os.path.isfile(path) or os.path.islink(path):
+				os.remove(path)
+			elif os.path.isdir(path):
+				shutil.rmtree(path)
 
 	os.symlink(hypr, chypr)
 	os.symlink(dmonitors, clocal)

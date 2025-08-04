@@ -130,6 +130,8 @@ window#waybar {
 #disk,
 #language,
 #idle_inhibitor,
+#custom-notifications,
+#custom-background,
 #tray {
 	background: #222630;
 	color: #fdf6e3;
@@ -142,4 +144,12 @@ window#waybar {
 #battery,
 #disk {
 	padding: 0 10px;
+}
+
+#custom-notifications {
+	padding: 0 5px;
+}
+
+#custom-background {
+	padding: 0 5px;
 }
