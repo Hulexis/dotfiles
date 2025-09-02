@@ -26,7 +26,6 @@ return {
 			"go",
 			"xml",
 			"http",
-			"pkl",
 			"c_sharp",
 			-- "swift", -- Disabled was to laggy
 		},
