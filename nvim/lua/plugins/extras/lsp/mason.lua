@@ -29,6 +29,8 @@ return {
 				"dart-debug-adapter",
 				"biome",
 				"debugpy",
+				"bacon",
+				"bacon-ls",
 			},
 		},
 	},
