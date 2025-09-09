@@ -54,3 +54,21 @@ ls.add_snippets("typescriptreact", {
 		t({ "", "\t}", "", "\treturn context;", "};" }),
 	}),
 })
+
+ls.add_snippets("typescriptreact", {
+	s("seffect", {
+		t("createEffect(() => {"),
+		t({ "", "\t" }),
+		i(1),
+		t({ "", "});" }),
+	}),
+})
+
+ls.add_snippets("typescriptreact", {
+	s("sonmount", {
+		t("onMount(() => {"),
+		t({ "", "\t" }),
+		i(1),
+		t({ "", "});" }),
+	}),
+})
