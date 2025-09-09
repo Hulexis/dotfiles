@@ -65,7 +65,7 @@ ls.add_snippets("typescriptreact", {
 })
 
 ls.add_snippets("typescriptreact", {
-	s("sonmount", {
+	s("smount", {
 		t("onMount(() => {"),
 		t({ "", "\t" }),
 		i(1),
