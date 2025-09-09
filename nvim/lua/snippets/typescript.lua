@@ -133,4 +133,15 @@ ls.add_snippets("typescriptreact", {
 		i(3, "<div>{item}</div>"),
 		t({ "", ")} </For>" }),
 	}),
+
+	s("swhen", {
+		t("createWhen("),
+		i(1, "condition"),
+		t(", ("),
+		i(2, "e"),
+		t(") => {"),
+		t({ "", "\t" }),
+		i(3),
+		t({ "", "});" }),
+	}),
 })
