@@ -3,6 +3,12 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 local rep = require("luasnip.extras").rep
+local f = ls.function_node
+
+local function capitalise_first(args)
+	local v = args[1][1] or ""
+	return (v:gsub("^%l", string.upper))
+end
 
 ls.add_snippets("typescriptreact", {
 	s("scontext", {
@@ -62,13 +68,69 @@ ls.add_snippets("typescriptreact", {
 		i(1),
 		t({ "", "});" }),
 	}),
-})
 
-ls.add_snippets("typescriptreact", {
-	s("smount", {
+	s("sonmount", {
 		t("onMount(() => {"),
 		t({ "", "\t" }),
 		i(1),
 		t({ "", "});" }),
+	}),
+
+	s("ssignal", {
+		t("const ["),
+		i(1, "value"), -- ask for the variable name
+		t(", set"),
+		f(capitalise_first, { 1 }), -- -> setX from the first insert
+		t("] = createSignal("),
+		i(2, "initial"),
+		t(");"),
+	}),
+
+	s("sstore", {
+		t("const ["),
+		i(1, "state"),
+		t(", set"),
+		f(capitalise_first, { 1 }),
+		t("] = createStore("),
+		t("{ "),
+		i(2),
+		t(" });"),
+	}),
+
+	s("smemo", {
+		t("const "),
+		i(1, "computed"),
+		t(" = createMemo(() => "),
+		i(2, "expression"),
+		t(");"),
+	}),
+
+	s("soncleanup", {
+		t("onCleanup(() => {"),
+		t({ "", "\t" }),
+		i(1),
+		t({ "", "});" }),
+	}),
+
+	s("scomponent", {
+		t("const "),
+		i(1, "Name"),
+		t(": Component = () => {"),
+		t({ "", "\treturn (" }),
+		t({ "", "\t\t" }),
+		i(2, "<div />"),
+		t({ "", "\t);" }),
+		t({ "", "};" }),
+	}),
+
+	s("sfor", {
+		t("<For each={"),
+		i(1, "items"),
+		t("}>{("),
+		i(2, "item"),
+		t(") => ("),
+		t({ "", "\t" }),
+		i(3, "<div>{item}</div>"),
+		t({ "", ")} </For>" }),
 	}),
 })
