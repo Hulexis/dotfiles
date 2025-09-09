@@ -1,2 +1,2 @@
 alias tmux='TERM=xterm-256color /opt/homebrew/bin/tmux'
-alias devcom="git add . ; git commit -m meh ; git push origin HEAD"
+alias devcom="git add . ; git commit -m chore: meh ; git push origin HEAD"
