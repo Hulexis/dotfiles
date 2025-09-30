@@ -40,6 +40,7 @@ set -x PATH "$GOPATH/bin" $PATH
 set -x PATH "$CARGO_PATH/bin" $PATH
 set -x PATH "$FLUTTER_PATH/bin" $PATH
 set -x PATH "$HOME/.local/bin" $PATH
+set -x PATH "$HOME/.pulumi/bin" $PATH
 
 set -x PATH "$FLUTTER_PATH_OSX/bin" $PATH
 set -x PATH "$GEM_HOME/bin" $PATH
