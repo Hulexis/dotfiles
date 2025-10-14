@@ -4,8 +4,8 @@ return {
 	-- Coding
 	{ "garymjr/nvim-snippets" },
 	{ "folke/ts-comments.nvim" },
-	{ "echasnovski/mini.comment" },
-	{ "echasnovski/mini.ai" },
+	{ "nvim-mini/mini.comment" },
+	{ "nvim-mini/mini.ai" },
 	{ "folke/lazydev.nvim" },
 
 	-- Editor
@@ -14,7 +14,7 @@ return {
 
 	-- LSP
 	{ "folke/neodev.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
+	{ "mason-org/mason-lspconfig.nvim" },
 
 	-- TreeSitter
 	{ "nvim-treesitter/nvim-treesitter" },
@@ -25,7 +25,7 @@ return {
 	{ "lukas-reineke/indent-blankline.nvim" },
 	{ "stevearc/dressing.nvim" },
 	{ "folke/noice.nvim" },
-	{ "echasnovski/mini.icons" },
+	{ "nvim-mini/mini.icons" },
 	{ "MunifTanjim/nui.nvim" },
 
 	-- Util

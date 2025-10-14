@@ -4,7 +4,7 @@ return {
 	-- Coding
 	{ "tzachar/cmp-tabnine", optional = true },
 	{ "Exafunction/codeium.nvim", optional = true },
-	{ "echasnovski/mini.surround", optional = true },
+	{ "nvim-mini/mini.surround", optional = true },
 	{ "JoosepAlviste/nvim-ts-context-commentstring", optional = true },
 
 	-- DAP
@@ -16,7 +16,7 @@ return {
 	{ "ggandor/flit.nvim", optional = true },
 	{ "ggandor/leap.nvim", optional = true },
 	{ "tpope/vim-repeat", optional = true },
-	{ "echasnovski/mini.files", optional = true },
+	{ "nvim-mini/mini.files", optional = true },
 	{ "SmiteshP/nvim-navic", optional = true },
 
 	-- Lang
@@ -75,13 +75,13 @@ return {
 	{ "folke/neodev.nvim", optional = true },
 
 	-- UI
-	{ "echasnovski/mini.animate", optional = true },
-	{ "echasnovski/mini.indentscope", optional = true },
-	{ "echasnovski/mini.starter", optional = true },
+	{ "nvim-mini/mini.animate", optional = true },
+	{ "nvim-mini/mini.indentscope", optional = true },
+	{ "nvim-mini/mini.starter", optional = true },
 	{ "nvim-treesitter/nvim-treesitter-context", optional = true },
 
 	-- Util
-	{ "echasnovski/mini.hipatterns", optional = true },
+	{ "nvim-mini/mini.hipatterns", optional = true },
 	{ "dstein64/vim-startuptime", optional = true },
 	{ "ahmedkhalf/project.nvim", optional = true },
 }

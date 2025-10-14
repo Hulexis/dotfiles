@@ -1,2 +1,1 @@
-return
-{ "echasnovski/mini.pairs", enabled = false }
+return { "nvim-mini/mini.pairs", enabled = false }
