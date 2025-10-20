@@ -42,18 +42,35 @@ map_normal("<leader>ch", require("utils.code").toggle_inlay_hints, { desc = "Tog
 map_normal("<leader>fa", require("utils.ui").search_all_files, { desc = "Search all files", remap = true })
 map_common("<C-b>", cmd("Neotree toggle"), { desc = "Open filetree", remap = true })
 map_common("<C-b>", cmd("Neotree toggle"), { desc = "Open filetree", remap = true })
+-- map_normal("<leader>/", function()
+-- 	local git_root = require("lspconfig.util").find_git_ancestor(vim.fn.getcwd()) or vim.loop.cwd()
+-- 	require("telescope.builtin").live_grep({
+-- 		cwd = git_root,
+-- 	})
+-- end, { desc = "Grep (Git Root Dir)", remap = true })
+-- map_normal("<leader><space>", function()
+-- 	local git_root = require("lspconfig.util").find_git_ancestor(vim.fn.getcwd()) or vim.loop.cwd()
+-- 	require("telescope.builtin").find_files({
+-- 		cwd = git_root,
+-- 	})
+-- end, { desc = "Find Files (Git Root Dir)", remap = true })
+
+-- Grep from Git root, remembering phrase
 map_normal("<leader>/", function()
 	local git_root = require("lspconfig.util").find_git_ancestor(vim.fn.getcwd()) or vim.loop.cwd()
-	require("telescope.builtin").live_grep({
-		cwd = git_root,
-	})
+	require("utils.ui").run_picker_fresh("live_grep", "live_grep", { cwd = git_root })
 end, { desc = "Grep (Git Root Dir)", remap = true })
+
+-- Find files from Git root, remembering phrase
 map_normal("<leader><space>", function()
 	local git_root = require("lspconfig.util").find_git_ancestor(vim.fn.getcwd()) or vim.loop.cwd()
-	require("telescope.builtin").find_files({
-		cwd = git_root,
-	})
+	require("utils.ui").run_picker_fresh("find_files", "find_files", { cwd = git_root })
 end, { desc = "Find Files (Git Root Dir)", remap = true })
+
+-- Repeat the last picker (same cwd/options), with the last phrase pre-filled
+map_normal("<leader>F", function()
+	require("utils.ui").repeat_last_picker()
+end, { desc = "Repeat last Telescope search", remap = true })
 
 map_normal("<leader>or", require("overseer").run_template, { desc = "Run a project task", remap = true })
 map_normal("<leader>ot", require("overseer").toggle, { desc = "Toggle overseer task list", remap = true })
