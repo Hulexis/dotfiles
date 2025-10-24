@@ -46,3 +46,5 @@ set -x PATH "$FLUTTER_PATH_OSX/bin" $PATH
 set -x PATH "$GEM_HOME/bin" $PATH
 
 alias assume="source /usr/local/bin/assume.fish"
+
+set -gx PATH /opt/homebrew/opt/curl/bin $PATH
