@@ -42,9 +42,9 @@ return {
 		opts = {
 			inlay_hints = { enabled = false },
 		},
-		init = function()
-			local keys = require("lazyvim.plugins.lsp.keymaps").get()
-			keys[#keys + 1] = { "<leader>cl", false }
-		end,
+		-- init = function()
+		-- 	local keys = require("lazyvim.plugins.lsp.keymaps").get()
+		-- 	keys[#keys + 1] = { "<leader>cl", false }
+		-- end,
 	},
 }
