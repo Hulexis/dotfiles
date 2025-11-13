@@ -13,7 +13,7 @@ rm -r ~/.zsh
 
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/.zsh ~/.zsh
 
 # Setup folders
