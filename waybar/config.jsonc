@@ -47,7 +47,8 @@
 			"7": "", // games
 			"8": "", // docs
 			"9": "󰓇", // music
-			"10": "" // misc
+			"10": "", // misc
+			"11": "󰄜" // apps
 		},
 		"persistent-workspaces": {
 			"1": [],
