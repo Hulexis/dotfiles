@@ -1,17 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Wallpaper engine
-hyprpaper &
+start() {
+	pgrep -x "$1" >/dev/null || "$@" &
+}
 
-# Bar
-waybar &
+start hyprpaper
+start waybar
+start swaync
+start hypridle
 
-# Notification Daemon
-swaync &
-# dunst &
-
-# Idle daemon to screen lock
-hypridle &
-
-# Random Wallpaper
-"$HOME"/.config/hypr/scripts/random_wallpaper.sh &
+# "$HOME/.config/hypr/scripts/random_wallpaper.sh" &
