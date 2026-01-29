@@ -43,3 +43,4 @@ keybind = super+t=text:\x1bt
 keybind = super+y=text:\x1by
 keybind = super+u=text:\x1bu
 
+background-opacity = 1.00
