@@ -19,7 +19,7 @@ def toggle_workspace(target_workspace):
 	if d["id"] != target_workspace:
 		subprocess.getstatusoutput(f"~/.dotfiles/scripts/hypr/qtile_like_swap.sh {target_workspace}")
 	else:
-		subprocess.getstatusoutput("hyprctl dispatch workspace previous")
+		subprocess.getstatusoutput("hyprctl dispatch 'hl.dsp.focus({workspace=\"previous\"})'")
 
 
 if __name__ == "__main__":

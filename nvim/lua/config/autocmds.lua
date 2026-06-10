@@ -12,3 +12,12 @@ vim.api.nvim_create_autocmd("BufLeave", {
 		end
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "python",
+	callback = function()
+		vim.opt_local.expandtab = false -- use tabs instead of spaces
+		vim.opt_local.shiftwidth = 2 -- visual width of indent
+		vim.opt_local.tabstop = 2 -- how wide a tab appears
+	end,
+})

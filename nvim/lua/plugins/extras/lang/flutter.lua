@@ -78,14 +78,14 @@ return {
 						enableSnippets = true,
 						updateImportsOnRename = true,
 					},
-					color = {
-						enabled = true,
-						background = false,
-						background_color = { r = 0, g = 0, b = 0 },
-						foreground = false,
-						virtual_text = true,
-						virtual_text_str = "⏺",
-					},
+					-- color = {
+					-- 	enabled = true,
+					-- 	background = false,
+					-- 	background_color = { r = 0, g = 0, b = 0 },
+					-- 	foreground = false,
+					-- 	virtual_text = true,
+					-- 	virtual_text_str = "⏺",
+					-- },
 				},
 			})
 		end,

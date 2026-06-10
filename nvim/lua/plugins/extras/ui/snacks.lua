@@ -2,6 +2,12 @@ return {
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
+	keys = {
+		-- snacks.scroll only tracks Up/Down wheel events, so Left/Right bypass
+		-- the smooth-scroll animation and get swallowed. Map them explicitly.
+		{ "<ScrollWheelLeft>", "zh", mode = { "n", "v", "i" } },
+		{ "<ScrollWheelRight>", "zl", mode = { "n", "v", "i" } },
+	},
 	opts = {
 
 		dashboard = {

@@ -4,21 +4,28 @@ return {
 		opts = {
 			servers = {
 				tailwindcss = {
-					-- exclude a filetype from the default_config
 					filetypes_exclude = { "markdown" },
-					-- add additional filetypes to the default_config
-					filetypes_include = {},
-					-- to fully override the default_config, change the below
-					-- filetypes = {}
+					filetypes_include = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
+
 					classRegex = {
+						-- Tailwind Variants / tv(...)
+						{ "tv%(([%s%S]-)%)", "[\"'`]([^\"'`]*)[\"'`]" },
+
+						-- slotClasses={{ root: "..." }}
+						{ "slotClasses%s*=%s*{{([^}]*)}}", "[\"'`]([^\"'`]*)[\"'`]" },
+
+						-- optional: a little more permissive for multiline objects
+						{ "slotClasses%s*=%s*{{([%s%S]-)}}", "[\"'`]([^\"'`]*)[\"'`]" },
+
+						-- Your existing custom patterns
 						{ "styles \\=([^;]*);", "'([^']*)'" },
 						{ "styles \\=([^;]*);", '"([^"]*)"' },
 						{ "styles \\=([^;]*);", "\\`([^\\`]*)\\`" },
 						{ "Styles \\=([^;]*);", "'([^']*)'" },
 						{ "Styles \\=([^;]*);", '"([^"]*)"' },
 						{ "Styles \\=([^;]*);", "\\`([^\\`]*)\\`" },
-						{ "slotClasses%s*=%s*{[^}]*}", "[\"']%w+[\"']%s*:%s*[\"']([^\"']+)[\"']" },
-						{ "slotClasses%s*=%s*{[^}]*}", "%w+%s*:%s*`([^`]+)`" },
+						-- { "slotClasses%s*=%s*{[^}]*}", "[\"']%w+[\"']%s*:%s*[\"']([^\"']+)[\"']" },
+						-- { "slotClasses%s*=%s*{[^}]*}", "%w+%s*:%s*`([^`]+)`" },
 					},
 				},
 			},

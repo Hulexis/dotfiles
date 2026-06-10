@@ -5,7 +5,7 @@ set TERM screen-256color
 set EDITOR vim
 set VISUAL vim
 # set BROWSER zen-browser
-set BROWSER firefox-developer-edition
+set BROWSER brave
 
 # Settings
 set fish_greeting

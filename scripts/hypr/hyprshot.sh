@@ -1,3 +1,3 @@
-hyprctl keyword animations:enabled false
+hyprctl eval "hl.config({ animations = { enabled = false } })"
 hyprshot -m region
-hyprctl keyword animations:enabled true
+hyprctl eval "hl.config({ animations = { enabled = true } })"

@@ -14,7 +14,7 @@ return {
 	{ "RRethy/vim-illuminate", optional = true },
 	{ "stevearc/aerial.nvim", optional = true },
 	{ "ggandor/flit.nvim", optional = true },
-	{ "ggandor/leap.nvim", optional = true },
+	{ "https://codeberg.org/andyg/leap.nvim.git", optional = true },
 	{ "tpope/vim-repeat", optional = true },
 	{ "nvim-mini/mini.files", optional = true },
 	{ "SmiteshP/nvim-navic", optional = true },
