@@ -1,162 +1,194 @@
-/* * { */
-/*   font-family: monospace; */
-/*   font-size: 12px; */
-/* } */
-/**/
-/* .background, */
-/* #bar { */
-/*   background-color: transparent; */
-/*   color: #fdf6e3; */
-/* } */
-/**/
-/* #bar, */
-/* #start, */
-/* #center, */
-/* #end { */
-/*   padding: 0; */
-/* } */
-/**/
-/* button { */
-/*   min-width: 0; */
-/*   min-height: 0; */
-/*   padding: 0; */
-/*   margin: 0; */
-/*   background-color: transparent; */
-/*   color: inherit; */
-/*   border: none; */
-/*   border-radius: 0; */
-/*   box-shadow: none; */
-/*   text-shadow: none; */
-/* } */
-/**/
-/* tooltip, */
-/* .popup { */
-/*   background-color: #222630; */
-/*   color: #fdf6e3; */
-/*   border: 1px solid #191d24; */
-/*   border-radius: 4px; */
-/* } */
-/**/
-/* tooltip label { */
-/*   color: #fdf6e3; */
-/* } */
-/**/
-/* #workspaces, */
-/* #music, */
-/* #pacman, */
-/* #system-info, */
-/* #battery, */
-/* #volume, */
-/* #keyboard, */
-/* #inhibit, */
-/* #notifications, */
-/* #wallpaper, */
-/* #tray, */
-/* #clock-day, */
-/* #clock-time, */
-/* #clock-date { */
-/*   min-height: 22px; */
-/*   background-color: #222630; */
-/*   color: #fdf6e3; */
-/* } */
-/**/
-/* /* Workspaces */ */
-/* #workspaces { */
-/*   padding-right: 3px; */
-/*   border-radius: 0 3px 3px 0; */
-/* } */
-/**/
-/* #workspaces .item { */
-/*   min-width: 18px; */
-/*   padding: 0 5px; */
-/*   background-color: transparent; */
-/*   color: #ffffff; */
-/* } */
-/**/
-/* #workspaces .item:hover { */
-/*   background-color: #000000; */
-/*   color: #fdf6e3; */
-/*   box-shadow: inset 0 -3px #d08770; */
-/* } */
-/**/
-/* #workspaces .item.visible { */
-/*   background-color: #000000; */
-/* } */
-/**/
-/* #workspaces .item.focused { */
-/*   background-color: #000000; */
-/*   box-shadow: inset 0 -3px #5e81ac; */
-/* } */
-/**/
-/* #workspaces .item.urgent { */
-/*   box-shadow: inset 0 -3px #eb4d4b; */
-/* } */
-/**/
-/* #workspaces .item.inactive { */
-/*   opacity: 0.2; */
-/* } */
-/**/
-/* /* Main modules */ */
-/* #music, */
-/* #volume, */
-/* #battery, */
-/* #clock-day, */
-/* #clock-time, */
-/* #clock-date { */
-/*   padding: 0 10px; */
-/* } */
-/**/
-/* #pacman, */
-/* #inhibit { */
-/*   padding: 0 10px 0 4px; */
-/* } */
-/**/
-/* #keyboard, */
-/* #tray { */
-/*   padding: 0 4px; */
-/* } */
-/**/
-/* #notifications, */
-/* #wallpaper { */
-/*   padding: 0 5px; */
-/* } */
-/**/
-/* #system-info .item { */
-/*   padding: 0 10px; */
-/* } */
-/**/
-/* #keyboard .key, */
-/* #keyboard .layout { */
-/*   padding: 0 3px; */
-/* } */
-/**/
-/* #tray .item { */
-/*   padding: 0; */
-/*   margin: 0 4px; */
-/* } */
-/**/
-/* #music { */
-/*   border-radius: 2px; */
-/* } */
-/**/
-/* #volume, */
-/* #clock-day { */
-/*   border-radius: 2px 0 0 2px; */
-/* } */
-/**/
-/* #clock-date { */
-/*   border-radius: 0 2px 2px 0; */
-/* } */
-/**/
-/* #notifications .count { */
-/*   color: #eb4d4b; */
-/*   font-size: 9px; */
-/* } */
-/**/
-/* #battery.warning { */
-/*   color: #d08770; */
-/* } */
-/**/
-/* #battery.critical { */
-/*   color: #eb4d4b; */
-/* } */
+:root {
+	--color-bg: #222630;
+	--color-bg-accent: #191d24;
+	--color-text: #fdf6e3;
+	--color-active: #b4befe;
+	--color-urgent: #f38ba8;
+	--color-hover-accent: #d08770;
+
+	--font-sm: 10px;
+	--font-md: 14px;
+	--font-lg: 20px;
+	--font-workspace: 24px;
+
+	--radius-sm: 0px;
+	--padding-module: 0 10px;
+	--padding-button: 0 0.5em;
+}
+
+/* =====================================================
+   Global Reset
+   ===================================================== */
+
+* {
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	background-image: none;
+	font-family: "Hack-ZeroSlash";
+	font-size: var(--font-md);
+	font-weight: bold;
+}
+
+.background {
+	background-color: transparent;
+}
+
+/* =====================================================
+   Bar Layout
+   ===================================================== */
+
+#start,
+#center,
+#end {
+	background-color: transparent;
+	padding: 0;
+	border: none;
+}
+
+.widget {
+	background-color: var(--color-bg);
+	padding: 0 2px;
+}
+
+.widget.start,
+.widget.end {
+	background: transparent;
+	padding: 0;
+}
+
+/* =====================================================
+   Base Widgets
+   ===================================================== */
+
+box,
+button,
+label {
+	background: transparent;
+	color: var(--color-text);
+	font-weight: bold;
+}
+
+button {
+	padding: var(--padding-button);
+}
+
+button:hover,
+button:active {
+	background-color: var(--color-bg);
+	cursor: pointer;
+}
+
+/* =====================================================
+   Popovers & Menus
+   ===================================================== */
+
+popover,
+popover contents,
+calendar {
+	background-color: var(--color-bg);
+	border: 1px solid var(--color-bg-accent);
+	border-radius: var(--radius-sm);
+	font-weight: bold;
+}
+
+/* =====================================================
+   Workspaces
+   ===================================================== */
+
+.workspaces .item {
+	padding: 0px 12px;
+	font-size: var(--font-workspace);
+}
+
+.workspaces .item:hover {
+	box-shadow: inset 0 -3px var(--color-hover-accent);
+}
+
+.workspaces .item.visible {
+	background-color: black;
+}
+
+.workspaces .item.focused {
+	background-color: black;
+	box-shadow: inset 0 -3px var(--color-active);
+}
+
+.workspaces .item.urgent {
+	box-shadow: inset 0 -3px var(--color-urgent);
+}
+
+.workspaces .inactive {
+	opacity: 0.2;
+}
+
+/* =====================================================
+   Modules
+   ===================================================== */
+
+.clock {
+	padding: var(--padding-module);
+}
+
+.volume {
+	padding: var(--padding-module);
+	/* margin-top: 1px; */
+}
+
+/* =====================================================
+   Arrows
+   ===================================================== */
+
+.left-arrow,
+.right-arrow {
+	font-size: var(--font-lg);
+}
+
+.left-arrow .light {
+	color: var(--color-bg-accent);
+}
+
+.left-arrow .dark {
+	background-color: var(--color-bg-accent);
+	color: var(--color-bg);
+}
+
+.right-arrow .light {
+	color: var(--color-bg);
+	background-color: var(--color-bg-accent);
+}
+
+.right-arrow .dark {
+	color: var(--color-bg-accent);
+}
+
+.left-arrow.start .dark,
+.left-arrow.start .light,
+.right-arrow.end .dark,
+.right-arrow.end .light {
+	font-size: var(--font-lg);
+	color: var(--color-bg);
+	background-color: transparent;
+}
+
+/* =====================================================
+   Volume Popup
+   ===================================================== */
+
+.popup-volume {
+	padding: 2px 4px;
+	font-size: var(--font-sm);
+	border-radius: var(--radius-sm);
+}
+
+.popup-volume .device-box .slider slider,
+.popup-volume .apps-box .slider slider {
+	min-width: 16px;
+	min-height: 16px;
+	border-radius: 50%;
+}
+
+.popup-volume .device-box scale trough,
+.popup-volume .apps-box scale trough {
+	min-height: 5px;
+}

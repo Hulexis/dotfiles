@@ -5,7 +5,7 @@ start() {
 }
 
 start hyprpaper
-start waybar
+start ironbar
 start swaync
 start hypridle
 

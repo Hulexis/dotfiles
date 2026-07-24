@@ -1,44 +1,41 @@
 {
 	"layer": "top",
 	"position": "top",
-
 	"modules-left": [],
 	"modules-center": [],
 	"modules-right": [],
-
 	"custom/left-arrow-light-start": {
-		"format": "\ue0b2",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/left-arrow-dark-start": {
-		"format": "\ue0b2",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/right-arrow-light-end": {
-		"format": "\ue0b0",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/right-arrow-dark-end": {
-		"format": "\ue0b0",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/left-arrow-dark": {
-		"format": "\ue0b2",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/left-arrow-light": {
-		"format": "\ue0b2",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/right-arrow-dark": {
-		"format": "\ue0b0",
+		"format": "",
 		"tooltip": false
 	},
 	"custom/right-arrow-light": {
-		"format": "\ue0b0",
+		"format": "",
 		"tooltip": false
 	},
-
 	"clock#one": {
 		"format": "{:%a}",
 		"tooltip": false
@@ -51,7 +48,6 @@
 		"format": "{:%d-%m}",
 		"tooltip": false
 	},
-
 	"hyprland/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": true,
@@ -61,17 +57,22 @@
 		"show-special": true,
 		"format": "{icon}",
 		"format-icons": {
-			"1": "\udb80\udf73",
-			"2": "\uea85",
-			"3": "\udb83\udfb0",
-			"4": "\udb82\udf79",
-			"5": "\udb86\udc13",
-			"6": "\udb80\uddee",
-			"7": "\uf11b",
-			"8": "\ueb1d",
-			"9": "\udb81\udcc7",
-			"10": "\ueb63",
-			"special": "\uf197"
+			"1": "󰍳 ",
+			"2": "󱘗\u200a",
+			"3": " ",
+			"4": " ",
+			"5": " ",
+			"6": " 6",
+			"7": " ",
+			"8": " ",
+			"9": " ",
+			"10": " ",
+			"11": " ",
+			"12": " ",
+			"13": " ",
+			"14": " ",
+			"15": " ",
+			"special": " "
 		},
 		"persistent-workspaces": {
 			"1": [],
@@ -87,7 +88,7 @@
 		}
 	},
 	"hyprland/language": {
-		"format": "\uf11c  {}",
+		"format": "  {}",
 		"on-click": "/usr/bin/python3 $HOME/.dotfiles/scripts/toggle_keyboard_layout.py"
 	},
 	"keyboard-state": {
@@ -95,8 +96,8 @@
 		"capslock": true,
 		"format": "{name} {icon}",
 		"format-icons": {
-			"locked": "\uf023",
-			"unlocked": "\uf09c"
+			"locked": "",
+			"unlocked": ""
 		}
 	},
 	"sway/mode": {
@@ -105,15 +106,15 @@
 	"sway/scratchpad": {
 		"format": "{icon} {count}",
 		"show-empty": true,
-		"format-icons": [",", "\uf2d2"],
+		"format-icons": [",", ""],
 		"tooltip": true,
 		"tooltip-format": "{app}: {title}"
 	},
 	"idle_inhibitor": {
 		"format": "{icon}",
 		"format-icons": {
-			"activated": "\udb80\ude08",
-			"deactivated": "\udb80\ude09"
+			"activated": "󰈈",
+			"deactivated": "󰈉"
 		}
 	},
 	"custom/separator": {
@@ -122,34 +123,24 @@
 		"tooltip": false
 	},
 	"clock": {
-		"format": "\uf017  {:%d/%m - %H:%M}",
+		"format": "  {:%d/%m - %H:%M}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format-alt": "\uf5ef  {:%d/%m/%Y %H:%M:%S}"
+		"format-alt": "  {:%d/%m/%Y %H:%M:%S}"
 	},
 	"temperature": {
 		"critical-threshold": 80,
-		"format": "{icon} {temperatureC}\u00b0C",
-		"format-icons": ["\uf76b", "\uf2c9", "\uf769"]
+		"format": "{icon} {temperatureC}°C",
+		"format-icons": ["", "", ""]
 	},
 	"backlight": {
 		"format": "{percent}% {icon}",
-		"format-icons": [
-			"\ue38d",
-			"\ue3d3",
-			"\ue3d1",
-			"\ue3cf",
-			"\ue3ce",
-			"\ue3cd",
-			"\ue3ca",
-			"\ue3c8",
-			"\ue39b"
-		]
+		"format-icons": ["", "", "", "", "", "", "", "", ""]
 	},
 	"network": {
-		"format-wifi": "\uf1eb  {essid} ({signalStrength}%)",
-		"format-ethernet": "\uf6ff",
-		"tooltip-format": "\uf6ff  {ifname} via {gwaddr}",
-		"format-linked": "\uf6ff  (No IP)",
+		"format-wifi": "  {essid} ({signalStrength}%)",
+		"format-ethernet": "",
+		"tooltip-format": "  {ifname} via {gwaddr}",
+		"format-linked": "  (No IP)",
 		"format-disconnected": "! Disconnected",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}"
 	},
@@ -157,14 +148,14 @@
 		"exec": "/usr/bin/python3 $HOME/scripts/audio/mediaplayer.py --player spotify",
 		"format": "{}",
 		"return-type": "json",
-		"on-click-right": "/usr/bin/python3 $HOME/scripts/hypr/toggle_workspace.py 9",
+		"on-click-right": "/usr/bin/python3 $HOME/scripts/hypr/toggle_workspace.py 14",
 		"on-click": "playerctl play-pause",
 		"on-scroll-up": "playerctl next",
 		"on-scroll-down": "playerctl previous",
 		"max-length": 20
 	},
 	"custom/pacman": {
-		"format": "\uf187   {}",
+		"format": "   {}",
 		"interval": 3600,
 		"exec": "checkupdates | wc -l",
 		"signal": 4
@@ -177,11 +168,11 @@
 	},
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",
-		"format-bluetooth": "{icon}  {volume}%\uf294",
-		"format-muted": "\ueb24",
+		"format-bluetooth": "{icon}  {volume}%",
+		"format-muted": "",
 		"format-icons": {
-			"headphones": "\uf025",
-			"default": ["\uf027", "\uf028"]
+			"headphones": "",
+			"default": ["", ""]
 		},
 		"scroll-step": 5,
 		"on-click": "pamixer -t",
@@ -202,7 +193,7 @@
 			"critical": 15
 		},
 		"format": "{icon} {capacity}%",
-		"format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+		"format-icons": ["", "", "", "", ""]
 	},
 	"disk": {
 		"interval": 5,
@@ -234,7 +225,7 @@
 		"escape": true
 	},
 	"custom/background": {
-		"format": "\udb86\uddff ",
+		"format": "󱧿 ",
 		"on-click": "/bin/sh $HOME/.config/hypr/scripts/random_wallpaper.sh"
 	}
 }

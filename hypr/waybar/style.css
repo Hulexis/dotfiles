@@ -1,5 +1,5 @@
 * {
-	font-size: 12px;
+	font-size: 16px;
 	font-family: monospace;
 }
 
@@ -28,10 +28,12 @@ window#waybar {
 }
 
 #workspaces button {
-	padding: 0 5px;
+	padding: 0;
+	min-width: 40px;
 	background-color: transparent;
 	color: #ffffff;
 	border-radius: 0;
+	font-size: 24px;
 }
 
 #workspaces button:hover,
@@ -56,6 +58,10 @@ window#waybar {
 
 #workspaces button.empty {
 	opacity: 0.2;
+}
+
+#workspaces button:nth-child(2) {
+	padding: 0 4px;
 }
 
 #custom-right-arrow-dark-end,

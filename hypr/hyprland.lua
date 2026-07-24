@@ -17,6 +17,7 @@ end
 -- =====================================================
 -- Monitors
 -- =====================================================
+
 if hostname == "tyr" then
 	hl.monitor({ output = "DP-2", mode = "2560x1440", position = "0x0", scale = 1 })
 	hl.monitor({ output = "DP-3", mode = "2560x1440", position = "2560x0", scale = 1 })
@@ -40,6 +41,7 @@ end
 -- =====================================================
 -- Colors (Catppuccin Macchiato)
 -- =====================================================
+
 local colors = {
 	rosewater = "rgb(f4dbd6)",
 	flamingo = "rgb(f0c6c6)",
@@ -70,8 +72,31 @@ local colors = {
 }
 
 -- =====================================================
+-- Workspaces
+-- =====================================================
+
+local ws = {
+	research       = 1,
+	build          = 2,
+	creative       = 3,
+	knowledge      = 4,
+	infrastructure = 5,
+	workadmin      = 6,
+	operations     = 7,
+	sandbox        = 8,
+	files          = 9,
+	misc           = 10,
+	chat           = 11,
+	devices        = 12,
+	games          = 13,
+	media          = 14,
+	runtime        = 15,
+}
+
+-- =====================================================
 -- Environment Variables
 -- =====================================================
+
 hl.env("GTK_THEME", "Adwaita-dark")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("XDG_SESSION_TYPE", "wayland")
@@ -93,22 +118,23 @@ end
 -- =====================================================
 -- Autostart
 -- =====================================================
+
 hl.on("hyprland.start", function()
 	hl.exec_cmd(home .. "/.config/hypr/scripts/autostart/services.sh")
 	hl.exec_cmd(home .. "/.config/hypr/scripts/autostart/apps.sh")
 	hl.exec_cmd("hyprpm reload -n")
 	hl.exec_cmd("hyprctl dispatcher focusmonitor 1")
-	hl.exec_cmd("[workspace 1 silent] brave")
-	hl.exec_cmd("[workspace 2 silent] ghostty")
-	hl.exec_cmd("[workspace 3 silent] brave")
-	hl.exec_cmd("[workspace 4 silent] slack")
-	hl.exec_cmd("[workspace 4 silent] discord")
-	hl.exec_cmd("[workspace 9 silent] spotify-launcher")
+	hl.exec_cmd("[workspace " .. ws.research .. " silent] brave")
+	hl.exec_cmd("[workspace " .. ws.build .. " silent] ghostty")
+	hl.exec_cmd("[workspace " .. ws.chat .. " silent] slack")
+	hl.exec_cmd("[workspace " .. ws.chat .. " silent] discord")
+	hl.exec_cmd("[workspace " .. ws.media .. " silent] spotify-launcher")
 end)
 
 -- =====================================================
 -- Input
 -- =====================================================
+
 hl.config({
 	input = {
 		kb_layout = "us,no",
@@ -130,6 +156,7 @@ hl.gesture({
 -- =====================================================
 -- General
 -- =====================================================
+
 hl.config({
 	general = {
 		gaps_in = 5,
@@ -150,6 +177,7 @@ hl.config({
 -- =====================================================
 -- Decoration
 -- =====================================================
+
 hl.config({
 	decoration = {
 		rounding = 7,
@@ -180,6 +208,7 @@ hl.config({
 -- =====================================================
 -- Groups
 -- =====================================================
+
 hl.config({
 	group = {
 		auto_group = false,
@@ -217,6 +246,7 @@ hl.config({
 -- =====================================================
 -- Animations
 -- =====================================================
+
 hl.curve("default", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.02 } } })
 hl.curve("wind", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.02 } } })
 hl.curve("overshot", { type = "bezier", points = { { 0.13, 0.99 }, { 0.29, 1.02 } } })
@@ -241,6 +271,7 @@ hl.animation({ leaf = "border", enabled = true, speed = 1, bezier = "liner" })
 -- =====================================================
 -- Layout
 -- =====================================================
+
 hl.config({
 	dwindle = {
 		-- pseudotile = true,
@@ -251,6 +282,7 @@ hl.config({
 -- =====================================================
 -- Misc
 -- =====================================================
+
 hl.config({
 	misc = {
 		force_default_wallpaper = -1,
@@ -263,37 +295,30 @@ hl.config({
 -- =====================================================
 -- Keybindings
 -- =====================================================
+
 local mainMod = "SUPER"
 local terminal = "ghostty"
 local browser = "brave"
 local menu = home .. "/.dotfiles/scripts/launcher.sh"
 
+-- -----------------------------------------------------
+-- General
+-- -----------------------------------------------------
+
 -- Core
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("hyprctl dispatch exit"))
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exit())
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("wofi --show drun"))
+-- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("wofi --show drun"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/toggle_keyboard_layout.py"))
 
 -- Waybar
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("killall -SIGUSR2 waybar"))
 
--- Window management
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
-hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen({ mode = "maximized" }))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("nautilus -w"))
-hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
-
 -- Lock screen
 hl.bind("CONTROL + ALT + Q", hl.dsp.exec_cmd("pidof hyprlock || (hyprlock)"))
-
--- Workspace navigation
-hl.bind("CONTROL + ALT + left", hl.dsp.focus({ workspace = "-1" }))
-hl.bind("CONTROL + ALT + right", hl.dsp.focus({ workspace = "+1" }))
 
 -- Screenshots
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/hypr/hyprshot.sh"))
@@ -303,6 +328,23 @@ hl.bind(mainMod .. " + CONTROL + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m output
 
 -- Screen recording
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("kooha"))
+
+-- -----------------------------------------------------
+-- Window Management
+-- -----------------------------------------------------
+
+-- Window management
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
+-- hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen({ mode = "maximized" }))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("nautilus -w"))
+hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
+
+-- Workspace navigation
+hl.bind("CONTROL + ALT + left", hl.dsp.focus({ workspace = "-1" }))
+hl.bind("CONTROL + ALT + right", hl.dsp.focus({ workspace = "+1" }))
 
 -- Focus movement
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
@@ -322,46 +364,86 @@ hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("hyprctl dispatch splitratio +0.0
 hl.bind(mainMod .. " + minus", hl.dsp.exec_cmd("hyprctl dispatch splitratio -0.05"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("hyprctl dispatch splitratio exact 1"))
 
--- Workspaces (qtile-like swap)
-for i = 0, 9 do
-	local ws = i == 0 and 10 or i
-	local key = tostring(i)
-	hl.bind(mainMod .. " + " .. key, hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/hypr/qtile_like_swap.sh " .. ws))
-	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = ws }))
-end
-
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/hypr/qtile_like_swap.sh 11"))
-hl.bind(mainMod .. " + SHIFT + A", hl.dsp.window.move({ workspace = 11 }))
-
--- Toggle workspace shortcuts
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("python " .. home .. "/.dotfiles/scripts/hypr/toggle_workspace.py 4"))
-hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("python " .. home .. "/.dotfiles/scripts/hypr/toggle_workspace.py 7"))
-hl.bind(
-	mainMod .. " + SHIFT + G",
-	hl.dsp.exec_cmd(
-		"[workspace 7] gamescope --backend sdl -W 3440 -H 1440 -r 120 --adaptive-sync --steam --force-grab-cursor -f -- steam -gamepadui"
-	)
-)
-
--- Scratchpad
-hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("tmp"))
-hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:tmp" }))
-
--- Media keys
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(home .. "/scripts/audio/volume_up.sh"), { locked = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(home .. "/scripts/audio/volume_down.sh"), { locked = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(home .. "/scripts/audio/volume_mute.sh"), { locked = true })
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd(home .. "/scripts/audio/player_next.sh"), { locked = true })
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(home .. "/scripts/audio/player_previous.sh"), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(home .. "/scripts/audio/player_play_or_pause.sh"), { locked = true })
-hl.bind("XF86AudioStop", hl.dsp.exec_cmd(home .. "/scripts/audio/player_stop.sh"), { locked = true })
-
 -- Mouse binds
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
+-- -----------------------------------------------------
+-- Workspaces
+-- -----------------------------------------------------
+
+-- Numbered workspaces
+for i = 0, 9 do
+	local ws = i == 0 and 10 or i
+	local key = tostring(i)
+
+	hl.bind(mainMod .. " + " .. key, hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/hypr/qtile_like_swap.sh " .. ws))
+	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = ws }))
+end
+
+-- Chat
+hl.bind(
+	mainMod .. " + C",
+	hl.dsp.exec_cmd("python " .. home .. "/.dotfiles/scripts/hypr/toggle_workspace.py " .. ws.chat)
+)
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.move({ workspace = ws.chat }))
+
+-- Devices
+hl.bind(
+	mainMod .. " + A",
+	hl.dsp.exec_cmd("python " .. home .. "/.dotfiles/scripts/hypr/toggle_workspace.py " .. ws.devices)
+)
+hl.bind(mainMod .. " + SHIFT + A", hl.dsp.window.move({ workspace = ws.devices }))
+
+-- Games
+hl.bind(
+	mainMod .. " + G",
+	hl.dsp.exec_cmd("python " .. home .. "/.dotfiles/scripts/hypr/toggle_workspace.py " .. ws.games)
+)
+hl.bind(mainMod .. " + SHIFT + G", hl.dsp.window.move({ workspace = ws.games }))
+hl.bind(
+	mainMod .. " + CONTROL + G",
+	hl.dsp.exec_cmd(
+		"[workspace "
+			.. ws.games
+			.. "] gamescope --backend sdl -W 3440 -H 1440 -r 120 --adaptive-sync --steam --force-grab-cursor -f -- steam -gamepadui"
+	)
+)
+
+-- Media
+hl.bind(
+	mainMod .. " + M",
+	hl.dsp.exec_cmd("python " .. home .. "/.dotfiles/scripts/hypr/toggle_workspace.py " .. ws.media)
+)
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.window.move({ workspace = ws.media }))
+
+-- Runtime / Preview
+hl.bind(
+	mainMod .. " + P",
+	hl.dsp.exec_cmd("python " .. home .. "/.dotfiles/scripts/hypr/toggle_workspace.py " .. ws.runtime)
+)
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.window.move({ workspace = ws.runtime }))
+
+-- Special workspace
+hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("tmp"))
+hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:tmp" }))
+
+-- -----------------------------------------------------
+-- Media Controls
+-- -----------------------------------------------------
+
+-- Media keys
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/audio/volume_up.sh"), { locked = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/audio/volume_down.sh"), { locked = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/audio/volume_mute.sh"), { locked = true })
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/audio/player_next.sh"), { locked = true })
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/audio/player_previous.sh"), { locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/audio/player_play_or_pause.sh"), { locked = true })
+hl.bind("XF86AudioStop", hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/audio/player_stop.sh"), { locked = true })
+
 -- =====================================================
 -- Window Rules
 -- =====================================================
+
 -- hl.window_rule({ match = { class = ".*" }, suppress_event = { "fullscreen", "maximize" } })
 hl.window_rule({ match = { class = "^scrcpy$" }, pseudo = true })
