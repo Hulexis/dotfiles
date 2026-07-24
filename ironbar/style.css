@@ -1,0 +1,162 @@
+/* * { */
+/*   font-family: monospace; */
+/*   font-size: 12px; */
+/* } */
+/**/
+/* .background, */
+/* #bar { */
+/*   background-color: transparent; */
+/*   color: #fdf6e3; */
+/* } */
+/**/
+/* #bar, */
+/* #start, */
+/* #center, */
+/* #end { */
+/*   padding: 0; */
+/* } */
+/**/
+/* button { */
+/*   min-width: 0; */
+/*   min-height: 0; */
+/*   padding: 0; */
+/*   margin: 0; */
+/*   background-color: transparent; */
+/*   color: inherit; */
+/*   border: none; */
+/*   border-radius: 0; */
+/*   box-shadow: none; */
+/*   text-shadow: none; */
+/* } */
+/**/
+/* tooltip, */
+/* .popup { */
+/*   background-color: #222630; */
+/*   color: #fdf6e3; */
+/*   border: 1px solid #191d24; */
+/*   border-radius: 4px; */
+/* } */
+/**/
+/* tooltip label { */
+/*   color: #fdf6e3; */
+/* } */
+/**/
+/* #workspaces, */
+/* #music, */
+/* #pacman, */
+/* #system-info, */
+/* #battery, */
+/* #volume, */
+/* #keyboard, */
+/* #inhibit, */
+/* #notifications, */
+/* #wallpaper, */
+/* #tray, */
+/* #clock-day, */
+/* #clock-time, */
+/* #clock-date { */
+/*   min-height: 22px; */
+/*   background-color: #222630; */
+/*   color: #fdf6e3; */
+/* } */
+/**/
+/* /* Workspaces */ */
+/* #workspaces { */
+/*   padding-right: 3px; */
+/*   border-radius: 0 3px 3px 0; */
+/* } */
+/**/
+/* #workspaces .item { */
+/*   min-width: 18px; */
+/*   padding: 0 5px; */
+/*   background-color: transparent; */
+/*   color: #ffffff; */
+/* } */
+/**/
+/* #workspaces .item:hover { */
+/*   background-color: #000000; */
+/*   color: #fdf6e3; */
+/*   box-shadow: inset 0 -3px #d08770; */
+/* } */
+/**/
+/* #workspaces .item.visible { */
+/*   background-color: #000000; */
+/* } */
+/**/
+/* #workspaces .item.focused { */
+/*   background-color: #000000; */
+/*   box-shadow: inset 0 -3px #5e81ac; */
+/* } */
+/**/
+/* #workspaces .item.urgent { */
+/*   box-shadow: inset 0 -3px #eb4d4b; */
+/* } */
+/**/
+/* #workspaces .item.inactive { */
+/*   opacity: 0.2; */
+/* } */
+/**/
+/* /* Main modules */ */
+/* #music, */
+/* #volume, */
+/* #battery, */
+/* #clock-day, */
+/* #clock-time, */
+/* #clock-date { */
+/*   padding: 0 10px; */
+/* } */
+/**/
+/* #pacman, */
+/* #inhibit { */
+/*   padding: 0 10px 0 4px; */
+/* } */
+/**/
+/* #keyboard, */
+/* #tray { */
+/*   padding: 0 4px; */
+/* } */
+/**/
+/* #notifications, */
+/* #wallpaper { */
+/*   padding: 0 5px; */
+/* } */
+/**/
+/* #system-info .item { */
+/*   padding: 0 10px; */
+/* } */
+/**/
+/* #keyboard .key, */
+/* #keyboard .layout { */
+/*   padding: 0 3px; */
+/* } */
+/**/
+/* #tray .item { */
+/*   padding: 0; */
+/*   margin: 0 4px; */
+/* } */
+/**/
+/* #music { */
+/*   border-radius: 2px; */
+/* } */
+/**/
+/* #volume, */
+/* #clock-day { */
+/*   border-radius: 2px 0 0 2px; */
+/* } */
+/**/
+/* #clock-date { */
+/*   border-radius: 0 2px 2px 0; */
+/* } */
+/**/
+/* #notifications .count { */
+/*   color: #eb4d4b; */
+/*   font-size: 9px; */
+/* } */
+/**/
+/* #battery.warning { */
+/*   color: #d08770; */
+/* } */
+/**/
+/* #battery.critical { */
+/*   color: #eb4d4b; */
+/* } */

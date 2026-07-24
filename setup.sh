@@ -37,6 +37,7 @@ rm -r ~/.config/posting
 rm -r ~/.config/btop
 rm -r ~/.config/swaync
 rm -r ~/.config/browser
+rm -r ~/.config/ironbar
 
 ln -s ~/.dotfiles/alacritty ~/.config/alacritty
 ln -s ~/.dotfiles/qtile ~/.config/qtile
@@ -57,5 +58,6 @@ ln -s ~/.dotfiles/posting ~/.config/posting
 ln -s ~/.dotfiles/btop ~/.config/btop
 ln -s ~/.dotfiles/swaync ~/.config/swaync
 ln -s ~/.dotfiles/browser ~/.config/browser
+ln -s ~/.dotfiles/ironbar ~/.config/ironbar
 
 python ./hypr/setup.py

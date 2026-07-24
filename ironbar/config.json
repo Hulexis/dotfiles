@@ -1,0 +1,206 @@
+{
+  "position": "top",
+  "layer": "top",
+  "height": 30,
+  "anchor_to_edges": true,
+  "exclusive_zone": true,
+  "popup_gap": 8,
+  "margin": {
+    "top": 8,
+    "bottom": 2,
+    "left": 10,
+    "right": 10
+  },
+  "start": [
+    {
+      "type": "workspaces",
+      "name": "workspaces",
+      "all_monitors": true,
+      "favorites": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "sort": "name",
+      "format": "{label}",
+      "name_map": {
+        "1": "󰍳",
+        "2": "",
+        "3": "󰾰",
+        "4": "󰭹",
+        "5": "󱠓",
+        "6": "󰇮",
+        "7": "",
+        "8": "",
+        "9": "󰓇",
+        "10": "",
+        "special": "",
+        "special:scratchpad": ""
+      }
+    }
+  ],
+  "center": [
+    {
+      "type": "music",
+      "name": "music",
+      "player_type": "mpris",
+      "format": "{title} - {artist}",
+      "show_status_icon": true,
+      "truncate": {
+        "mode": "end",
+        "max_length": 20
+      },
+      "on_click_left": "playerctl --player=spotify play-pause",
+      "on_click_right": "/usr/bin/python3 $HOME/scripts/hypr/toggle_workspace.py 9",
+      "on_scroll_up": "playerctl --player=spotify next",
+      "on_scroll_down": "playerctl --player=spotify previous"
+    }
+  ],
+  "end": [
+    {
+      "type": "script",
+      "name": "pacman",
+      "cmd": "printf '  '; checkupdates 2>/dev/null | wc -l",
+      "mode": "poll",
+      "interval": 3600000,
+      "tooltip": "Available package updates"
+    },
+    {
+      "type": "sys_info",
+      "name": "system-info",
+      "format": [
+        "Mem {memory_percent}%",
+        "CPU {cpu_percent}%",
+        "Disk {disk_percent@/}%"
+      ],
+      "interval": {
+        "memory": 5,
+        "cpu": 5,
+        "disks": 5
+      }
+    },
+    {
+      "type": "battery",
+      "name": "battery",
+      "format": "{percentage}%",
+      "show_icon": true,
+      "show_label": true,
+      "show_if": "poll:30000:command -v upower >/dev/null && upower -e | grep -q battery",
+      "profiles": {
+        "good": 95,
+        "warning": 30,
+        "critical": {
+          "when": {
+            "percent": 15,
+            "charging": false
+          }
+        }
+      }
+    },
+    {
+      "type": "volume",
+      "name": "volume",
+      "format": "{icon} {percentage}%",
+      "mute_format": "",
+      "max_volume": 100,
+      "disable_popup": true,
+      "icons": {
+        "volume": "",
+        "muted": ""
+      },
+      "profiles": {
+        "low": {
+          "when": 33,
+          "icons": {
+            "volume": ""
+          }
+        }
+      },
+      "on_click_left": "pamixer -t",
+      "on_click_right": "pavucontrol",
+      "on_scroll_up": "pamixer -i 5",
+      "on_scroll_down": "pamixer -d 5"
+    },
+    {
+      "type": "keyboard",
+      "name": "keyboard",
+      "show_caps": true,
+      "show_num": true,
+      "show_scroll": false,
+      "show_layout": true,
+      "icons": {
+        "caps_on": "",
+        "caps_off": "",
+        "num_on": "",
+        "num_off": ""
+      },
+      "on_click_left": "/usr/bin/python3 $HOME/.dotfiles/scripts/toggle_keyboard_layout.py"
+    },
+    {
+      "type": "inhibit",
+      "name": "inhibit",
+      "durations": [
+        "inf"
+      ],
+      "default_duration": "inf",
+      "on_click_left": "toggle",
+      "on_click_right": "toggle",
+      "format_on": "󰈈",
+      "format_off": "󰈉"
+    },
+    {
+      "type": "notifications",
+      "name": "notifications",
+      "show_count": true,
+      "icons": {
+        "closed_none": "",
+        "closed_some": "",
+        "closed_dnd": "",
+        "open_none": "",
+        "open_some": "",
+        "open_dnd": ""
+      },
+      "on_click_right": "swaync-client -d -sw"
+    },
+    {
+      "type": "script",
+      "name": "wallpaper",
+      "cmd": "printf '󱧿'",
+      "mode": "poll",
+      "interval": 86400000,
+      "on_click_left": "$HOME/.config/hypr/scripts/random_wallpaper.sh",
+      "tooltip": "Change wallpaper"
+    },
+    {
+      "type": "tray",
+      "name": "tray",
+      "icon_size": 20,
+      "direction": "horizontal"
+    },
+    {
+      "type": "clock",
+      "name": "clock-day",
+      "format": "%a",
+      "disable_popup": true
+    },
+    {
+      "type": "clock",
+      "name": "clock-time",
+      "format": "%H:%M",
+      "disable_popup": true
+    },
+    {
+      "type": "clock",
+      "name": "clock-date",
+      "format": "%d-%m",
+      "disable_popup": true
+    }
+  ]
+}
