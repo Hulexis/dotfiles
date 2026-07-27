@@ -57,18 +57,18 @@
 		"show-special": true,
 		"format": "{icon}",
 		"format-icons": {
-			"1": "󰍳 ",
+			"1": "󰍳",
 			"2": "󱘗\u200a",
-			"3": " ",
+			"3": "",
 			"4": " ",
 			"5": " ",
-			"6": " 6",
+			"6": "",
 			"7": " ",
-			"8": " ",
-			"9": " ",
-			"10": " ",
-			"11": " ",
-			"12": " ",
+			"8": "",
+			"9": "",
+			"10": "",
+			"11": "",
+			"12": "",
 			"13": " ",
 			"14": " ",
 			"15": " ",
@@ -89,6 +89,8 @@
 	},
 	"hyprland/language": {
 		"format": "  {}",
+		"format-en": "EN",
+		"format-no": "NO",
 		"on-click": "/usr/bin/python3 $HOME/.dotfiles/scripts/toggle_keyboard_layout.py"
 	},
 	"keyboard-state": {
@@ -109,13 +111,6 @@
 		"format-icons": [",", ""],
 		"tooltip": true,
 		"tooltip-format": "{app}: {title}"
-	},
-	"idle_inhibitor": {
-		"format": "{icon}",
-		"format-icons": {
-			"activated": "󰈈",
-			"deactivated": "󰈉"
-		}
 	},
 	"custom/separator": {
 		"format": "|",
@@ -155,7 +150,7 @@
 		"max-length": 20
 	},
 	"custom/pacman": {
-		"format": "   {}",
+		"format": "  {}",
 		"interval": 3600,
 		"exec": "checkupdates | wc -l",
 		"signal": 4
@@ -167,7 +162,7 @@
 		"exec": "/usr/bin/python3 $HOME/scripts/hypr/workspaces.py -w 1 -e -vvv  -a output"
 	},
 	"pulseaudio": {
-		"format": "{icon} {volume:2}%",
+		"format": "{icon}  {volume:2}%",
 		"format-bluetooth": "{icon}  {volume}%",
 		"format-muted": "",
 		"format-icons": {
@@ -180,7 +175,7 @@
 	},
 	"memory": {
 		"interval": 5,
-		"format": "Mem {}%"
+		"format": "  {}%"
 	},
 	"cpu": {
 		"interval": 5,
@@ -225,7 +220,23 @@
 		"escape": true
 	},
 	"custom/background": {
-		"format": "󱧿 ",
+		"format": " ",
 		"on-click": "/bin/sh $HOME/.config/hypr/scripts/random_wallpaper.sh"
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "󰆖 ",
+			"deactivated": "󰪞 "
+		},
+		"timeout": 480
+	},
+	"inhibitor": {
+		"what": "handle-lid-switch",
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
 	}
 }
