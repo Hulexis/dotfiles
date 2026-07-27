@@ -76,21 +76,21 @@ local colors = {
 -- =====================================================
 
 local ws = {
-	research       = 1,
-	build          = 2,
-	creative       = 3,
-	knowledge      = 4,
+	research = 1,
+	build = 2,
+	creative = 3,
+	knowledge = 4,
 	infrastructure = 5,
-	workadmin      = 6,
-	operations     = 7,
-	sandbox        = 8,
-	files          = 9,
-	misc           = 10,
-	chat           = 11,
-	devices        = 12,
-	games          = 13,
-	media          = 14,
-	runtime        = 15,
+	workadmin = 6,
+	operations = 7,
+	sandbox = 8,
+	files = 9,
+	misc = 10,
+	chat = 11,
+	devices = 12,
+	games = 13,
+	media = 14,
+	runtime = 15,
 }
 
 -- =====================================================
@@ -339,7 +339,7 @@ hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen
 -- hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("nautilus -w"))
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+-- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 
 -- Workspace navigation
