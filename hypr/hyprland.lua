@@ -27,9 +27,9 @@ elseif hostname == "hoth" then
 	hl.monitor({ output = "DP-1", mode = "3440x1440", position = "1440x850", scale = 1 })
 	hl.monitor({ output = "DP-2", mode = "3440x1440", position = "4880x850", scale = 1 })
 elseif hostname == "mustafar" then
-	hl.monitor({ output = "HDMI-A-1", mode = "2560x1440", position = "0x0", scale = 1, transform = 1 })
-	hl.monitor({ output = "DP-2", mode = "3840x2160@240", position = "1440x0", scale = 1 })
-	hl.monitor({ output = "DP-1", mode = "3440x1440", position = "5280x0", scale = 1 })
+	hl.monitor({ output = "HDMI-A-1", mode = "2560x1440", position = "0x180", scale = 1, transform = 1 })
+	hl.monitor({ output = "DP-2", mode = "3440x1440@175", position = "1440x720", scale = 1 })
+	hl.monitor({ output = "DP-1", mode = "3840x2160@240", position = "4880x0", scale = 1 })
 elseif hostname == "dathomir" then
 	hl.monitor({ output = "DP-2", mode = "2560x1440", position = "0x0", scale = 1 })
 	hl.monitor({ output = "DP-3", mode = "3440x1440", position = "2560x0", scale = 1 })
