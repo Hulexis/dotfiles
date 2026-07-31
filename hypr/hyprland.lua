@@ -447,3 +447,4 @@ hl.bind("XF86AudioStop", hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/audio/playe
 
 -- hl.window_rule({ match = { class = ".*" }, suppress_event = { "fullscreen", "maximize" } })
 hl.window_rule({ match = { class = "^scrcpy$" }, pseudo = true })
+hl.window_rule({ match = { class = "^[Dd]iscord$" }, workspace = tostring(ws.chat) .. " silent" })
