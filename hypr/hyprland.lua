@@ -351,7 +351,7 @@ hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
-hl.bind(mainMod .. " + TAB", hl.dsp.window.cycle_next())
+hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd(home .. "/.dotfiles/scripts/hypr/cycle_focus.sh"))
 
 -- Move windows
 hl.bind(mainMod .. " + CONTROL + left", hl.dsp.window.move({ direction = "left" }))
