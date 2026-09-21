@@ -4,4 +4,5 @@ return {
 	require("plugins.extras.ui.colorschemes.edge"),
 	require("plugins.extras.ui.colorschemes.nordic"),
 	require("plugins.extras.ui.colorschemes.tokyonight"),
+	require("plugins.extras.ui.colorschemes.nightfox"),
 }
